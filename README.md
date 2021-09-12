@@ -7,7 +7,8 @@ My name is Sam Gozman. Brief information about me:
 - 📈 Since 2021, I have been developing open source software for investors (stock market, value analysis, short sales activity). This includes a [TightShort](https://tightshorts.ru/) website that structures short sales data in the form of a screener with filters; [Short-Fork](https://short-fork.herokuapp.com/) - is a personal compact assistant in the quick evaluation of the company's financial multipliers; and a lot of small public libraries for these projects (+Telegram bots)
 - 🧑‍🔧 4 years of experience in designing and assembling 3D printers as a favorite hobby (+ working on CO2 laser cutter)
 - 🧑‍🔬 3 years of experience in programming and soldering microcontrollers as a hobby (from Attiny13 to NodeMCU)
-- 👨‍🎓 My education: 4 years in college as a developer, 4 years of bachelor's degree in "business informatics" at the institute. And a ton of courses on Udemy 
+- 👨‍🎓 My education: 4 years in college as a developer, 4 years of bachelor's degree in "business informatics" at the institute. And a ton of courses on Udemy
+- 🌍 My languages: 🇷🇺 Russian, 🇬🇧 English
 
 💼 **I am currently considering job offers as a junior NodeJS backend developer**
 

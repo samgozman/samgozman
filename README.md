@@ -13,3 +13,7 @@ My name is Sam Gozman. Brief information about me:
 💼 **I am currently considering job offers as a junior NodeJS backend developer**
 
 📫 How to reach me: [Telegram](https://t.me/samgozman) (preferably), [Email](mailto:sam@gozman.space)
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=samgozman&count_private=true&hide=contribs&show_icons=true&theme=dark)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=samgozman&layout=compact&theme=dark)
+

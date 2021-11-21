@@ -10,8 +10,6 @@ My name is Sam Gozman. Brief information about me:
 - 👨‍🎓 My education: 4 years in college as a developer, 4 years of bachelor's degree in "business informatics" at the institute. And a ton of courses on Udemy
 - 🌍 My languages: 🇷🇺 Russian, 🇬🇧 English
 
-💼 **I am currently considering job offers as a junior NodeJS backend developer**
-
 📫 How to reach me: [Telegram](https://t.me/samgozman) (preferably), [Email](mailto:sam@gozman.space)
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=samgozman&count_private=true&hide=contribs&show_icons=true&theme=dark)

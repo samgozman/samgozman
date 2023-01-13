@@ -13,7 +13,6 @@ My name is Sam Gozman. Brief information about me:
 
 📫 How to reach me: [Telegram](https://t.me/samgozman) (preferably), [Email](mailto:sam@gozman.space)
 
-![Anurag's GitHub stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=samgozman&count_private=true&hide=contribs&show_icons=true&theme=transparent&hide_border=true)
-
+![Anurag's GitHub stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=samgozman&count_private=true&show_icons=true&theme=transparent&hide_border=true&hide_rank=true)
 ![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=samgozman&layout=compact&theme=transparent&hide_border=true&langs_count=10)
 

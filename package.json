@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "highlight.js": "^11.9.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
@@ -25,6 +26,7 @@
     "@vue/tsconfig": "^0.4.0",
     "autoprefixer": "^10.4.16",
     "bun-types": "^1.0.5-canary.20231009T140142",
+    "daisyui": "^3.9.2",
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
     "npm-run-all2": "^6.0.6",

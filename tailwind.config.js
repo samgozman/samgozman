@@ -5,5 +5,6 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: []
+  // eslint-disable-next-line no-undef
+  plugins: [require('daisyui')]
 }

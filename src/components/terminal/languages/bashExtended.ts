@@ -6,7 +6,7 @@ export default function bashExtended(hljs: HLJSApi): Language {
   const keywords = ext.keywords as Record<string, string | string[]> | undefined;
   if (keywords && Array.isArray(keywords.built_in)) {
     // Extend the built-in keywords. Full syntax is here: node_modules/highlight.js/lib/languages/bash.js
-    keywords.built_in.push(...['curl', 'bash'])
+    keywords.built_in.push(...['curl', 'bash', 'ssh'])
   }
   return ext
 }

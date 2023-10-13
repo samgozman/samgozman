@@ -12,7 +12,7 @@ hljs.registerLanguage('bash', bashExtended)
 
 <template>
   <div class="mockup-code">
-    <RowBash :hljs="hljs" value="ssh sam@gozman.space:26 -i ~/.ssh/backend_dev_rsa" />
+    <RowBash :hljs="hljs" value="ssh sam@gozman.space -p 26 -i ~/.ssh/backend_dev_rsa" />
     <RowBash :hljs="hljs" value="curl -s -L https://gozman.space/portfolio.sh | bash" />
   </div>
 </template>

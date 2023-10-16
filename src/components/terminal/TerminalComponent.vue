@@ -21,7 +21,7 @@ const experience = yearsFrom(new Date('2016-07-01'))
 </style>
 
 <template>
-  <div class="mockup-code font-mono m-3">
+  <div class="mockup-code font-mono h-fit">
     <RowBash :hljs="hljs" value="ssh sam@gozman.space -i ~/.ssh/backend_dev_rsa" />
     <RowBash :hljs="hljs" value="curl -s -L https://gozman.space/portfolio.sh | bash" />
     <Row>

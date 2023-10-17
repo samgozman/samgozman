@@ -18,12 +18,35 @@ const experience = yearsFrom(new Date('2016-07-01'))
 
 <style>
 @import 'highlight.js/styles/github-dark.css';
+
+/* Modify `pre` margins for mobile */
+.mockup-code pre:before {
+  margin-right: 1ch;
+}
+.mockup-code pre[data-prefix]:before {
+  width: 1.5rem;
+}
+@media (min-width: 640px) {
+  .mockup-code pre:before {
+    margin-right: 2ch;
+  }
+  .mockup-code pre[data-prefix]:before {
+    width: 2rem;
+  }
+}
 </style>
 
 <template>
-  <div class="mockup-code bg-inherit sm:bg-neutral font-mono h-fit">
-    <RowBash :hljs="hljs" value="ssh sam@gozman.space -i ~/.ssh/backend_dev_rsa" />
-    <RowBash :hljs="hljs" value="curl -s -L https://gozman.space/portfolio.sh | bash" />
+  <div
+    class="mockup-code bg-inherit sm:bg-neutral font-mono h-full sm:h-fit text-sm sm:text-base py-4 sm:py-6"
+  >
+    <RowBash :hljs="hljs" class="sm:hidden" value="ssh sam@gozman.space -i ~/.ssh/dev_rsa" />
+    <RowBash
+      :hljs="hljs"
+      class="hidden sm:block"
+      value="ssh sam@gozman.space -i ~/.ssh/backend_dev_rsa"
+    />
+    <RowBash :hljs="hljs" value="curl -s https://gozman.space/me.sh | bash" />
     <Row>
       👋 Hi! My name is <span class="font-bold bg-fuchsia-900 text-slate-200">Sam Gozman</span>,
       {{ age }}

@@ -29,11 +29,11 @@ In my free time, I work on personal open-source projects on GitHub.
 
 ${white_back}Stack:${N} NodeJS, Go lang, TypeScript, Rust, PostgreSQL, Redis, NestJS, VueJS, Docker, Linux, Git.
 
-Links:
+${white_back}Links:${N}
 • GitHub:   ${U}https://github.com/samgozman${N}.
 • LinkedIn: ${U}https://www.linkedin.com/in/samgozman${N}.
 
-My recent major open-source projects:
+${white_back}Open-source projects:${N}
 • RVP, Rust CLI tool for parsing static web pages - ${U}https://github.com/samgozman/rvp${N}
 • Validity.Red, track expirations and calendar sync - ${U}https://github.com/samgozman/validity.red${N}
 • Short-Fork, financial data for US stocks - ${U}https://github.com/samgozman/short-fork${N}

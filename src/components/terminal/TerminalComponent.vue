@@ -70,7 +70,7 @@ const experience = yearsFrom(new Date('2016-07-01'))
     </Row>
     <br />
     <Row>
-      Links:
+      <span class="bg-gray-100 text-gray-900">Links:</span>
       <ul class="list-disc list-inside">
         <li>GitHub: <Link value="https://github.com/samgozman" /></li>
         <li>LinkedIn: <Link value="https://www.linkedin.com/in/samgozman" /></li>
@@ -78,7 +78,7 @@ const experience = yearsFrom(new Date('2016-07-01'))
     </Row>
     <br />
     <Row>
-      My recent major open-source projects:
+      <span class="bg-gray-100 text-gray-900">Open-source projects:</span>
       <ul class="list-disc list-inside">
         <li>
           RVP, Rust CLI tool for parsing static web pages -

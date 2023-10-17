@@ -47,22 +47,24 @@ const experience = yearsFrom(new Date('2016-07-01'))
       value="ssh sam@gozman.space -i ~/.ssh/backend_dev_rsa"
     />
     <RowBash :hljs="hljs" value="curl -s https://gozman.space/me.sh | bash" />
-    <Row>
+    <Row class="text-justify sm:text-left">
       👋 Hi! My name is <span class="font-bold bg-fuchsia-900 text-slate-200">Sam Gozman</span>,
       {{ age }}
       years old.
     </Row>
-    <Row>
+    <Row class="text-justify sm:text-left">
       I'm an experienced <span class="font-bold">Backend Engineer</span> with expertise in
       <span class="underline">Go lang</span> and <span class="underline">NodeJS</span>.
     </Row>
-    <Row>
+    <Row class="text-justify sm:text-left">
       I've been working as a developer over the course of the last
       <span class="font-bold">{{ experience }}+ years</span>.
     </Row>
-    <Row> In my free time, I work on personal open-source projects on GitHub. </Row>
+    <Row class="text-justify sm:text-left">
+      In my free time, I work on personal open-source projects on GitHub.
+    </Row>
     <br />
-    <Row>
+    <Row class="text-justify sm:text-left">
       <span class="bg-gray-100 text-gray-900">Stack:</span> NodeJS, Go lang, TypeScript, Rust,
       PostgreSQL, Redis, NestJS, VueJS, Docker, Linux, Git.
     </Row>

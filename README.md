@@ -14,7 +14,7 @@ My name is Sam Gozman. Brief information about me:
   
   - In late 2022 I created my new big [open-source](https://github.com/samgozman/validity.red) project - [Validity.Red](https://validity.red). A web service for managing the expiration dates of documents (passports, travel cards, vaccinations, insurance, etc) and synchronizing them with your calendar. It is written in Go, TypeScript, Vue, and Rust
   - [Short-Fork](https://short-fork.extr.app) - is a personal compact assistant in the quick evaluation of the company's financial multipliers and a lot of small public libraries for these projects. Recently updated to NestJS, Redis, and VueJS.
-  - [TightShorts](https://tightshorts.ru/) website that structures short sales data in the form of a screener with filters.
+  - [TightShorts](https://tightshorts.extr.app) website that structures short sales data in the form of a screener with filters.
   - [YoptaScript](https://github.com/samgozman/YoptaScript) - a real programming language for “gopniks”. It was written in 2016 as a joke but gained popularity in Russia due to its excessive simplicity for poorly educated people with a limited vocabulary.
 </details>
 

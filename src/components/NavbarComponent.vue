@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeaderSignature from './elements/HeaderSignature.vue'
+</script>
 
 <template>
   <div class="navbar bg-white">
@@ -29,7 +31,9 @@
           <li><a>Item 3</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl">gozman.</a>
+      <a class="btn btn-ghost text-xl">
+        <HeaderSignature value="gozman." />
+      </a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">

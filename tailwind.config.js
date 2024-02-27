@@ -3,7 +3,11 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts}'],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif']
+      }
+    }
   },
   // eslint-disable-next-line no-undef
   plugins: [require('daisyui')],

@@ -1,0 +1,15 @@
+<script setup lang="ts">
+import { createTwoPartsTitle } from './utils'
+
+const props = defineProps<{
+  value: string
+}>()
+
+const title = createTwoPartsTitle(props.value)
+</script>
+
+<template class="text-xl font-semibold font-sans">
+  <span class="text-xl font-semibold font-poppins">
+    {{ title.part1 }}<span v-if="title.part2" class="text-orange-500">{{ title.part2 }}</span>
+  </span>
+</template>

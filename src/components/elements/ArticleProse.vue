@@ -1,15 +1,24 @@
 <template>
-  <article class="prose prose-headings:font-poppins prose-p:font-sans prose-a:text-orange-500">
+  <article
+    ref="article"
+    class="prose prose-headings:font-poppins prose-p:font-sans prose-a:text-orange-500"
+  >
     <slot />
   </article>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
+
+const article = ref<HTMLElement | null>(null)
 
 /* Add punctuation header styles for */
 onMounted(() => {
-  const headers = document.querySelectorAll(
+  if (!article.value) {
+    return
+  }
+
+  const headers = article.value.querySelectorAll(
     '.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6'
   )
 

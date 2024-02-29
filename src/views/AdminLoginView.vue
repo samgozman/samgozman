@@ -1,7 +1,26 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { StorageKeeper } from '@/services/StorageKeeper'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 
 const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID
+
+onMounted(() => {
+  // read param 'code' from URL
+  const urlParams = new URLSearchParams(window.location.search)
+  const code = urlParams.get('code')
+
+  if (!code) {
+    return
+  }
+
+  // TODO: call backend to exchange code for token
+
+  // save token to local storage
+  // add 60 seconds to current time
+  const expireTime = new Date().getTime() + 60 * 1000
+  StorageKeeper.set('token', 'token', expireTime)
+})
 </script>
 
 <template>

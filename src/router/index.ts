@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import BlogView from '../views/BlogView.vue'
+import HomeView from '@/views/HomeView.vue'
+import BlogView from '@/views/BlogView.vue'
+import { StorageKeeper } from '@/services/StorageKeeper'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,18 +19,18 @@ const router = createRouter({
     {
       path: '/blog/:id',
       name: 'blog-post',
-      component: () => import('../views/BlogPostView.vue')
+      component: () => import('@/views/BlogPostView.vue')
     },
     {
       path: '/admin/login',
       name: 'admin-login',
-      component: () => import('../views/AdminLoginView.vue')
+      component: () => import('@/views/AdminLoginView.vue')
     },
     // TODO: add route to redirect to from GitHub
     {
       path: '/admin/posts/new',
       name: 'admin-new-post',
-      component: () => import('../views/AdminPostNewView.vue'),
+      component: () => import('@/views/AdminPostNewView.vue'),
       meta: { requiresAuth: true }
     }
   ]
@@ -41,12 +42,7 @@ router.beforeEach(async (to) => {
     return
   }
 
-  // TODO: Add expiration for the stored token
-  // const item = {
-  //   value: value,
-  //   expiry: new Date().getTime() + ttl
-  // }
-  const token = localStorage.getItem('bloggy-token')
+  const token = StorageKeeper.get('token')
 
   if (
     !token &&

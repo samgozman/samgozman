@@ -97,7 +97,7 @@ div[data-type='codeBlock'] .token.inserted {
 
 .prose .anchor {
   text-decoration: none;
-  font-size: 0.65em;
+  font-size: 1rem;
   vertical-align: middle;
   margin-right: 0.25em;
   color: var(--tw-prose-body);

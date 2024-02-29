@@ -40,7 +40,7 @@ div[data-type='codeBlock'] .token.function-name {
 div[data-type='codeBlock'] .token.boolean,
 div[data-type='codeBlock'] .token.number,
 div[data-type='codeBlock'] .token.function {
-  color: rgb(249 115 22); /* .text-orange-500 */
+  color: oklch(var(--s));
 }
 div[data-type='codeBlock'] .token.property,
 div[data-type='codeBlock'] .token.class-name,
@@ -102,12 +102,14 @@ div[data-type='codeBlock'] .token.inserted {
   margin-right: 0.25em;
   color: var(--tw-prose-body);
   opacity: 0.2;
-  transition: opacity 0.3s ease, color 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    color 0.3s ease;
 }
 
 .prose .anchor:hover {
   opacity: 1;
-  color: rgb(249 115 22); /* .text-orange-500 */
+  color: oklch(var(--p));
 }
 </style>
 

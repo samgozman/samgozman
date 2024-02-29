@@ -12,6 +12,15 @@ module.exports = {
   // eslint-disable-next-line no-undef
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
-    themes: ['light']
+    themes: [
+      {
+        light: {
+          // eslint-disable-next-line no-undef
+          ...require('daisyui/src/theming/themes')['light'],
+          primary: '#f97316',
+          secondary: '#f97316'
+        }
+      }
+    ]
   }
 }

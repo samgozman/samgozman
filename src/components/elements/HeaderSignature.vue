@@ -10,6 +10,6 @@ const title = createTwoPartsTitle(props.value)
 
 <template class="not-prose text-xl font-semibold font-sans">
   <span class="text-xl font-semibold font-poppins">
-    {{ title.part1 }}<span v-if="title.part2" class="text-orange-500">{{ title.part2 }}</span>
+    {{ title.part1 }}<span v-if="title.part2" class="text-primary">{{ title.part2 }}</span>
   </span>
 </template>

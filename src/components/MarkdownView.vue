@@ -7,7 +7,7 @@ const props = defineProps<{
   value: string
 }>()
 
-const engine = new CherryEngine({})
+const engine = new CherryEngine({}) as any
 const html = engine.makeHtml(props.value) // Note: this is valid call
 </script>
 

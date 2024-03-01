@@ -20,11 +20,7 @@ export class BloggyApi {
     const response = await fetch(this.BASE_URL + url, options)
     const contentType = await response.json()
 
-    if (!response.ok) {
-      contentType.ok = false
-    } else {
-      contentType.ok = true
-    }
+    contentType.ok = response.ok
 
     return contentType
   }

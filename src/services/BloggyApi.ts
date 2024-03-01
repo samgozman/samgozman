@@ -18,11 +18,11 @@ export class BloggyApi {
 
   private static async request<T>(url: string, options: RequestInit): Promise<T> {
     const response = await fetch(this.BASE_URL + url, options)
-    const contentType = await response.json()
+    const contentBody = await response.json()
 
-    contentType.ok = response.ok
+    contentBody.ok = response.ok
 
-    return contentType
+    return contentBody
   }
 }
 

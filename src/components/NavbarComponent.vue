@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import HeaderSignature from './elements/HeaderSignature.vue'
 </script>
 
@@ -26,9 +27,10 @@ import HeaderSignature from './elements/HeaderSignature.vue'
           tabindex="0"
           class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li><a>Item 1</a></li>
-          <li><a>Item 2</a></li>
-          <li><a>Item 3</a></li>
+          <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
+          <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
+          <li><RouterLink :to="{ name: 'admin-login' }">Login</RouterLink></li>
+          <li><RouterLink :to="{ name: 'admin-new-post' }">New post</RouterLink></li>
         </ul>
       </div>
       <a class="btn btn-ghost text-xl">
@@ -37,9 +39,10 @@ import HeaderSignature from './elements/HeaderSignature.vue'
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-        <li><a>Item 3</a></li>
+        <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
+        <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
+        <li><RouterLink :to="{ name: 'admin-login' }">Login</RouterLink></li>
+        <li><RouterLink :to="{ name: 'admin-new-post' }">New post</RouterLink></li>
       </ul>
     </div>
     <div class="navbar-end">

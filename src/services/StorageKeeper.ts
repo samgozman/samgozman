@@ -10,6 +10,9 @@ export class StorageKeeper {
 
   /**
    * Store the value in the local storage of the browser.
+   * @param key
+   * @param value
+   * @param ttl Time to live in milliseconds.
    */
   static set<T>(key: string, value: T, ttl: number): void {
     const item: StorageItem<T> = {

@@ -18,6 +18,7 @@ onMounted(async () => {
 
     const refreshToken = await BloggyApi.refreshToken(token)
     if (!refreshToken.ok) {
+      console.error('Token refresh failed:', refreshToken.message)
       StorageKeeper.remove('token')
       return
     }

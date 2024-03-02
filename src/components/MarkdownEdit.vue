@@ -76,6 +76,33 @@ watch(
     deep: true
   }
 )
+
+const errorText = ref('')
+const savePost = () => {
+  errorText.value = ''
+
+  // validate that all required fields are filled
+  if (!props.value.title || !props.value.slug || !props.value.description || !props.value.text) {
+    errorText.value = 'Please fill all required fields.'
+    return
+  }
+
+  // validate that slug is URL friendly
+  if (!/^[a-z0-9-]+$/.test(props.value.slug)) {
+    errorText.value = 'URL slug can only contain lowercase letters, numbers and hyphens.'
+    return
+  }
+
+  // validate that keywords are comma separated
+  if (props.value.keywords && !/^[a-z0-9,-]+$/.test(props.value.keywords)) {
+    errorText.value = 'Keywords can only contain lowercase letters, numbers, hyphens and commas.'
+    return
+  }
+
+  // TODO: Save the post to the server
+
+  // TODO: Redirect to the Edit post page
+}
 </script>
 
 <template>
@@ -83,17 +110,15 @@ watch(
 
   <div class="mt-6 space-y-2">
     <label class="input input-bordered flex items-center gap-2">
-      <strong>Title</strong>
+      <strong>Title *</strong>
       <input type="text" class="grow" placeholder="Some catchy title" v-model="props.title" />
     </label>
 
-    <!-- TODO: Add format validation -->
     <label class="input input-bordered flex items-center gap-2">
-      <strong>URL Slug</strong>
+      <strong>URL Slug *</strong>
       <input type="text" class="grow" placeholder="some-catchy-name" v-model="props.slug" />
     </label>
 
-    <!-- TODO: Add format validation -->
     <label class="input input-bordered flex items-center gap-2">
       <strong>Keywords (comma separated)</strong>
       <input type="text" class="grow" placeholder="typescript,vuejs" v-model="props.keywords" />
@@ -101,7 +126,7 @@ watch(
 
     <label class="form-control">
       <div class="label">
-        <span class="label-text font-bold">Compact description</span>
+        <span class="label-text font-bold">Compact description *</span>
       </div>
       <textarea
         placeholder="A short description of the post."
@@ -115,6 +140,27 @@ watch(
         <span class="label-text font-bold">Is published (visible for everyone)</span>
         <input type="checkbox" class="checkbox checkbox-warning" v-model="props.isPublished" />
       </label>
+    </div>
+
+    <button class="btn w-96 mt-6 text-xl" @click="savePost">🚀 Save</button>
+
+    <div v-if="errorText" role="alert" class="alert alert-error mt-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="stroke-current shrink-0 h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span>
+        {{ errorText }}
+      </span>
     </div>
   </div>
 </template>

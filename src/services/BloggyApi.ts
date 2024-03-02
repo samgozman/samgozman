@@ -13,6 +13,22 @@ export class BloggyApi {
       },
       body: JSON.stringify({ code })
     })
+
+    return response
+  }
+
+  /**
+   * Refresh the user's token and return the `LoginResponse`.
+   */
+  public static async refreshToken(token: string): Promise<LoginResponse> {
+    // Setup token as a Bearer token
+    const response = await this.request<LoginResponse>('/login/refresh', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+
     return response
   }
 

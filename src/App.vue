@@ -1,6 +1,31 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { onMounted } from 'vue'
 import NavbarComponent from './components/NavbarComponent.vue'
+import { StorageKeeper } from '@/services/StorageKeeper'
+import { BloggyApi } from '@/services/BloggyApi'
+
+// Token TTL in milliseconds
+const ttl = Number(import.meta.env.VITE_AUTH_TOKEN_TTL_SECONDS) * 1000
+
+onMounted(async () => {
+  // Refresh token while user is still active on the page
+  setInterval(async () => {
+    const token = StorageKeeper.get<string>('token')
+    if (!token) {
+      return
+    }
+
+    const refreshToken = await BloggyApi.refreshToken(token)
+    if (!refreshToken.ok) {
+      StorageKeeper.remove('token')
+      return
+    }
+
+    const expireTime = new Date().getTime() + ttl
+    StorageKeeper.set<string>('token', refreshToken.token, expireTime)
+  }, ttl)
+})
 </script>
 
 <template>

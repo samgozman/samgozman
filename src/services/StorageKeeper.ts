@@ -21,6 +21,7 @@ export class StorageKeeper {
 
   /**
    * Retrieve the value from the local storage of the browser.
+   * If the value is expired, it will be removed from the local storage and return `null`.
    */
   static get<T>(key: string): T | null {
     const item = localStorage.getItem(this.PREFIX + key)

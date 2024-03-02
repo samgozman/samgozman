@@ -4,6 +4,8 @@ import { StorageKeeper } from '@/services/StorageKeeper'
 import { BloggyApi } from '@/services/BloggyApi'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 
+// Token TTL in milliseconds
+const ttl = Number(import.meta.env.VITE_AUTH_TOKEN_TTL_SECONDS) * 1000
 const clientId = import.meta.env.VITE_GITHUB_CLIENT_ID
 const errorCode = ref()
 const errorMessage = ref()
@@ -24,7 +26,7 @@ onMounted(async () => {
       return
     }
 
-    const expireTime = new Date().getTime() + 50 * 1000
+    const expireTime = new Date().getTime() + ttl
     StorageKeeper.set<string>('token', res.token, expireTime)
   } catch (error) {
     errorCode.value = 'unexpected-error'

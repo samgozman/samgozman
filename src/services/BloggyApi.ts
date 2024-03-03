@@ -52,6 +52,26 @@ export class BloggyApi {
   }
 
   /**
+   * Update a post by its slug and return the `PostResponse`.
+   */
+  public static async updatePostBySlug(
+    token: string,
+    slug: string,
+    post: PutPostRequest
+  ): Promise<PostResponse & ErrorResponse> {
+    const response = await this.request<PostResponse & ErrorResponse>(`/posts/${slug}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(post)
+    })
+
+    return response
+  }
+
+  /**
    * Get a post by its slug and return the `PostResponse`.
    */
   public static async getPostBySlug(slug: string): Promise<PostResponse & ErrorResponse> {
@@ -97,3 +117,5 @@ export interface PostResponse extends PostRequest {
   created_at: string
   updated_at: string
 }
+
+type PutPostRequest = Omit<PostRequest, 'slug'>

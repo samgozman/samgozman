@@ -114,7 +114,17 @@ const savePost = async () => {
   const keywords = post.value.keywords?.split(',').map((k) => k.trim())
 
   if (isEditing.value) {
-    // TODO: Update the post
+    const response = await BloggyApi.updatePostBySlug(token, post.value.slug, {
+      title: post.value.title,
+      description: post.value.description,
+      keywords: keywords,
+      content: post.value.text
+    })
+
+    if (!response.ok) {
+      errorText.value = `Failed to update the post. ${response.message}. Code: ${response.code}`
+      return
+    }
   } else {
     const response = await BloggyApi.createPost(token, {
       title: post.value.title,
@@ -156,7 +166,7 @@ const generateSlug = () => {
       <input type="text" class="grow" placeholder="Some catchy title" v-model="post.title" />
     </label>
 
-    <div class="join w-full">
+    <div class="join w-full" v-if="!isEditing">
       <label class="input input-bordered flex items-center gap-2 join-item w-full">
         <strong>URL Slug *</strong>
         <input type="text" class="grow" placeholder="some-catchy-name" v-model="post.slug" />
@@ -180,7 +190,9 @@ const generateSlug = () => {
       ></textarea>
     </label>
 
-    <button class="btn w-96 mt-6 text-xl btn-secondary" @click="savePost">🚀 Save</button>
+    <button class="btn w-96 mt-6 text-xl btn-secondary" @click="savePost">
+      {{ isEditing ? '👾 Update' : '🚀 Save' }}
+    </button>
 
     <div v-if="errorText" role="alert" class="alert alert-error mt-4">
       <svg

@@ -127,6 +127,16 @@ const savePost = async () => {
 
   // TODO: Redirect to the Edit post page
 }
+
+const generateSlug = () => {
+  if (props.value.title) {
+    props.value.slug = props.value.title
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '')
+  }
+}
 </script>
 
 <template>
@@ -138,10 +148,13 @@ const savePost = async () => {
       <input type="text" class="grow" placeholder="Some catchy title" v-model="props.title" />
     </label>
 
-    <label class="input input-bordered flex items-center gap-2">
-      <strong>URL Slug *</strong>
-      <input type="text" class="grow" placeholder="some-catchy-name" v-model="props.slug" />
-    </label>
+    <div class="join w-full">
+      <label class="input input-bordered flex items-center gap-2 join-item w-full">
+        <strong>URL Slug *</strong>
+        <input type="text" class="grow" placeholder="some-catchy-name" v-model="props.slug" />
+      </label>
+      <button class="btn join-item" @click="generateSlug">Generate from title</button>
+    </div>
 
     <label class="input input-bordered flex items-center gap-2">
       <strong>Keywords (comma separated)</strong>
@@ -166,7 +179,7 @@ const savePost = async () => {
       </label>
     </div>
 
-    <button class="btn w-96 mt-6 text-xl" @click="savePost">🚀 Save</button>
+    <button class="btn w-96 mt-6 text-xl btn-secondary" @click="savePost">🚀 Save</button>
 
     <div v-if="errorText" role="alert" class="alert alert-error mt-4">
       <svg

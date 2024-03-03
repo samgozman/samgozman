@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch, defineProps } from 'vue'
 import CherryEngine from 'cherry-markdown'
 import 'cherry-markdown/dist/cherry-markdown.min.css'
 import { StorageKeeper } from '@/services/StorageKeeper'
@@ -11,24 +11,29 @@ interface LocalPost {
   description?: string
   keywords?: string
   text?: string
-  isPublished?: boolean
 }
 
 // Get props from parent (for editing)
-const props = ref<LocalPost>({})
-
-// If props are not passed, try to load from local store
-if (!props.value.text) {
-  const lastPost = StorageKeeper.get<LocalPost>('last-post')
-  if (lastPost) {
-    props.value = lastPost
-  }
-}
+const props = defineProps<LocalPost>()
+const post = ref<LocalPost>({ ...props })
+const isEditing = ref(false)
 
 onMounted(() => {
+  // console.log(props.value)
+  // If props are not passed, try to load from local store
+  if (!props.text || !props.title || !props.slug) {
+    const lastPost = StorageKeeper.get<LocalPost>('last-post')
+    if (lastPost) {
+      post.value = lastPost
+    }
+  } else {
+    post.value = props
+    isEditing.value = true
+  }
+
   new CherryEngine({
     id: 'markdown-container',
-    value: props.value.text,
+    value: post.value.text,
     toolbars: {
       toolbar: [
         'bold',
@@ -59,7 +64,7 @@ onMounted(() => {
     },
     callback: {
       afterChange: (text: string) => {
-        props.value.text = text
+        post.value = { ...post.value, text: text }
       }
     },
     locale: 'en_US'
@@ -67,7 +72,7 @@ onMounted(() => {
 })
 
 watch(
-  () => props.value,
+  () => post.value,
   (newProps) => {
     // local store backup for a week
     StorageKeeper.set<LocalPost>('last-post', newProps, 1000 * 60 * 60 * 24 * 7)
@@ -83,19 +88,19 @@ const savePost = async () => {
   errorText.value = ''
 
   // validate that all required fields are filled
-  if (!props.value.title || !props.value.slug || !props.value.description || !props.value.text) {
+  if (!post.value.title || !post.value.slug || !post.value.description || !post.value.text) {
     errorText.value = 'Please fill all required fields.'
     return
   }
 
   // validate that slug is URL friendly
-  if (!/^[a-z0-9-]+$/.test(props.value.slug)) {
+  if (!/^[a-z0-9-]+$/.test(post.value.slug)) {
     errorText.value = 'URL slug can only contain lowercase letters, numbers and hyphens.'
     return
   }
 
   // validate that keywords are comma separated
-  if (props.value.keywords && !/^[a-z0-9,-]+$/.test(props.value.keywords)) {
+  if (post.value.keywords && !/^[a-z0-9,-]+$/.test(post.value.keywords)) {
     errorText.value = 'Keywords can only contain lowercase letters, numbers, hyphens and commas.'
     return
   }
@@ -106,20 +111,23 @@ const savePost = async () => {
     return
   }
 
-  const keywords = props.value.keywords?.split(',').map((k) => k.trim())
+  const keywords = post.value.keywords?.split(',').map((k) => k.trim())
 
-  const response = await BloggyApi.createPost(token, {
-    title: props.value.title,
-    slug: props.value.slug,
-    description: props.value.description,
-    keywords: keywords,
-    content: props.value.text
-    // TODO: isPublished: props.value.isPublished
-  })
+  if (isEditing.value) {
+    // TODO: Update the post
+  } else {
+    const response = await BloggyApi.createPost(token, {
+      title: post.value.title,
+      slug: post.value.slug,
+      description: post.value.description,
+      keywords: keywords,
+      content: post.value.text
+    })
 
-  if (!response.ok) {
-    errorText.value = `Failed to save the post. ${response.message}. Code: ${response.code}`
-    return
+    if (!response.ok) {
+      errorText.value = `Failed to save the post. ${response.message}. Code: ${response.code}`
+      return
+    }
   }
 
   // Clear local store backup after successful save
@@ -129,8 +137,8 @@ const savePost = async () => {
 }
 
 const generateSlug = () => {
-  if (props.value.title) {
-    props.value.slug = props.value.title
+  if (post.value.title) {
+    post.value.slug = post.value.title
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
       .replace(/-+/g, '-')
@@ -145,20 +153,20 @@ const generateSlug = () => {
   <div class="mt-6 space-y-2">
     <label class="input input-bordered flex items-center gap-2">
       <strong>Title *</strong>
-      <input type="text" class="grow" placeholder="Some catchy title" v-model="props.title" />
+      <input type="text" class="grow" placeholder="Some catchy title" v-model="post.title" />
     </label>
 
     <div class="join w-full">
       <label class="input input-bordered flex items-center gap-2 join-item w-full">
         <strong>URL Slug *</strong>
-        <input type="text" class="grow" placeholder="some-catchy-name" v-model="props.slug" />
+        <input type="text" class="grow" placeholder="some-catchy-name" v-model="post.slug" />
       </label>
       <button class="btn join-item" @click="generateSlug">Generate from title</button>
     </div>
 
     <label class="input input-bordered flex items-center gap-2">
       <strong>Keywords (comma separated)</strong>
-      <input type="text" class="grow" placeholder="typescript,vuejs" v-model="props.keywords" />
+      <input type="text" class="grow" placeholder="typescript,vuejs" v-model="post.keywords" />
     </label>
 
     <label class="form-control">
@@ -168,16 +176,9 @@ const generateSlug = () => {
       <textarea
         placeholder="A short description of the post."
         class="textarea textarea-bordered textarea-md w-full max-w-xl"
-        v-model="props.description"
+        v-model="post.description"
       ></textarea>
     </label>
-
-    <div class="form-control max-w-xl">
-      <label class="cursor-pointer label">
-        <span class="label-text font-bold">Is published (visible for everyone)</span>
-        <input type="checkbox" class="checkbox checkbox-warning" v-model="props.isPublished" />
-      </label>
-    </div>
 
     <button class="btn w-96 mt-6 text-xl btn-secondary" @click="savePost">🚀 Save</button>
 

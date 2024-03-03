@@ -51,6 +51,17 @@ export class BloggyApi {
     return response
   }
 
+  /**
+   * Get a post by its slug and return the `PostResponse`.
+   */
+  public static async getPostBySlug(slug: string): Promise<PostResponse & ErrorResponse> {
+    const response = await this.request<PostResponse & ErrorResponse>(`/posts/${slug}`, {
+      method: 'GET'
+    })
+
+    return response
+  }
+
   private static async request<T>(url: string, options: RequestInit): Promise<T> {
     const response = await fetch(this.BASE_URL + url, options)
     const contentBody = await response.json()
@@ -78,10 +89,9 @@ interface PostRequest {
   description: string
   keywords?: string[]
   content: string
-  // TODO: isPublished
 }
 
-interface PostResponse extends PostRequest {
+export interface PostResponse extends PostRequest {
   id: string
   reading_time: number
   created_at: string

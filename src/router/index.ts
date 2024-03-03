@@ -17,7 +17,7 @@ const router = createRouter({
       component: BlogView
     },
     {
-      path: '/blog/:id',
+      path: '/blog/:slug',
       name: 'blog-post',
       component: () => import('@/views/BlogPostView.vue')
     },
@@ -32,6 +32,12 @@ const router = createRouter({
       name: 'admin-new-post',
       component: () => import('@/views/AdminPostNewView.vue'),
       meta: { requiresAuth: true }
+    },
+    {
+      path: '/admin/posts/:slug',
+      name: 'admin-edit-post',
+      component: () => import('@/views/AdminPostEditView.vue'),
+      meta: { requiresAuth: true },
     }
   ]
 })

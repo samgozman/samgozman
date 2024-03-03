@@ -3,6 +3,7 @@ import { onMounted, ref, watch } from 'vue'
 import CherryEngine from 'cherry-markdown'
 import 'cherry-markdown/dist/cherry-markdown.min.css'
 import { StorageKeeper } from '@/services/StorageKeeper'
+import { BloggyApi } from '@/services/BloggyApi'
 
 interface LocalPost {
   slug?: string
@@ -78,7 +79,7 @@ watch(
 )
 
 const errorText = ref('')
-const savePost = () => {
+const savePost = async () => {
   errorText.value = ''
 
   // validate that all required fields are filled
@@ -99,7 +100,30 @@ const savePost = () => {
     return
   }
 
-  // TODO: Save the post to the server
+  const token = StorageKeeper.get<string>('token')
+  if (!token) {
+    errorText.value = 'You need to be logged in to save a post.'
+    return
+  }
+
+  const keywords = props.value.keywords?.split(',').map((k) => k.trim())
+
+  const response = await BloggyApi.createPost(token, {
+    title: props.value.title,
+    slug: props.value.slug,
+    description: props.value.description,
+    keywords: keywords,
+    content: props.value.text
+    // TODO: isPublished: props.value.isPublished
+  })
+
+  if (!response.ok) {
+    errorText.value = `Failed to save the post. ${response.message}. Code: ${response.code}`
+    return
+  }
+
+  // Clear local store backup after successful save
+  StorageKeeper.remove('last-post')
 
   // TODO: Redirect to the Edit post page
 }

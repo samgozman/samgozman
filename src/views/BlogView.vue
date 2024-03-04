@@ -24,6 +24,8 @@ onMounted(async () => {
     <BlogListItem v-for="item in items" :key="item.slug" :post="item" />
   </div>
 
+  <!-- TODO: Add pagination here -->
+
   <ArticleProse>
     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
     <p>

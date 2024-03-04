@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import BlogView from '@/views/BlogView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 import { StorageKeeper } from '@/services/StorageKeeper'
 
 const router = createRouter({
@@ -37,7 +38,12 @@ const router = createRouter({
       path: '/admin/posts/:slug',
       name: 'admin-edit-post',
       component: () => import('@/views/AdminPostEditView.vue'),
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: NotFoundView
     }
   ]
 })

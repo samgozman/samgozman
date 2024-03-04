@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch, defineProps } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import CherryEngine from 'cherry-markdown'
 import 'cherry-markdown/dist/cherry-markdown.min.css'
 import { StorageKeeper } from '@/services/StorageKeeper'

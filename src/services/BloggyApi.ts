@@ -119,3 +119,5 @@ export interface PostResponse extends PostRequest {
 }
 
 type PutPostRequest = Omit<PostRequest, 'slug'>
+
+export type PostListItem = Omit<PostResponse, 'content' | 'id' | 'updated_at'>

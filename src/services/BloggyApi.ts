@@ -6,7 +6,7 @@ export class BloggyApi {
    * Authenticate the user with GitHub code and return the `LoginResponse`.
    */
   public static async login(code: string): Promise<LoginResponse & ErrorResponse> {
-    const response = await this.request<LoginResponse & ErrorResponse>('/login/github/authorize', {
+    const response = await this.request<LoginResponse>('/login/github/authorize', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ export class BloggyApi {
    */
   public static async refreshToken(token: string): Promise<LoginResponse & ErrorResponse> {
     // Setup token as a Bearer token
-    const response = await this.request<LoginResponse & ErrorResponse>('/login/refresh', {
+    const response = await this.request<LoginResponse>('/login/refresh', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`
@@ -39,7 +39,7 @@ export class BloggyApi {
     token: string,
     post: PostRequest
   ): Promise<PostResponse & ErrorResponse> {
-    const response = await this.request<PostResponse & ErrorResponse>('/posts', {
+    const response = await this.request<PostResponse>('/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export class BloggyApi {
     slug: string,
     post: PutPostRequest
   ): Promise<PostResponse & ErrorResponse> {
-    const response = await this.request<PostResponse & ErrorResponse>(`/posts/${slug}`, {
+    const response = await this.request<PostResponse>(`/posts/${slug}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -75,14 +75,43 @@ export class BloggyApi {
    * Get a post by its slug and return the `PostResponse`.
    */
   public static async getPostBySlug(slug: string): Promise<PostResponse & ErrorResponse> {
-    const response = await this.request<PostResponse & ErrorResponse>(`/posts/${slug}`, {
+    const response = await this.request<PostResponse>(`/posts/${slug}`, {
       method: 'GET'
     })
 
     return response
   }
 
-  private static async request<T>(url: string, options: RequestInit): Promise<T> {
+  /**
+   * Get all posts and return the `PostListResponse`.
+   */
+  public static async getPosts(
+    page?: number,
+    limit?: number
+  ): Promise<PostListResponse & ErrorResponse> {
+    let url = '/posts'
+    const params = new URLSearchParams()
+
+    if (page) {
+      params.append('page', page.toString())
+    }
+
+    if (limit) {
+      params.append('limit', limit.toString())
+    }
+
+    if (params.toString()) {
+      url += '?' + params.toString()
+    }
+
+    const response = await this.request<PostListResponse>(url, {
+      method: 'GET'
+    })
+
+    return response
+  }
+
+  private static async request<T>(url: string, options: RequestInit): Promise<T & ErrorResponse> {
     const response = await fetch(this.BASE_URL + url, options)
     const contentBody = await response.json()
 
@@ -121,3 +150,8 @@ export interface PostResponse extends PostRequest {
 type PutPostRequest = Omit<PostRequest, 'slug'>
 
 export type PostListItem = Omit<PostResponse, 'content' | 'id' | 'updated_at'>
+
+interface PostListResponse {
+  posts: PostListItem[]
+  total: number
+}

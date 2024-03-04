@@ -12,7 +12,9 @@ const readingTimeSeconds = props.post.reading_time % 60
 </script>
 
 <template>
-  <div class="card shadow-lg compact bg-base-100 flex flex-col sm:flex-row">
+  <div
+    class="card hover:shadow-lg compact bg-base-100 flex flex-col sm:flex-row transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-102"
+  >
     <!-- Left Section -->
     <div class="p-4 flex justify-between items-center sm:flex-col sm:items-center">
       <p class="text-base-content text-opacity-80 text-2xl font-black font-poppins uppercase">

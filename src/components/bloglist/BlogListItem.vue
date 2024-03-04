@@ -12,13 +12,13 @@ const readingTimeSeconds = props.post.reading_time % 60
 </script>
 
 <template>
-  <div class="card shadow-lg compact bg-base-100 flex flex-row">
+  <div class="card shadow-lg compact bg-base-100 flex flex-col sm:flex-row">
     <!-- Left Section -->
-    <div class="p-4 flex flex-col justify-center items-center">
+    <div class="p-4 flex justify-between items-center sm:flex-col sm:items-center">
       <p class="text-base-content text-opacity-80 text-2xl font-black font-poppins uppercase">
         {{ `${createdAt.getDate()} ${createdAt.toLocaleString('default', { month: 'short' })}` }}
       </p>
-      <p class="text-base-content text-opacity-20 text-4xl font-poppins font-semibold">
+      <p class="text-base-content text-opacity-20 text-2xl sm:text-4xl font-poppins font-semibold">
         {{ createdAt.getFullYear() }}
       </p>
     </div>
@@ -31,7 +31,7 @@ const readingTimeSeconds = props.post.reading_time % 60
       >
         {{ post.title }}
       </RouterLink>
-      <p class="text-base-content text-opacity-80">
+      <p class="text-base-content text-opacity-80 text-justify sm:text-left">
         {{ post.description }}
       </p>
       <div class="">

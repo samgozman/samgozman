@@ -8,7 +8,7 @@ import { BloggyApi, type PostListItem } from '@/services/BloggyApi'
 const items = ref<PostListItem[]>([])
 
 onMounted(async () => {
-  const res = await BloggyApi.getPosts()
+  const res = await BloggyApi.getPosts(1, 15)
   if (!res.ok) {
     console.error('Failed to fetch posts:', res)
     return

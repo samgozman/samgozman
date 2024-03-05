@@ -29,13 +29,7 @@ import HeaderSignature from './elements/HeaderSignature.vue'
         >
           <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
           <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
-          <li><RouterLink :to="{ name: 'admin-login' }">Login</RouterLink></li>
-          <li><RouterLink :to="{ name: 'admin-new-post' }">New post</RouterLink></li>
-          <li>
-            <RouterLink :to="{ name: 'admin-edit-post', params: { slug: 'really-big-fish-2' } }"
-              >Edit post</RouterLink
-            >
-          </li>
+          <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
         </ul>
       </div>
       <a class="btn btn-ghost text-xl">
@@ -46,13 +40,7 @@ import HeaderSignature from './elements/HeaderSignature.vue'
       <ul class="menu menu-horizontal px-1">
         <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
         <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
-        <li><RouterLink :to="{ name: 'admin-login' }">Login</RouterLink></li>
-        <li><RouterLink :to="{ name: 'admin-new-post' }">New post</RouterLink></li>
-        <li>
-          <RouterLink :to="{ name: 'admin-edit-post', params: { slug: 'really-big-fish-2' } }"
-            >Edit post</RouterLink
-          >
-        </li>
+        <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
       </ul>
     </div>
     <div class="navbar-end">

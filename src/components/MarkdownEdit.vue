@@ -16,7 +16,7 @@ interface LocalPost {
 // Get props from parent (for editing)
 const props = defineProps<LocalPost>()
 const post = ref<LocalPost>({ ...props })
-const isEditing = ref(false)
+const isEditing = ref(false) // Editing mode (for already existing posts)
 
 onMounted(() => {
   // console.log(props.value)
@@ -74,6 +74,11 @@ onMounted(() => {
 watch(
   () => post.value,
   (newProps) => {
+    // If editing, don't save to local store
+    if (isEditing.value) {
+      return
+    }
+
     // local store backup for a week
     StorageKeeper.set<LocalPost>('last-post', newProps, 1000 * 60 * 60 * 24 * 7)
   },

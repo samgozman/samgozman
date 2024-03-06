@@ -27,9 +27,9 @@ import HeaderSignature from './elements/HeaderSignature.vue'
           tabindex="0"
           class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
+          <li><RouterLink :to="{ name: 'home' }">About</RouterLink></li>
           <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
-          <li><RouterLink :to="{ name: 'projects' }">My projects</RouterLink></li>
+          <li><RouterLink :to="{ name: 'projects' }">Projects</RouterLink></li>
           <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
         </ul>
       </div>
@@ -39,9 +39,9 @@ import HeaderSignature from './elements/HeaderSignature.vue'
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
+        <li><RouterLink :to="{ name: 'home' }">About</RouterLink></li>
         <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
-        <li><RouterLink :to="{ name: 'projects' }">My projects</RouterLink></li>
+        <li><RouterLink :to="{ name: 'projects' }">Projects</RouterLink></li>
         <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
       </ul>
     </div>

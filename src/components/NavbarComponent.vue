@@ -29,6 +29,7 @@ import HeaderSignature from './elements/HeaderSignature.vue'
         >
           <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
           <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
+          <li><RouterLink :to="{ name: 'projects' }">My projects</RouterLink></li>
           <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
         </ul>
       </div>
@@ -40,6 +41,7 @@ import HeaderSignature from './elements/HeaderSignature.vue'
       <ul class="menu menu-horizontal px-1">
         <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
         <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
+        <li><RouterLink :to="{ name: 'projects' }">My projects</RouterLink></li>
         <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
       </ul>
     </div>

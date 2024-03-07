@@ -47,9 +47,14 @@ const experience = calculateAge(new Date('2016-07-01'))
         </p>
       </div>
     </div>
-    <h3>Navigation:</h3>
-    <p>menu items of the website</p>
     <h3>Contacts:</h3>
-    <p>all socials in one place</p>
+    <ul class="not-prose menu menu-lg w-96 bg-base-200 rounded-box">
+      <li><a href="https://github.com/samgozman" target="_blank" rel="nofollow">GitHub</a></li>
+      <li>
+        <a href="https://www.linkedin.com/in/samgozman/" target="_blank" rel="nofollow">LinkedIn</a>
+      </li>
+      <li><a href="https://t.me/samgozman" target="_blank" rel="nofollow">Telegram</a></li>
+      <li><a href="mailto:sam@gozman.space">sam@gozman.space</a></li>
+    </ul>
   </ArticleProse>
 </template>

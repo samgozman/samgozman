@@ -34,13 +34,13 @@ onMounted(async () => {
     <div
       class="bg-white flex flex-col m-3 min-h-[calc(100vh-1.5rem)] md:m-5 md:min-h-[calc(100vh-2.5rem)]"
     >
-      <header class="mb-5 md:mb-10">
+      <header class="container mb-6 md:mb-12 mx-auto max-w-6xl">
         <NavbarComponent />
       </header>
-      <main class="flex-1 px-2 md:px-6 2xl:px-0 container mx-auto max-w-6xl">
+      <main class="flex-1 px-2 md:px-6 container mx-auto max-w-6xl">
         <RouterView />
       </main>
-      <footer class="">Footer</footer>
+      <footer class="container mx-auto max-w-6xl">Footer</footer>
     </div>
   </div>
 </template>

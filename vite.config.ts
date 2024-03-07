@@ -7,7 +7,16 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   // Note: base for github pages
   // base: process.env.NODE_ENV === 'production' ? '/samgozman/' : '/',
-  plugins: [vue()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          // Note: ignore ionicons
+          isCustomElement: (tag) => tag.startsWith('ion-')
+        }
+      }
+    })
+  ],
   build: {
     sourcemap: true
   },

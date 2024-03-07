@@ -48,13 +48,31 @@ const experience = calculateAge(new Date('2016-07-01'))
       </div>
     </div>
     <h3>Contacts:</h3>
-    <ul class="not-prose menu menu-lg w-96 bg-base-200 rounded-box">
-      <li><a href="https://github.com/samgozman" target="_blank" rel="nofollow">GitHub</a></li>
+    <ul class="not-prose menu menu-lg w-96 rounded-box">
       <li>
-        <a href="https://www.linkedin.com/in/samgozman/" target="_blank" rel="nofollow">LinkedIn</a>
+        <a href="https://github.com/samgozman" target="_blank" rel="noopener noreferrer">
+          <ion-icon name="logo-github"></ion-icon>
+          GitHub
+        </a>
       </li>
-      <li><a href="https://t.me/samgozman" target="_blank" rel="nofollow">Telegram</a></li>
-      <li><a href="mailto:sam@gozman.space">sam@gozman.space</a></li>
+      <li>
+        <a href="https://www.linkedin.com/in/samgozman/" target="_blank" rel="noopener noreferrer">
+          <ion-icon name="logo-linkedin"></ion-icon>
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="https://t.me/samgozman" target="_blank" rel="noopener noreferrer">
+          <ion-icon name="paper-plane-outline"></ion-icon>
+          Telegram
+        </a>
+      </li>
+      <li>
+        <a href="mailto:sam@gozman.space">
+          <ion-icon name="mail-outline"></ion-icon>
+          sam@gozman.space
+        </a>
+      </li>
     </ul>
   </ArticleProse>
 </template>

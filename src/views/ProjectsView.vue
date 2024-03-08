@@ -7,7 +7,7 @@ import ProjectItem from '@/components/projects/ProjectItem.vue'
 <template>
   <HeaderMax value="My projects." />
 
-  <ArticleProse class="text-justify text-xl">
+  <ArticleProse class="text-justify">
     <p>
       Over the last several years, besides my regular job as backend engineer, I've been chipping
       away at my own open-source side projects whenever I could. It's been a hobby I've poured time

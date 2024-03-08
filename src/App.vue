@@ -56,10 +56,10 @@ onMounted(async () => {
             <ion-icon name="paper-plane-outline"></ion-icon>
           </a>
         </div>
-        <p class="text-center mt-4 text-xl">Sam Gozman</p>
-        <!-- mail -->
-        <p class="text-center mt-1">
-          <a href="mailto:sam@gozman.space" class="hover:underline">sam@gozman.space</a>
+        <p class="text-center my-2 text-xl">Sam Gozman</p>
+        <p class="text-center my-2">
+          Backend Engineer:<br />
+          Golang, NodeJS, Rust.
         </p>
       </footer>
     </div>

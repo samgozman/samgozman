@@ -1,7 +1,7 @@
 <template>
   <article
     ref="article"
-    class="prose prose-headings:font-poppins prose-p:font-sans prose-a:text-orange-500"
+    class="prose prose-headings:font-poppins prose-p:font-sans prose-a:text-orange-500 text-xl text-justify"
   >
     <slot />
   </article>

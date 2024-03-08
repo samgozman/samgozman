@@ -33,7 +33,10 @@ defineProps<ProjectItemProps>()
       <p class="text-justify">
         <slot></slot>
       </p>
-      <div class="flex-grow flex justify-center items-center">
+      <div
+        :class="side === 'left' ? 'md:justify-end' : 'md:justify-start'"
+        class="flex-grow flex justify-center items-center"
+      >
         <ul class="not-prose p-1 menu menu-horizontal menu-sm">
           <li v-if="sourceLink">
             <a :href="sourceLink" target="_blank" rel="noopener noreferrer">

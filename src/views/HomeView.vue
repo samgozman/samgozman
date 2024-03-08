@@ -26,20 +26,20 @@ const experience = calculateAge(new Date('2016-07-01'))
       />
       <div class="flex-grow">
         <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
-        <HeaderMax value="Backend Engineer and Open-Source Developer." class="text-justify" />
-        <p class="text-justify">
+        <HeaderMax value="Backend Engineer & Open Source Developer." class="text-left" />
+        <p>
           Welcome to my dev blog 2.0! I'm an experienced Backend Engineer with expertise in Golang
           and NodeJS and a big fan of open-source. I've been working as a developer over the course
           of the last
           <strong>{{ experience }}+ years</strong>.
         </p>
-        <p class="text-justify">
+        <p>
           My programming journey began at the age of <strong>12</strong>, tinkering with mods for a
           computer game and soon diving into web development by creating my first website. With
           solid commercial experience since 2016, I now specialize in backend development,
           particularly drawn to fintech, stocks, savings, and investments fields.
         </p>
-        <p class="text-justify">
+        <p>
           My main stack includes Go, NodeJS, Rust, PostgreSQL, Redis, VueJS, Docker, Linux, and Git,
           forming a versatile toolkit for efficient development.
         </p>

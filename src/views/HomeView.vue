@@ -14,25 +14,23 @@ function calculateAge(date: Date) {
   return age
 }
 
-const age = calculateAge(new Date('1997-06-01'))
 const experience = calculateAge(new Date('2016-07-01'))
 </script>
 
 <template>
-  <HeaderMax value="Sam Gozman." />
-
-  <ArticleProse class="md:max-w-[100ch] lg:max-w-[90ch]">
-    <h2>Backend Engineer.</h2>
+  <ArticleProse class="md:max-w-[100ch]">
     <div class="flex flex-col md:flex-row">
       <img
-        class="mask mask-hexagon-2 mx-[8ch] my-4 md:my-0 md:ml-0 md:mr-8 md:max-h-56 order-first md:order-none"
+        class="rounded-lg my-4 mx-auto max-w-[80%] md:my-0 md:ml-0 md:mr-8 md:max-h-[38rem] order-first md:order-none"
         src="/img/me.jpg"
       />
       <div class="flex-grow">
+        <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
+        <HeaderMax value="Backend Engineer and Open-Source Developer." class="text-justify" />
         <p class="text-justify">
-          Hi! My name is <strong>Sam Gozman</strong>, {{ age }}
-          years old. I'm an experienced Backend Engineer with expertise in Golang and NodeJS and a
-          big fan of open-source. I've been working as a developer over the course of the last
+          Welcome to my blog 2.0! I'm an experienced Backend Engineer with expertise in Golang and
+          NodeJS and a big fan of open-source. I've been working as a developer over the course of
+          the last
           <strong>{{ experience }}+ years</strong>.
         </p>
         <p class="text-justify">
@@ -45,34 +43,44 @@ const experience = calculateAge(new Date('2016-07-01'))
           My main stack includes Go, NodeJS, Rust, PostgreSQL, Redis, VueJS, Docker, Linux, and Git,
           forming a versatile toolkit for efficient development.
         </p>
+        <ul class="not-prose menu menu-horizontal rounded-box">
+          <li>
+            <a
+              href="https://github.com/samgozman"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+            >
+              <ion-icon name="logo-github" class="text-4xl"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/samgozman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+            >
+              <ion-icon name="logo-linkedin" class="text-4xl"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://t.me/samgozman"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Telegram"
+            >
+              <ion-icon name="paper-plane-outline" class="text-4xl"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sam@gozman.space" title="Mail to me: sam@gozman.space">
+              <ion-icon name="mail-outline" class="text-4xl"></ion-icon>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <h3>Contacts:</h3>
-    <ul class="not-prose menu menu-lg w-96 rounded-box">
-      <li>
-        <a href="https://github.com/samgozman" target="_blank" rel="noopener noreferrer">
-          <ion-icon name="logo-github"></ion-icon>
-          GitHub
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/samgozman/" target="_blank" rel="noopener noreferrer">
-          <ion-icon name="logo-linkedin"></ion-icon>
-          LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="https://t.me/samgozman" target="_blank" rel="noopener noreferrer">
-          <ion-icon name="paper-plane-outline"></ion-icon>
-          Telegram
-        </a>
-      </li>
-      <li>
-        <a href="mailto:sam@gozman.space">
-          <ion-icon name="mail-outline"></ion-icon>
-          sam@gozman.space
-        </a>
-      </li>
-    </ul>
   </ArticleProse>
 </template>

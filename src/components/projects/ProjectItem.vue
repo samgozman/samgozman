@@ -37,7 +37,7 @@ defineProps<ProjectItemProps>()
         :class="side === 'left' ? 'md:justify-end' : 'md:justify-start'"
         class="flex-grow flex justify-center items-center"
       >
-        <ul class="not-prose p-1 menu menu-horizontal menu-sm">
+        <ul class="not-prose px-0 py-1 menu menu-horizontal menu-sm">
           <li v-if="sourceLink">
             <a :href="sourceLink" target="_blank" rel="noopener noreferrer">
               <ion-icon name="logo-github" class="text-xl"></ion-icon>

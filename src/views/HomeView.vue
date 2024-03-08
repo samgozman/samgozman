@@ -28,9 +28,9 @@ const experience = calculateAge(new Date('2016-07-01'))
         <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
         <HeaderMax value="Backend Engineer and Open-Source Developer." class="text-justify" />
         <p class="text-justify">
-          Welcome to my blog 2.0! I'm an experienced Backend Engineer with expertise in Golang and
-          NodeJS and a big fan of open-source. I've been working as a developer over the course of
-          the last
+          Welcome to my dev blog 2.0! I'm an experienced Backend Engineer with expertise in Golang
+          and NodeJS and a big fan of open-source. I've been working as a developer over the course
+          of the last
           <strong>{{ experience }}+ years</strong>.
         </p>
         <p class="text-justify">
@@ -43,43 +43,45 @@ const experience = calculateAge(new Date('2016-07-01'))
           My main stack includes Go, NodeJS, Rust, PostgreSQL, Redis, VueJS, Docker, Linux, and Git,
           forming a versatile toolkit for efficient development.
         </p>
-        <ul class="not-prose menu menu-horizontal rounded-box">
-          <li>
-            <a
-              href="https://github.com/samgozman"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="GitHub"
-            >
-              <ion-icon name="logo-github" class="text-4xl"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/samgozman/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-            >
-              <ion-icon name="logo-linkedin" class="text-4xl"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://t.me/samgozman"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Telegram"
-            >
-              <ion-icon name="paper-plane-outline" class="text-4xl"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:sam@gozman.space" title="Mail to me: sam@gozman.space">
-              <ion-icon name="mail-outline" class="text-4xl"></ion-icon>
-            </a>
-          </li>
-        </ul>
+        <div class="flex-grow flex justify-center items-center">
+          <ul class="not-prose menu menu-horizontal rounded-box">
+            <li>
+              <a
+                href="https://github.com/samgozman"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+              >
+                <ion-icon name="logo-github" class="text-4xl"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/samgozman/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+              >
+                <ion-icon name="logo-linkedin" class="text-4xl"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://t.me/samgozman"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Telegram"
+              >
+                <ion-icon name="paper-plane-outline" class="text-4xl"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:sam@gozman.space" title="Mail to me: sam@gozman.space">
+                <ion-icon name="mail-outline" class="text-4xl"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </ArticleProse>

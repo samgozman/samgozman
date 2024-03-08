@@ -33,9 +33,9 @@ import HeaderSignature from './elements/HeaderSignature.vue'
           <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl">
+      <span class="text-xl select-none">
         <HeaderSignature value="gozman." />
-      </a>
+      </span>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">

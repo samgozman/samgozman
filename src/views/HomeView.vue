@@ -21,7 +21,7 @@ const experience = calculateAge(new Date('2016-07-01'))
   <ArticleProse class="md:max-w-[100ch]">
     <div class="flex flex-col md:flex-row">
       <img
-        class="rounded-lg my-4 mx-auto max-w-[70%] md:my-0 md:ml-0 md:mr-8 md:max-h-[38rem]"
+        class="rounded-xl my-4 mx-auto max-w-[70%] md:my-0 md:ml-0 md:mr-8 md:max-h-[38rem]"
         src="/img/me.jpg"
       />
       <div class="flex-grow">

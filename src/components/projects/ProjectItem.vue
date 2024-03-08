@@ -20,7 +20,12 @@ defineProps<ProjectItemProps>()
   <li>
     <hr v-if="type === 'end' || type === 'middle'" />
     <div class="timeline-middle">
-      <ion-icon name="heart-circle" class="text-xl text-primary"></ion-icon>
+      <ion-icon
+        v-if="type === 'start'"
+        name="arrow-up-circle"
+        class="text-xl text-primary"
+      ></ion-icon>
+      <ion-icon v-else name="heart-circle" class="text-xl text-primary"></ion-icon>
     </div>
     <div :class="side === 'left' ? 'timeline-start md:text-end' : 'timeline-end'" class="mb-10">
       <time class="font-mono italic">{{ date }}</time>
@@ -29,7 +34,7 @@ defineProps<ProjectItemProps>()
         <slot></slot>
       </p>
       <div class="flex-grow flex justify-center items-center">
-        <ul class="not-prose menu menu-horizontal rounded-box">
+        <ul class="not-prose p-1 menu menu-horizontal menu-sm">
           <li v-if="sourceLink">
             <a :href="sourceLink" target="_blank" rel="noopener noreferrer">
               <ion-icon name="logo-github" class="text-xl"></ion-icon>

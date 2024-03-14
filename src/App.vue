@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import { onMounted } from 'vue'
 import NavbarComponent from './components/NavbarComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
 import { StorageKeeper } from '@/services/StorageKeeper'
 import { BloggyApi } from '@/services/BloggyApi'
 
@@ -40,28 +41,7 @@ onMounted(async () => {
       <main class="flex-1 px-2 container mx-auto max-w-6xl">
         <RouterView />
       </main>
-      <footer class="container mx-auto max-w-6xl p-4">
-        <div class="flex justify-center space-x-4 text-primary text-2xl">
-          <a href="https://github.com/samgozman" target="_blank" rel="noopener noreferrer">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/samgozman/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-          <a href="https://t.me/samgozman" target="_blank" rel="noopener noreferrer">
-            <ion-icon name="paper-plane-outline"></ion-icon>
-          </a>
-        </div>
-        <p class="text-center my-2 text-xl">Sam Gozman</p>
-        <p class="text-center my-2">
-          Backend Engineer:<br />
-          Golang, NodeJS, Rust.
-        </p>
-      </footer>
+      <FooterComponent />
     </div>
   </div>
 </template>

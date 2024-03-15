@@ -3,6 +3,8 @@ import HomeView from '@/views/HomeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
 import BlogView from '@/views/BlogView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+import SubscribeSuccessView from '@/views/subscriptions/SubscribeSuccessView.vue'
+import SubscribeConfirmView from '@/views/subscriptions/SubscribeConfirmView.vue'
 import { StorageKeeper } from '@/services/StorageKeeper'
 
 const router = createRouter({
@@ -29,11 +31,20 @@ const router = createRouter({
       component: () => import('@/views/BlogPostView.vue')
     },
     {
+      path: 'subscription/success',
+      name: 'subscription-success',
+      component: SubscribeSuccessView
+    },
+    {
+      path: 'subscription/confirm',
+      name: 'subscription-confirm',
+      component: SubscribeConfirmView
+    },
+    {
       path: '/admin/login',
       name: 'admin-login',
       component: () => import('@/views/AdminLoginView.vue')
     },
-    // TODO: add route to redirect to from GitHub
     {
       path: '/admin/posts/new',
       name: 'admin-new-post',

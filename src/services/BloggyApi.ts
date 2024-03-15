@@ -111,6 +111,54 @@ export class BloggyApi {
     return response
   }
 
+  /**
+   * Subscribe to the newsletter and return the `ErrorResponse` if any.
+   */
+  public static async subscribeToNewsletter(
+    email: string,
+    captcha: string
+  ): Promise<ErrorResponse> {
+    const response = await this.request<ErrorResponse>('/subscribers:', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, captcha })
+    })
+
+    return response
+  }
+
+  /**
+   * Confirm the subscription by token and return the `ErrorResponse` if any.
+   */
+  public static async confirmSubscription(token: string, captcha: string): Promise<ErrorResponse> {
+    const response = await this.request<ErrorResponse>(`/subscribers/confirm`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ token, captcha })
+    })
+
+    return response
+  }
+
+  public static async unsubscribe(subscriptionId: string, reason: string): Promise<ErrorResponse> {
+    const response = await this.request<ErrorResponse>(`/subscribers`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        subscription_id: subscriptionId,
+        reason
+      })
+    })
+
+    return response
+  }
+
   private static async request<T>(url: string, options: RequestInit): Promise<T & ErrorResponse> {
     const response = await fetch(this.BASE_URL + url, options)
     const contentBody = await response.json()

@@ -28,7 +28,7 @@ onMounted(async () => {
   <!-- TODO: Add pagination here -->
 
   <ArticleProse>
-    <h2>Welcome to Sam Gozman's Dev Blog!</h2>
+    <h3 class="text-left">Welcome to Sam Gozman's Dev Blog!</h3>
     <p>
       Hello fellow developers and enthusiasts! I'm thrilled to welcome you to my blog, a space where
       I share insights, experiences, and updates from the world of development. As a lead backend

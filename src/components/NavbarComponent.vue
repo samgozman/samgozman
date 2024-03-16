@@ -1,24 +1,45 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import HeaderSignature from './elements/HeaderSignature.vue'
 import SubscribeForm from './SubscribeForm.vue'
+
+const dropdownVisible = ref(true)
 </script>
 
 <template>
-  <div class="navbar bg-white">
+  <div class="navbar md:px-4">
     <div class="navbar-start">
       <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden pl-0">
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost lg:hidden pl-0"
+          @click="dropdownVisible = true"
+        >
           <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
         </div>
         <ul
           tabindex="0"
+          v-show="dropdownVisible"
           class="menu menu-md dropdown-content mt-2 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-poppins font-medium"
         >
-          <li><RouterLink :to="{ name: 'home' }">About</RouterLink></li>
-          <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
-          <li><RouterLink :to="{ name: 'projects' }">Projects</RouterLink></li>
-          <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
+          <li>
+            <RouterLink :to="{ name: 'home' }" @click="dropdownVisible = false">About</RouterLink>
+          </li>
+          <li>
+            <RouterLink :to="{ name: 'blog' }" @click="dropdownVisible = false">Blog</RouterLink>
+          </li>
+          <li>
+            <RouterLink :to="{ name: 'projects' }" @click="dropdownVisible = false"
+              >Projects</RouterLink
+            >
+          </li>
+          <li>
+            <RouterLink :to="{ name: 'admin-dashboard' }" @click="dropdownVisible = false"
+              >Admin</RouterLink
+            >
+          </li>
         </ul>
       </div>
       <span class="text-xl select-none">

@@ -31,7 +31,7 @@ onMounted(() => {
       let text = textNode.nodeValue || ''
 
       // Replace punctuation with wrapped punctuation
-      text = text.replace(/([.,;:!?&*$])/g, '<span class="text-primary">$1</span>')
+      text = text.replace(/([.,;:!?&*$'])/g, '<span class="text-primary">$1</span>')
 
       // Create a temporary div to convert string to HTML
       const tempDiv = document.createElement('div')

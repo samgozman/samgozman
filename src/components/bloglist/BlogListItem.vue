@@ -16,7 +16,9 @@ const readingTimeSeconds = props.post.reading_time % 60
     class="card hover:shadow-lg compact bg-base-100 flex flex-col sm:flex-row transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-102"
   >
     <!-- Left Section -->
-    <div class="p-4 flex justify-between items-center sm:flex-col sm:items-center">
+    <div
+      class="p-1 md:p-4 flex justify-between sm:justify-start sm:gap-2 items-center sm:flex-col sm:items-center"
+    >
       <p class="text-base-content text-opacity-80 text-2xl font-black font-poppins uppercase">
         {{ `${createdAt.getDate()} ${createdAt.toLocaleString('default', { month: 'short' })}` }}
       </p>
@@ -26,7 +28,7 @@ const readingTimeSeconds = props.post.reading_time % 60
     </div>
 
     <!-- Middle Section -->
-    <div class="flex-1 p-4 flex flex-col justify-center">
+    <div class="flex-1 p-1 md:p-4 flex flex-col justify-center">
       <RouterLink
         :to="{ name: 'blog-post', params: { slug: post.slug } }"
         class="card-title text-primary font-poppins truncate text-2xl font-semibold hover:underline"

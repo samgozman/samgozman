@@ -38,7 +38,7 @@ onMounted(async () => {
       <header class="container mb-6 md:mb-12 mx-auto max-w-6xl">
         <NavbarComponent />
       </header>
-      <main class="flex-1 px-2 container mx-auto max-w-6xl">
+      <main class="flex-1 px-2 md:px-4 container mx-auto max-w-6xl">
         <RouterView />
       </main>
       <FooterComponent />

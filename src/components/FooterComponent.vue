@@ -8,8 +8,8 @@ import SubscribeForm from './SubscribeForm.vue'
     class="footer container mx-auto max-w-6xl p-4 flex flex-col md:flex-row justify-center md:justify-between items-center"
   >
     <aside class="order-2 md:order-1">
-      <div class="text-center">
-        <div class="grid grid-flow-col gap-4 mb-8 md:mb-0 text-3xl md:text-2xl text-primary">
+      <div class="text-center md:text-left">
+        <div class="grid grid-flow-col gap-4 md:gap-0 mb-8 md:mb-0 text-3xl md:text-2xl text-primary">
           <a href="https://github.com/samgozman" target="_blank" rel="noopener noreferrer">
             <ion-icon name="logo-github"></ion-icon>
           </a>

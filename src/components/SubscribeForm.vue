@@ -41,12 +41,16 @@ const onSubmit = async (event: Event) => {
   email.value = ''
   router.push({ name: 'subscription-success' })
 }
+
+// Generate a random string
+const inputName = Math.random().toString(36).substring(2, 10)
 </script>
 
 <template>
   <form @submit="onSubmit">
     <div class="join">
       <input
+        :name="inputName"
         type="email"
         placeholder="Enter your email"
         class="input input-bordered join-item"

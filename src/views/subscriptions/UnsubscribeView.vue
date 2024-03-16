@@ -24,14 +24,21 @@ onMounted(async () => {
 const onSubmit = async (event: Event) => {
   event.preventDefault()
 
-  const res = await BloggyApi.unsubscribe(unsubscribeToken.value, unsubscribeReason.value)
-  if (!res.ok) {
-    return
+  try {
+    const res = await BloggyApi.unsubscribe(unsubscribeToken.value, unsubscribeReason.value)
+    if (!res.ok) {
+      return
+    }
+
+    error.value = ''
+
+    setTimeout(() => {
+      router.push({ name: 'home' })
+    }, 5000)
+  } catch (err) {
+    error.value = 'Failed to unsubscribe'
+    console.error(err)
   }
-
-  error.value = ''
-
-  router.push({ name: 'home' })
 }
 </script>
 

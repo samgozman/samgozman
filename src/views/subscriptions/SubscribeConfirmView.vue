@@ -31,22 +31,27 @@ onMounted(async () => {
     return
   }
 
-  await captcha.value.executeAsync()
+  try {
+    await captcha.value.executeAsync()
 
-  const res = await BloggyApi.confirmSubscription(confirmationToken, captchaToken.value)
-  if (!res.ok) {
-    return
+    const res = await BloggyApi.confirmSubscription(confirmationToken, captchaToken.value)
+    if (!res.ok) {
+      return
+    }
+
+    error.value = ''
+  } catch (err) {
+    error.value = 'Failed to confirm subscription'
+    console.error(err)
   }
-
-  error.value = ''
 })
 </script>
 
 <template>
   <ArticleProse>
-    <h2 class="text-center">Subscription confirmation</h2>
-    <p v-if="error" class="text-center text-error">{{ error }}</p>
-    <p v-else class="text-center">You have successfully subscribed to my blog! ❤️</p>
+    <h2>Subscription confirmation:</h2>
+    <p v-if="error" class="text-error">{{ error }}</p>
+    <p v-else>You have successfully subscribed to my blog! ❤️</p>
   </ArticleProse>
 
   <vue-hcaptcha

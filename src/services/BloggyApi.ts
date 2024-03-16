@@ -118,13 +118,17 @@ export class BloggyApi {
     email: string,
     captcha: string
   ): Promise<ErrorResponse> {
-    const response = await this.request<ErrorResponse>('/subscribers:', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await this.request<ErrorResponse>(
+      '/subscribers',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, captcha })
       },
-      body: JSON.stringify({ email, captcha })
-    })
+      true
+    )
 
     return response
   }
@@ -133,39 +137,56 @@ export class BloggyApi {
    * Confirm the subscription by token and return the `ErrorResponse` if any.
    */
   public static async confirmSubscription(token: string, captcha: string): Promise<ErrorResponse> {
-    const response = await this.request<ErrorResponse>(`/subscribers/confirm`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await this.request<ErrorResponse>(
+      `/subscribers/confirm`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ token, captcha })
       },
-      body: JSON.stringify({ token, captcha })
-    })
+      true
+    )
 
     return response
   }
 
   public static async unsubscribe(subscriptionId: string, reason: string): Promise<ErrorResponse> {
-    const response = await this.request<ErrorResponse>(`/subscribers`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await this.request<ErrorResponse>(
+      `/subscribers`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          subscription_id: subscriptionId,
+          reason
+        })
       },
-      body: JSON.stringify({
-        subscription_id: subscriptionId,
-        reason
-      })
-    })
+      true
+    )
 
     return response
   }
 
-  private static async request<T>(url: string, options: RequestInit): Promise<T & ErrorResponse> {
+  private static async request<T>(
+    url: string,
+    options: RequestInit,
+    isNoContent = false
+  ): Promise<T & ErrorResponse> {
     const response = await fetch(this.BASE_URL + url, options)
-    const contentBody = await response.json()
 
-    contentBody.ok = response.ok
+    if (!isNoContent) {
+      const contentBody = await response.json()
+      contentBody.ok = response.ok
+      return contentBody
+    }
 
-    return contentBody
+    return {
+      ok: response.ok
+    } as T & ErrorResponse
   }
 }
 

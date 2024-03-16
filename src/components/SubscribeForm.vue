@@ -38,6 +38,7 @@ const onSubmit = async (event: Event) => {
     return
   }
 
+  email.value = ''
   router.push({ name: 'subscription-success' })
 }
 </script>

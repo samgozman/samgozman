@@ -47,7 +47,7 @@ const dropdownVisible = ref(true)
       </span>
     </div>
     <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1 font-poppins font-medium">
+      <ul class="menu menu-horizontal gap-1 font-poppins font-medium">
         <li><RouterLink :to="{ name: 'home' }">About</RouterLink></li>
         <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
         <li><RouterLink :to="{ name: 'projects' }">Projects</RouterLink></li>

@@ -8,7 +8,7 @@ const dropdownVisible = ref(true)
 </script>
 
 <template>
-  <div class="navbar md:px-4">
+  <div class="navbar md:p-4">
     <div class="navbar-start">
       <div class="dropdown">
         <div

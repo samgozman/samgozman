@@ -46,5 +46,12 @@ onMounted(() => {
       header.removeChild(textNode)
     }
   })
+
+  // Scroll to the hash if it exists
+  const hash = window.location.hash.slice(1) // remove the '#' from the start
+  const element = document.getElementById(hash)
+  if (element) {
+    element.scrollIntoView()
+  }
 })
 </script>

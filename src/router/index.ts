@@ -10,6 +10,15 @@ import { StorageKeeper } from '@/services/StorageKeeper'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior() {
+    // Scroll to the top of the page if no hash is present
+    if (!window.location.hash) {
+      return { top: 0 }
+    } else {
+      // Keep the position of the hash
+      return false
+    }
+  },
   routes: [
     {
       path: '/',

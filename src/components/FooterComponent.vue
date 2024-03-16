@@ -29,7 +29,10 @@ import SubscribeForm from './SubscribeForm.vue'
       </div>
     </aside>
     <div class="order-3 md:order-2 flex justify-center md:justify-end">
-      <SubscribeForm />
+      <fieldset class="form-control">
+        <h6 class="footer-title text-center md:text-right px-2">Subscribe to my blog</h6>
+        <SubscribeForm />
+      </fieldset>
     </div>
     <nav class="order-1 md:hidden">
       <h6 class="footer-title">Blog navigation</h6>

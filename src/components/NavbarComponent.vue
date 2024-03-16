@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import HeaderSignature from './elements/HeaderSignature.vue'
+import SubscribeForm from './SubscribeForm.vue'
 </script>
 
 <template>
@@ -33,7 +34,18 @@ import HeaderSignature from './elements/HeaderSignature.vue'
       </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn">Subscribe</a>
+      <button class="btn" onclick="subscribeNavTop.showModal()">Subscribe</button>
+      <dialog id="subscribeNavTop" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">Subscribe to my blog 🧡</h3>
+          <SubscribeForm class="pt-8" />
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   </div>
 </template>

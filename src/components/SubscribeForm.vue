@@ -45,18 +45,15 @@ const onSubmit = async (event: Event) => {
 
 <template>
   <form @submit="onSubmit">
-    <h6 class="footer-title text-center md:text-right px-2">Subscribe to my blog</h6>
-    <fieldset class="form-control w-80">
-      <div class="join">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          class="input input-bordered join-item"
-          v-model="email"
-        />
-        <button class="btn btn-primary join-item text-base-100">Subscribe</button>
-      </div>
-    </fieldset>
+    <div class="join">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        class="input input-bordered join-item"
+        v-model="email"
+      />
+      <button class="btn btn-primary join-item text-base-100">Subscribe</button>
+    </div>
     <vue-hcaptcha
       ref="captcha"
       :sitekey="hCaptchaKey"

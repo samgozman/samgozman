@@ -51,7 +51,7 @@ onMounted(async () => {
   <ArticleProse>
     <h2>Subscription confirmation:</h2>
     <p v-if="error" class="text-error">{{ error }}</p>
-    <p v-else>You have successfully subscribed to my blog! ❤️</p>
+    <p v-else>You have successfully subscribed to my blog! 🧡</p>
   </ArticleProse>
 
   <vue-hcaptcha

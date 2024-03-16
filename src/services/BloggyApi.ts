@@ -76,7 +76,10 @@ export class BloggyApi {
    */
   public static async getPostBySlug(slug: string): Promise<PostResponse & ErrorResponse> {
     const response = await this.request<PostResponse>(`/posts/${slug}`, {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
 
     return response
@@ -105,7 +108,10 @@ export class BloggyApi {
     }
 
     const response = await this.request<PostListResponse>(url, {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
 
     return response
@@ -171,6 +177,22 @@ export class BloggyApi {
     return response
   }
 
+  public static async sendPostToSubscribers(token: string, slug: string) {
+    const response = await this.request<ErrorResponse>(
+      `/posts/${slug}/send-email`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      },
+      true
+    )
+
+    return response
+  }
+
   private static async request<T>(
     url: string,
     options: RequestInit,
@@ -178,7 +200,7 @@ export class BloggyApi {
   ): Promise<T & ErrorResponse> {
     const response = await fetch(this.BASE_URL + url, options)
 
-    if (!isNoContent) {
+    if (!isNoContent || !response.ok) {
       const contentBody = await response.json()
       contentBody.ok = response.ok
       return contentBody
@@ -218,7 +240,9 @@ export interface PostResponse extends PostRequest {
 
 type PutPostRequest = Omit<PostRequest, 'slug'>
 
-export type PostListItem = Omit<PostResponse, 'content' | 'id' | 'updated_at'>
+export type PostListItem = Omit<PostResponse, 'content' | 'id' | 'updated_at'> & {
+  sent_to_subscribers_at: string
+}
 
 interface PostListResponse {
   posts: PostListItem[]

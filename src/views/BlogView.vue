@@ -7,6 +7,7 @@ import BlogListItem from '@/components/bloglist/BlogListItem.vue'
 import { BloggyApi, type PostListItem } from '@/services/BloggyApi'
 
 const items = ref<PostListItem[]>([])
+const isLoading = ref(true)
 
 onMounted(async () => {
   const res = await BloggyApi.getPosts(1, 15)
@@ -16,13 +17,41 @@ onMounted(async () => {
   }
 
   items.value.push(...res.posts)
+  isLoading.value = false
 })
 </script>
 
 <template>
   <HeaderMax value="Blog." />
   <div class="grid grid-cols-1 gap-y-2 my-4">
-    <BlogListItem v-for="item in items" :key="item.slug" :post="item" />
+    <!-- Skeleton preview -->
+    <div v-if="isLoading" class="flex flex-col gap-4 w-full">
+      <!-- fist -->
+      <div class="flex gap-4 justify-between items-center">
+        <div class="skeleton w-16 h-12 shrink-0"></div>
+        <div class="flex flex-col flex-grow gap-4">
+          <div class="skeleton h-4 w-[70%]"></div>
+          <div class="skeleton h-4 w-full"></div>
+        </div>
+        <div class="skeleton w-16 h-12"></div>
+      </div>
+      <div class="skeleton h-4 w-full md:w-[80%]"></div>
+      <div class="skeleton h-4 w-full md:w-[60%]"></div>
+      <div class="skeleton h-4 w-full md:w-[40%]"></div>
+      <!-- second -->
+      <div class="flex gap-4 justify-between items-center">
+        <div class="skeleton w-16 h-12 shrink-0"></div>
+        <div class="flex flex-col flex-grow gap-4">
+          <div class="skeleton h-4 w-[70%]"></div>
+          <div class="skeleton h-4 w-full"></div>
+        </div>
+        <div class="skeleton w-16 h-12"></div>
+      </div>
+      <div class="skeleton h-4 w-full md:w-[80%]"></div>
+      <div class="skeleton h-4 w-full md:w-[60%]"></div>
+      <div class="skeleton h-4 w-full md:w-[40%]"></div>
+    </div>
+    <BlogListItem v-else v-for="item in items" :key="item.slug" :post="item" />
   </div>
 
   <!-- TODO: Add pagination here -->

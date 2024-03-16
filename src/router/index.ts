@@ -31,12 +31,12 @@ const router = createRouter({
       component: () => import('@/views/BlogPostView.vue')
     },
     {
-      path: 'subscription/success',
+      path: '/subscription/success',
       name: 'subscription-success',
       component: SubscribeSuccessView
     },
     {
-      path: 'subscription/confirm',
+      path: '/subscription/confirm',
       name: 'subscription-confirm',
       component: SubscribeConfirmView
     },

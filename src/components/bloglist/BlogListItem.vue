@@ -38,7 +38,7 @@ const readingTimeSeconds = props.post.reading_time % 60
       <p class="text-base-content text-opacity-80 text-justify sm:text-left">
         {{ post.description }}
       </p>
-      <div class="">
+      <div class="flex gap-2 mt-1">
         <div v-for="(keyword, index) in post.keywords" :key="index" class="badge text-sm">
           {{ keyword }}
         </div>

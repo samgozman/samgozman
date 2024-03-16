@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
 import { BloggyApi } from '@/services/BloggyApi'
 
-const error = ref('')
+const error = ref('Confirm unsubscribing')
 const unsubscribeToken = ref('')
 const unsubscribeReason = ref('')
 const router = useRouter()
@@ -44,17 +44,19 @@ const onSubmit = async (event: Event) => {
 
 <template>
   <ArticleProse>
-    <h2 class="text-center">Unsubscribe fom blog:</h2>
+    <h2>Unsubscribe fom blog:</h2>
 
     <form @submit="onSubmit">
-      <p v-if="error" class="text-center text-error">{{ error }}</p>
-      <p v-else class="text-center">You have successfully unsubscribed from my blog! 😢</p>
-      <textarea
-        class="form-input"
-        placeholder="Reason for unsubscribing"
-        :value="unsubscribeReason"
-      ></textarea>
-      <button class="btn btn-primary">Unsubscribe</button>
+      <p v-if="error" class="text-error">{{ error }}</p>
+      <p v-else>You have successfully unsubscribed from my blog! 😢</p>
+      <div class="flex flex-col max-w-80">
+        <textarea
+          class="textarea textarea-bordered"
+          placeholder="Reason for unsubscribing"
+          :value="unsubscribeReason"
+        ></textarea>
+        <button class="btn btn-primary mt-2">Unsubscribe</button>
+      </div>
     </form>
   </ArticleProse>
 </template>

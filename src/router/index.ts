@@ -5,6 +5,7 @@ import BlogView from '@/views/BlogView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import SubscribeSuccessView from '@/views/subscriptions/SubscribeSuccessView.vue'
 import SubscribeConfirmView from '@/views/subscriptions/SubscribeConfirmView.vue'
+import UnsubscribeView from '@/views/subscriptions/UnsubscribeView.vue'
 import { StorageKeeper } from '@/services/StorageKeeper'
 
 const router = createRouter({
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/subscription/confirm',
       name: 'subscription-confirm',
       component: SubscribeConfirmView
+    },
+    {
+      path: '/subscription/unsubscribe',
+      name: 'unsubscribe',
+      component: UnsubscribeView
     },
     {
       path: '/admin/login',

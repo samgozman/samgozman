@@ -68,7 +68,7 @@ onMounted(() => {
       }
     },
     locale: 'en_US'
-  }) as any
+  } as any)
 })
 
 watch(

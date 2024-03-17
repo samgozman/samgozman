@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useSeoMeta } from 'unhead'
 import { StorageKeeper } from '@/services/StorageKeeper'
 import { BloggyApi } from '@/services/BloggyApi'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
+
+useSeoMeta({
+  title: 'Login | Sam Gozman'
+})
 
 // Token TTL in milliseconds
 const ttl = Number(import.meta.env.VITE_AUTH_TOKEN_TTL_SECONDS) * 1000

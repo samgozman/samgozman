@@ -1,7 +1,20 @@
 <script setup lang="ts">
+import { useSeoMeta } from 'unhead'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
 import ProjectItem from '@/components/projects/ProjectItem.vue'
+
+useSeoMeta({
+  title: 'Projects | Sam Gozman',
+  description: "Sam Gozman's open-source projects timeline.",
+  ogDescription: "Sam Gozman's open-source projects timeline.",
+  ogTitle: 'Projects | Sam Gozman',
+  ogType: 'website',
+  ogUrl: 'https://gozman.space/projects',
+  ogSiteName: 'Sam Gozman',
+  twitterCard: 'summary_large_image',
+  twitterImageAlt: 'Projects | Sam Gozman'
+})
 </script>
 
 <template>

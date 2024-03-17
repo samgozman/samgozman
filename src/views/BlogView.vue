@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useSeoMeta } from 'unhead'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
 import BlogListItem from '@/components/bloglist/BlogListItem.vue'
@@ -8,6 +9,18 @@ import { BloggyApi, type PostListItem } from '@/services/BloggyApi'
 
 const items = ref<PostListItem[]>([])
 const isLoading = ref(true)
+
+useSeoMeta({
+  title: 'Blog | Sam Gozman',
+  description: "Welcome to Sam Gozman's Dev Blog!",
+  ogDescription: "Welcome to Sam Gozman's Dev Blog!",
+  ogTitle: 'Blog | Sam Gozman',
+  ogType: 'website',
+  ogUrl: 'https://gozman.space/blog',
+  ogSiteName: 'Sam Gozman',
+  twitterCard: 'summary_large_image',
+  twitterImageAlt: 'Blog | Sam Gozman'
+})
 
 onMounted(async () => {
   const res = await BloggyApi.getPosts(1, 15)

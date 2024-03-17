@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import { useSeoMeta } from 'unhead'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
+
+useSeoMeta({
+  title: 'Subscription confirmation | Sam Gozman'
+})
 </script>
 
 <template>

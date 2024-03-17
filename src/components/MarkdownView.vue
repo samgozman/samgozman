@@ -18,6 +18,10 @@ const html = engine.makeHtml(props.value) // Note: this is valid call
 */
 
 /** <Code block> */
+div[data-type='codeBlock'] > pre {
+  font-size: 1rem;
+}
+
 div[data-type='codeBlock'] .token.comment,
 div[data-type='codeBlock'] .token.block-comment,
 div[data-type='codeBlock'] .token.prolog,

@@ -35,11 +35,6 @@ const dropdownVisible = ref(true)
               >Projects</RouterLink
             >
           </li>
-          <li>
-            <RouterLink :to="{ name: 'admin-dashboard' }" @click="dropdownVisible = false"
-              >Admin</RouterLink
-            >
-          </li>
         </ul>
       </div>
       <span class="text-xl select-none">
@@ -51,7 +46,6 @@ const dropdownVisible = ref(true)
         <li><RouterLink :to="{ name: 'home' }">About</RouterLink></li>
         <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>
         <li><RouterLink :to="{ name: 'projects' }">Projects</RouterLink></li>
-        <li><RouterLink :to="{ name: 'admin-dashboard' }">Admin</RouterLink></li>
       </ul>
     </div>
     <div class="navbar-end">

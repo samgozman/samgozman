@@ -14,10 +14,13 @@ const dropdownVisible = ref(true)
         <div
           tabindex="0"
           role="button"
-          class="btn btn-ghost lg:hidden pl-0"
+          class="btn btn-ghost lg:hidden px-3"
           @click="dropdownVisible = true"
         >
-          <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
+          <ion-icon name="menu-outline" class="text-2xl mr-1"></ion-icon>
+          <span class="text-xl select-none">
+            <HeaderSignature value="gozman." />
+          </span>
         </div>
         <ul
           tabindex="0"
@@ -37,7 +40,7 @@ const dropdownVisible = ref(true)
           </li>
         </ul>
       </div>
-      <span class="text-xl select-none">
+      <span class="text-xl select-none hidden lg:block">
         <HeaderSignature value="gozman." />
       </span>
     </div>

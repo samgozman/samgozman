@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import { useSeoMeta } from 'unhead'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
@@ -41,9 +42,10 @@ const experience = calculateAge(new Date('2016-07-01'))
         <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
         <HeaderMax value="Backend Engineer & Open Source Developer." class="text-left" />
         <p>
-          Welcome to my dev blog 2.0! I'm an experienced Backend Engineer with expertise in Golang
-          and NodeJS and a big fan of open-source. I've been working as a developer over the course
-          of the last
+          Welcome to my dev
+          <RouterLink class="link link-hover" :to="{ name: 'blog' }">blog</RouterLink> 2.0! I'm an
+          experienced Backend Engineer with expertise in Golang and NodeJS and a big fan of
+          open-source. I've been working as a developer over the course of the last
           <strong>{{ experience }}+ years</strong>.
         </p>
         <p>

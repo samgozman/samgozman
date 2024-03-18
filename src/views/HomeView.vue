@@ -34,10 +34,12 @@ const experience = calculateAge(new Date('2016-07-01'))
 <template>
   <ArticleProse class="md:max-w-[100ch]">
     <div class="flex flex-col md:flex-row">
-      <img
-        class="rounded-xl my-4 mx-auto max-w-[70%] md:my-0 md:ml-0 md:mr-8 md:max-h-[38rem]"
-        src="/img/me.jpg"
-      />
+      <div class="avatar not-prose mb-4 md:my-0 mx-auto md:mr-8">
+        <div class="w-64 md:w-96">
+          <img class="rounded-full md:rounded-xl md:max-h-[38rem]" src="/img/me.jpg" />
+        </div>
+      </div>
+
       <div class="flex-grow">
         <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
         <HeaderMax value="Backend Engineer & Open Source Developer." class="text-left" />

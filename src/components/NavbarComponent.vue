@@ -5,6 +5,13 @@ import HeaderSignature from './elements/HeaderSignature.vue'
 import SubscribeForm from './SubscribeForm.vue'
 
 const dropdownVisible = ref(true)
+
+const closeModal = () => {
+  const dialog = document.getElementById('subscribeNavTop') as HTMLDialogElement
+  if (dialog) {
+    dialog.close()
+  }
+}
 </script>
 
 <template>
@@ -56,7 +63,7 @@ const dropdownVisible = ref(true)
       <dialog id="subscribeNavTop" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
           <h3 class="font-bold text-lg">Subscribe to my blog 🧡</h3>
-          <SubscribeForm class="pt-8" />
+          <SubscribeForm class="pt-8" @closeModal="closeModal" />
           <div class="modal-action">
             <form method="dialog">
               <button class="btn">Close</button>

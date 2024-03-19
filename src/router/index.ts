@@ -3,9 +3,6 @@ import HomeView from '@/views/HomeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
 import BlogView from '@/views/BlogView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
-import SubscribeSuccessView from '@/views/subscriptions/SubscribeSuccessView.vue'
-import SubscribeConfirmView from '@/views/subscriptions/SubscribeConfirmView.vue'
-import UnsubscribeView from '@/views/subscriptions/UnsubscribeView.vue'
 import { StorageKeeper } from '@/services/StorageKeeper'
 
 const router = createRouter({
@@ -43,17 +40,17 @@ const router = createRouter({
     {
       path: '/subscription/success',
       name: 'subscription-success',
-      component: SubscribeSuccessView
+      component: () => import('@/views/subscriptions/SubscribeSuccessView.vue')
     },
     {
       path: '/subscription/confirm',
       name: 'subscription-confirm',
-      component: SubscribeConfirmView
+      component: () => import('@/views/subscriptions/SubscribeConfirmView.vue')
     },
     {
       path: '/subscription/unsubscribe',
       name: 'unsubscribe',
-      component: UnsubscribeView
+      component: () => import('@/views/subscriptions/UnsubscribeView.vue')
     },
     {
       path: '/admin/login',

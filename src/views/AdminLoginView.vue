@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { StorageKeeper } from '@/services/StorageKeeper'
 import { BloggyApi } from '@/services/BloggyApi'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 
 window.document.title = 'Login | Sam Gozman'
+
+const router = useRouter()
 
 // Token TTL in milliseconds
 const ttl = Number(import.meta.env.VITE_AUTH_TOKEN_TTL_SECONDS) * 1000
@@ -30,6 +33,8 @@ onMounted(async () => {
 
     const expireTime = new Date().getTime() + ttl
     StorageKeeper.set<string>('token', res.token, expireTime)
+
+    router.push({ name: 'admin-dashboard' })
   } catch (error) {
     errorCode.value = 'unexpected-error'
     errorMessage.value = error

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useSeoMeta } from 'unhead'
 import MarkdownView from '@/components/MarkdownView.vue'
 import { BloggyApi } from '@/services/BloggyApi'
 
@@ -22,17 +21,7 @@ onMounted(async () => {
     return
   }
 
-  useSeoMeta({
-    title: res.title,
-    description: res.description,
-    ogDescription: res.description,
-    ogTitle: res.title,
-    ogType: 'article',
-    ogUrl: `https://gozman.space/blog/${res.slug}`,
-    ogSiteName: 'Sam Gozman',
-    twitterCard: 'summary_large_image',
-    twitterImageAlt: res.title,
-  })
+  window.document.title = `${res.title} | Sam Gozman`
 
   md.value = res.content
 })

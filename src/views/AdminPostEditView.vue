@@ -8,6 +8,8 @@ import { BloggyApi, type PostResponse } from '@/services/BloggyApi'
 const route = useRoute()
 const post = ref<PostResponse>()
 
+window.document.title = 'Post edit | Sam Gozman'
+
 onMounted(async () => {
   const slug = route.params.slug as string
 

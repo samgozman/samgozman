@@ -1,3 +1,7 @@
+<script setup lang="ts">
+window.document.title = '404, it happens | Sam Gozman'
+</script>
+
 <template>
   <div class="h-[60vh] flex flex-col items-center justify-center">
     <h1 class="font-black font-poppins text-9xl text-primary">404</h1>

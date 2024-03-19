@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { useSeoMeta } from 'unhead'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 import { BloggyApi, type PostListItem } from '@/services/BloggyApi'
 import { StorageKeeper } from '@/services/StorageKeeper'
 
-useSeoMeta({
-  title: 'Admin Dashboard | Sam Gozman'
-})
+window.document.title = 'Admin Dashboard | Sam Gozman'
 
 const items = ref<PostListItem[]>([])
 

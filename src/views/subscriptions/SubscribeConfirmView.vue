@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
-import { useSeoMeta } from 'unhead'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
 import { BloggyApi } from '@/services/BloggyApi'
 
-useSeoMeta({
-  title: 'Subscription status | Sam Gozman'
-})
+window.document.title = 'Subscription status  | Sam Gozman'
 
 const hCaptchaKey = import.meta.env.VITE_HCAPTCHA_SITE_KEY
 

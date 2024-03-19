@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useSeoMeta } from 'unhead'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
 import { BloggyApi } from '@/services/BloggyApi'
 
-useSeoMeta({
-  title: 'Unsubscribe | Sam Gozman'
-})
+window.document.title = 'Unsubscribe  | Sam Gozman'
 
 const error = ref('Confirm unsubscribing')
 const unsubscribeToken = ref('')

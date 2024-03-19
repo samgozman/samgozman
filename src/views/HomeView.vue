@@ -1,20 +1,9 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { useSeoMeta } from 'unhead'
 import HeaderMax from '@/components/elements/HeaderMax.vue'
 import ArticleProse from '@/components/elements/ArticleProse.vue'
 
-useSeoMeta({
-  title: 'Sam Gozman | Backend Engineer & Open Source Developer',
-  description: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
-  ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
-  ogTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',
-  ogType: 'website',
-  ogUrl: 'https://gozman.space',
-  ogSiteName: 'Sam Gozman',
-  twitterCard: 'summary_large_image',
-  twitterImageAlt: 'Sam Gozman | Backend Engineer & Open Source Developer'
-})
+window.document.title = 'Sam Gozman | Backend Engineer & Open Source Developer'
 
 function calculateAge(date: Date) {
   const today = new Date()

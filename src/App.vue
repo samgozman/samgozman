@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import { onMounted } from 'vue'
-import { createHead } from 'unhead'
 import NavbarComponent from './components/NavbarComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
 import { StorageKeeper } from '@/services/StorageKeeper'
@@ -9,8 +8,6 @@ import { BloggyApi } from '@/services/BloggyApi'
 
 // Token TTL in milliseconds
 const ttl = Number(import.meta.env.VITE_AUTH_TOKEN_TTL_SECONDS) * 1000
-
-createHead()
 
 onMounted(async () => {
   // Refresh token while user is still active on the page

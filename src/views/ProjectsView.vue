@@ -23,7 +23,7 @@ useSeoMeta({
   <ArticleProse class="text-justify">
     <p>
       Over the last several years, besides my regular job as backend engineer, I've been chipping
-      away at my own open-source side projects whenever I could. It's been a hobby I've poured time
+      away at my own <strong>open-source</strong> side projects whenever I could. It's been a hobby I've poured time
       into, tinkering with it during weekends and evenings. It's my way of exploring new things and
       ideas outside of work and giving back to the community in a small way.
     </p>

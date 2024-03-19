@@ -1,0 +1,2 @@
+import{d as o,e as s,c as t,w as a,_ as i,o as n,a as e}from"./index-DVeLQdnf.js";const c=e("h2",null,"Thank you for subscribing!",-1),r=e("p",null," You will receive a confirmation email shortly. Please click the link in the email to confirm your subscription. ",-1),f=o({__name:"SubscribeSuccessView",setup(l){return s({title:"Subscription confirmation | Sam Gozman"}),(u,_)=>(n(),t(i,null,{default:a(()=>[c,r]),_:1}))}});export{f as default};
+//# sourceMappingURL=SubscribeSuccessView-DDWCjzgi.js.map

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
 import { BloggyApi } from '@/services/BloggyApi'

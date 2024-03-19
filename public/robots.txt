@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/*
+Disallow: /subscription/success
+Disallow: /subscription/confirm
+Disallow: /subscription/unsubscribe

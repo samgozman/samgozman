@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -14,13 +14,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1" />
 
     <!-- Address bar color theme -->
-    <meta name="theme-color" content="#000000" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-    <meta
-      name="description"
-      content="Personal page of Sam Gozman - NodeJS / Go backend developer."
-    />
+    <meta name="theme-color" content="#f97316" />
+    <meta name="theme-color" content="#f97316" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#f97316" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Dev blog of a backend developer Sam Gozman." />
 
     <!-- Meta tags for sharing in social -->
     <meta property="og:title" content="Sam Gozman | Backend Developer" />
@@ -28,13 +25,32 @@
     <meta property="og:image" content="https://gozman.space/sharing.jpg" />
     <meta property="og:url" content="https://gozman.space/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:description" content="Sam Gozman - NodeJS / Go backend developer." />
-    <meta property="og:site_name" content="Short-fork" />
-    <meta name="twitter:image:alt" content="Sam Gozman - NodeJS / Go backend developer." />
-    <script async src="https://umami.host.extr.app/script.js" data-website-id="aa340c87-a780-4076-9b07-563f34742edf"></script>
+    <meta property="og:description" content="Dev blog of a backend developer Sam Gozman." />
+    <meta property="og:site_name" content="Sam Gozman Blog" />
+    <meta name="twitter:image:alt" content="Dev blog of a backend developer Sam Gozman." />
+
+    <!-- Umami -->
+    <script
+      async
+      src="https://umami.host.extr.app/script.js"
+      data-website-id="aa340c87-a780-4076-9b07-563f34742edf"
+    ></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="dark:bg-black">
+  <body class="bg-orange-500">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

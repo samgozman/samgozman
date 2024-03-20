@@ -5,6 +5,7 @@ import CherryEngine from 'cherry-markdown/dist/cherry-markdown.engine.core'
 
 const props = defineProps<{
   value: string
+  createdAt: Date
 }>()
 
 const engine = new CherryEngine({}) as any
@@ -120,5 +121,19 @@ div[data-type='codeBlock'] .token.inserted {
 <template>
   <ArticleProse>
     <div v-html="html" />
+    <div class="not-prose flex flex-row justify-between items-center mt-4">
+      <div class="mb-2 sm:mb-0">
+        <p class="text-base-content text-opacity-80 text-2xl font-black font-poppins uppercase">
+          {{ `${createdAt.getDate()} ${createdAt.toLocaleString('default', { month: 'short' })}` }}
+        </p>
+      </div>
+      <div>
+        <p
+          class="text-base-content text-opacity-20 text-2xl sm:text-2xl font-poppins font-semibold"
+        >
+          {{ createdAt.getFullYear() }}
+        </p>
+      </div>
+    </div>
   </ArticleProse>
 </template>

@@ -6,6 +6,7 @@ import { BloggyApi } from '@/services/BloggyApi'
 
 const md = ref<string>()
 const router = useRouter()
+const createdAt = ref<Date>(new Date())
 
 onMounted(async () => {
   const route = useRoute()
@@ -24,11 +25,10 @@ onMounted(async () => {
   window.document.title = `${res.title} | Sam Gozman`
 
   md.value = res.content
+  createdAt.value = new Date(res.created_at)
 })
 </script>
 
 <template>
-  <div class="">
-    <MarkdownView v-if="md" :value="md" />
-  </div>
+  <MarkdownView v-if="md" :value="md" :created-at="createdAt" />
 </template>

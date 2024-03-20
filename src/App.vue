@@ -45,3 +45,15 @@ onMounted(async () => {
     </div>
   </div>
 </template>
+
+<style>
+/* Note: OKLCH Colors Workaround For Disqus Embed.js */
+:root,
+[data-theme] {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+.bg-base-100 {
+  background-color: #ffffff;
+}
+</style>

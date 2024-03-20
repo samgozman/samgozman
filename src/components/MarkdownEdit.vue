@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import CherryEngine from 'cherry-markdown'
 import 'cherry-markdown/dist/cherry-markdown.min.css'
 import { StorageKeeper } from '@/services/StorageKeeper'
@@ -12,6 +13,8 @@ interface LocalPost {
   keywords?: string
   text?: string
 }
+
+const router = useRouter()
 
 // Get props from parent (for editing)
 const props = defineProps<LocalPost>()
@@ -148,7 +151,7 @@ const savePost = async () => {
   // Clear local store backup after successful save
   StorageKeeper.remove('last-post')
 
-  // TODO: Redirect to the Edit post page
+  router.push({ name: 'admin-dashboard' })
 }
 
 const generateSlug = () => {

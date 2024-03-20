@@ -1,2 +1,0 @@
-import{d as a,e as o,i as e,a as s,F as t,o as n,l as c}from"./index-ByEInlPt.js";import{_ as m}from"./MarkdownEdit.vue_vue_type_script_setup_true_lang-DAz78MEq.js";const _={class:"w-full"},f=a({__name:"AdminPostNewView",setup(r){return window.document.title="New post | Sam Gozman",(i,d)=>(n(),o(t,null,[e(c,{value:"🔥 Add new post."}),s("div",_,[e(m)])],64))}});export{f as default};
-//# sourceMappingURL=AdminPostNewView-Dxl0LDqd.js.map

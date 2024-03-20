@@ -1,0 +1,2 @@
+import{d as o,c as i,w as n,_ as t,o as s,a as e}from"./index-DrXkFkaE.js";const a=e("h2",null,"Thank you for subscribing!",-1),c=e("p",null," You will receive a confirmation email shortly. Please click the link in the email to confirm your subscription. ",-1),m=o({__name:"SubscribeSuccessView",setup(r){return window.document.title="Subscription confirmation  | Sam Gozman",(l,u)=>(s(),i(t,null,{default:n(()=>[a,c]),_:1}))}});export{m as default};
+//# sourceMappingURL=SubscribeSuccessView-0ReMhHhb.js.map

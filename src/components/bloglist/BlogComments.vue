@@ -22,5 +22,5 @@ const disqus_config = function (this: any) {
 </script>
 
 <template>
-  <div id="disqus_thread"></div>
+  <div id="disqus_thread" class="my-8"></div>
 </template>

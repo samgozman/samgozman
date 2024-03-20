@@ -36,6 +36,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <MarkdownView v-if="md" :value="md" :created-at="createdAt" />
-  <BlogComments :page-url="pageURL" :page-slug="slug" :page-title="title" />
+  <div class="max-w-fit">
+    <MarkdownView v-if="md" :value="md" :created-at="createdAt" />
+    <BlogComments :page-url="pageURL" :page-slug="slug" :page-title="title" />
+  </div>
 </template>

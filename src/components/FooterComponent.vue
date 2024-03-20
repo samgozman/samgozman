@@ -5,9 +5,9 @@ import SubscribeForm from './SubscribeForm.vue'
 
 <template>
   <footer
-    class="footer container mx-auto max-w-6xl p-4 flex flex-col md:flex-row justify-center md:justify-between items-center md:items-end"
+    class="footer container mx-auto max-w-6xl p-4 flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-end"
   >
-    <aside class="order-2 md:order-1">
+    <aside class="order-2 sm:order-1">
       <div class="text-center md:text-left">
         <div
           class="grid grid-flow-col gap-4 md:gap-0 mb-8 md:mb-0 text-3xl md:text-2xl text-primary"
@@ -30,7 +30,7 @@ import SubscribeForm from './SubscribeForm.vue'
         <p class="mt-2 text-xl md:text-sm">Backend Engineer:<br />Golang, NodeJS, Rust.</p>
       </div>
     </aside>
-    <div class="order-3 md:order-2 flex">
+    <div class="order-3 sm:order-2 flex">
       <fieldset class="form-control">
         <h6 class="footer-title text-center text-xl md:text-sm md:text-right px-2">
           Subscribe to my blog
@@ -38,7 +38,7 @@ import SubscribeForm from './SubscribeForm.vue'
         <SubscribeForm />
       </fieldset>
     </div>
-    <nav class="order-1 md:hidden text-xl mt-6 flex flex-col items-center">
+    <nav class="order-1 sm:hidden text-xl mt-6 flex flex-col items-center">
       <h6 class="footer-title">Navigation</h6>
       <RouterLink class="link link-hover" :to="{ name: 'home' }">About</RouterLink>
       <RouterLink class="link link-hover" :to="{ name: 'blog' }">Blog</RouterLink>

@@ -15,13 +15,13 @@ const closeModal = () => {
 </script>
 
 <template>
-  <div class="navbar md:p-4">
+  <div class="navbar sm:p-4">
     <div class="navbar-start">
       <div class="dropdown">
         <div
           tabindex="0"
           role="button"
-          class="btn btn-ghost lg:hidden px-3"
+          class="btn btn-ghost sm:hidden px-3"
           @click="dropdownVisible = true"
         >
           <ion-icon name="menu-outline" class="text-2xl mr-1"></ion-icon>
@@ -47,11 +47,11 @@ const closeModal = () => {
           </li>
         </ul>
       </div>
-      <span class="text-xl select-none hidden lg:block">
+      <span class="text-xl select-none hidden sm:block">
         <HeaderSignature value="gozman." />
       </span>
     </div>
-    <div class="navbar-center hidden lg:flex">
+    <div class="navbar-center hidden sm:flex">
       <ul class="menu menu-horizontal gap-1 font-poppins font-medium">
         <li><RouterLink :to="{ name: 'home' }">About</RouterLink></li>
         <li><RouterLink :to="{ name: 'blog' }">Blog</RouterLink></li>

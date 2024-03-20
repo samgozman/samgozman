@@ -33,7 +33,7 @@ onMounted(async () => {
 <template>
   <div class="min-h-screen flex flex-col">
     <div
-      class="bg-base-100 rounded-xl flex flex-col m-3 min-h-[calc(100vh-1.5rem)] md:m-5 md:min-h-[calc(100vh-2.5rem)]"
+      class="bg-base-100 rounded-xl flex flex-col m-3 min-h-[calc(100vh-1.5rem)] lg:m-5 lg:min-h-[calc(100vh-2.5rem)]"
     >
       <header class="container mb-4 md:mb-0 lg:mb-6 xl:mb-12 mx-auto max-w-6xl">
         <NavbarComponent />

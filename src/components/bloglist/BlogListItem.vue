@@ -20,7 +20,7 @@ const readingTimeSeconds = props.post.reading_time % 60
       class="p-1 md:p-4 flex justify-between sm:justify-start sm:gap-2 items-center sm:flex-col sm:items-center"
     >
       <p class="text-base-content text-opacity-80 text-2xl font-black font-poppins uppercase">
-        {{ `${createdAt.getDate()} ${createdAt.toLocaleString('default', { month: 'short' })}` }}
+        {{ `${createdAt.getDate()} ${createdAt.toLocaleString('en-GB', { month: 'short' })}` }}
       </p>
       <p class="text-base-content text-opacity-20 text-2xl sm:text-4xl font-poppins font-semibold">
         {{ createdAt.getFullYear() }}

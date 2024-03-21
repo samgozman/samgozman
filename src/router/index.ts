@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
 import BlogView from '@/views/BlogView.vue'
+import SubscriptionView from '@/views/subscriptions/SubscribeView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import { StorageKeeper } from '@/services/StorageKeeper'
 
@@ -36,6 +37,11 @@ const router = createRouter({
       path: '/blog/:slug',
       name: 'blog-post',
       component: () => import('@/views/BlogPostView.vue')
+    },
+    {
+      path: '/subscription',
+      name: 'subscription',
+      component: SubscriptionView,
     },
     {
       path: '/subscription/success',

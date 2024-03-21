@@ -12,7 +12,6 @@ const captcha = ref<VueHcaptcha>()
 const formClicked = ref(false)
 
 const router = useRouter()
-const emit = defineEmits(['closeModal'])
 
 const onCaptchaVerified = (t: string) => {
   token.value = t
@@ -41,7 +40,6 @@ const onSubmit = async (event: Event) => {
   }
 
   email.value = ''
-  emit('closeModal')
   router.push({ name: 'subscription-success' })
 }
 

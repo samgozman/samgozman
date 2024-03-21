@@ -2,16 +2,8 @@
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import HeaderSignature from './elements/HeaderSignature.vue'
-import SubscribeForm from './SubscribeForm.vue'
 
 const dropdownVisible = ref(true)
-
-const closeModal = () => {
-  const dialog = document.getElementById('subscribeNavTop') as HTMLDialogElement
-  if (dialog) {
-    dialog.close()
-  }
-}
 </script>
 
 <template>
@@ -59,18 +51,7 @@ const closeModal = () => {
       </ul>
     </div>
     <div class="navbar-end">
-      <button class="btn" onclick="subscribeNavTop.showModal()">Subscribe</button>
-      <dialog id="subscribeNavTop" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">Subscribe to my blog 🧡</h3>
-          <SubscribeForm class="pt-8" @closeModal="closeModal" />
-          <div class="modal-action">
-            <form method="dialog">
-              <button class="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+      <RouterLink class="btn" :to="{ name: 'subscription' }">Subscribe</RouterLink>
     </div>
   </div>
 </template>

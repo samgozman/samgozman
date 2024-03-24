@@ -119,7 +119,10 @@ const savePost = async () => {
     return
   }
 
-  const keywords = post.value.keywords?.split(',').map((k) => k.trim())
+  const keywords =
+    post.value.keywords !== '' && post.value.keywords !== undefined
+      ? post.value.keywords?.split(',').map((k) => k.trim())
+      : undefined
 
   if (isEditing.value) {
     const response = await BloggyApi.updatePostBySlug(token, post.value.slug, {

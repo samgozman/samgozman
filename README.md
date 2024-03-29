@@ -10,7 +10,7 @@ My name is Sam Gozman. Brief information about me:
 - 📈 I'm interested in fintech, brokers, stocks investments, etc as my main line of work. I have also spent around 4 years designing and assembling 3D printers, working with CO2 laser cutters, and programming & soldering microcontrollers as a hobby 👨‍🏭.
 
 <details>
-    <summary>I’m working only on my own OSS projects in this GitHub account. Some of my latest big projects</summary>
+    <summary>Some of my latest OSS big projects</summary>
 
   - In late 2022 I created my new big [open-source](https://github.com/samgozman/validity.red) project - [Validity.Red](https://validity.red). A web service for managing the expiration dates of documents (passports, travel cards, vaccinations, insurance, etc) and synchronizing them with your calendar. It is written in Go, TypeScript, Vue, and Rust
   - [Short-Fork](https://short-fork.extr.app) - is a personal compact assistant in the quick evaluation of the company's financial multipliers and a lot of small public libraries for these projects. Recently updated to NestJS, Redis, and VueJS.

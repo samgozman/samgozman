@@ -31,7 +31,7 @@ const readingTimeSeconds = props.post.reading_time % 60
     <div class="flex-1 p-1 md:p-4 flex flex-col justify-center">
       <RouterLink
         :to="{ name: 'blog-post', params: { slug: post.slug } }"
-        class="card-title text-primary font-poppins truncate text-2xl font-semibold hover:underline"
+        class="card-title text-primary font-poppins text-2xl font-semibold hover:underline"
       >
         {{ post.title }}
       </RouterLink>

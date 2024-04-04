@@ -116,6 +116,10 @@ div[data-type='codeBlock'] .token.inserted {
   opacity: 1;
   color: oklch(var(--p));
 }
+
+.prose h1:first-child .anchor {
+  display: none;
+}
 </style>
 
 <template>

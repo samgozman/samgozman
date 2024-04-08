@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/fonts', '@nuxtjs/tailwindcss',],
+  modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss'],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
@@ -49,14 +49,6 @@ export default defineNuxtConfig({
           async: true,
           src: 'https://umami.host.extr.app/script.js',
           'data-website-id': 'aa340c87-a780-4076-9b07-563f34742edf'
-        },
-        {
-          src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js',
-          type: 'module'
-        },
-        {
-          src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js',
-          nomodule: true
         }
       ]
     }

@@ -11,6 +11,20 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => tag.startsWith('ion-')
     }
   },
+  fonts: {
+    assets: {
+      prefix: '/_fonts'
+    },
+    families: [
+      {
+        name: 'Poppins',
+        provider: 'google',
+        weights: ['300', '400', '500', '600', '700', '800', '900', '1300', '1400'],
+        display: 'swap',
+        styles: ['italic', 'normal']
+      }
+    ]
+  },
   app: {
     head: {
       meta: [

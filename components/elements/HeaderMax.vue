@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { createTwoPartsTitle } from '../../composables/utils'
+import { createTwoPartsTitle } from '~/composables/utils'
 const props = defineProps<{
   value: string
 }>()

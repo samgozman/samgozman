@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { forceMagicDwarfsToColorHeaders } from '../../composables/utils'
+import { forceMagicDwarfsToColorHeaders } from '~/composables/utils'
 
 const article = ref<HTMLElement | null>(null)
 

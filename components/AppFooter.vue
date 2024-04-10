@@ -1,6 +1,4 @@
-<script setup lang="ts">
-// import SubscribeForm from './SubscribeForm.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <footer
@@ -34,7 +32,7 @@
         <h6 class="footer-title text-center text-xl md:text-sm md:text-right px-2">
           Subscribe to my blog
         </h6>
-        <!-- <SubscribeForm /> -->
+        <SubscribeForm />
       </fieldset>
     </div>
     <nav class="order-1 sm:hidden text-xl mt-6 flex flex-col items-center">

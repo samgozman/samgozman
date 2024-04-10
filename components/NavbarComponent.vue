@@ -50,7 +50,7 @@ const dropdownVisible = ref(true)
       </ul>
     </div>
     <div class="navbar-end">
-      <!-- <RouterLink class="btn" :to="{ name: 'subscription' }">Subscribe</RouterLink> -->
+      <NuxtLink class="btn" :to="{ name: 'subscription' }">Subscribe</NuxtLink>
     </div>
   </div>
 </template>

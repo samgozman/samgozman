@@ -1,8 +1,9 @@
-const runtimeConfig = useRuntimeConfig()
-
 // TODO: Generate API client with OpenAPI generator later
 export class BloggyApi {
-  private static readonly BASE_URL = runtimeConfig.public.apiURL
+  private static get BASE_URL() {
+    const runtimeConfig = useRuntimeConfig()
+    return runtimeConfig.public.apiURL
+  }
 
   /**
    * Authenticate the user with GitHub code and return the `LoginResponse`.

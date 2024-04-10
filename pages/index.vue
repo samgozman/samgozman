@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { calculateAge } from '~/composables/utils'
-
 const experience = calculateAge(new Date('2016-07-01'))
 const age = calculateAge(new Date('1997-06-01'))
 </script>

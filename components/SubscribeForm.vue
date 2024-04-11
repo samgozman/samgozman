@@ -3,6 +3,11 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
 
+const { data } = useAsyncData(async () => {
+  const inputName = `email-${Math.random().toString(36).substring(2, 10)}`
+  return inputName
+})
+
 const runtimeConfig = useRuntimeConfig()
 
 const hCaptchaKey = runtimeConfig.public.hcaptchaSiteKey
@@ -44,9 +49,6 @@ const onSubmit = async (event: Event) => {
   router.push({ name: 'subscription-success' })
 }
 
-// Generate a random string
-const inputName = Math.random().toString(36).substring(2, 10)
-
 const onInputFocus = () => {
   formClicked.value = true
 }
@@ -56,7 +58,7 @@ const onInputFocus = () => {
   <form @submit="onSubmit">
     <div class="join">
       <input
-        :name="inputName"
+        :name="data ?? 'email'"
         type="email"
         placeholder="Enter your email"
         class="input input-bordered join-item"

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+
 const props = defineProps<{
   pageUrl: string
   pageSlug: string
@@ -11,14 +13,16 @@ const disqus_config = function (this: any) {
   this.page.title = props.pageTitle.slice(0, 200)
 }
 
-;(function () {
+onMounted(() => {
   // DON'T EDIT BELOW THIS LINE
   var d = document,
     s = d.createElement('script')
   s.src = 'https://gozman.disqus.com/embed.js'
   s.setAttribute('data-timestamp', String(+new Date()))
-  ;(d.head || d.body).appendChild(s)
-})()
+  if (d.getElementById('disqus_thread')) {
+    ;(d.head || d.body).appendChild(s)
+  }
+})
 </script>
 
 <template>

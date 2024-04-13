@@ -77,6 +77,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Can be exposed to the client
     public: {
+      baseUrl: 'https://gozman.space',
       // apiURL: 'http://localhost:3000',
       apiURL: 'https://api-gozman-blog.extr.app',
       githubClientId: '3a1bed516b6eda760936',

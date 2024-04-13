@@ -5,10 +5,8 @@ const md = ref<string>()
 const createdAt = ref<Date>(new Date())
 const title = ref<string>('')
 
-const pageURL = window.location.href
-
 const route = useRoute()
-
+const pageURL = `${useRuntimeConfig().public.baseUrl}${route.fullPath}`
 const slug = route.params.slug as string
 
 const { error } = useAsyncData('blog-post', async (context) => {
@@ -33,16 +31,13 @@ const { error } = useAsyncData('blog-post', async (context) => {
 })
 
 if (error.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page Not Found'
-  })
+  showError(error.value)
 }
 </script>
 
 <template>
   <div class="max-w-fit">
     <MarkdownView v-if="md" :value="md" :created-at="createdAt" />
-    <BlogComments :page-url="pageURL" :page-slug="slug" :page-title="title" />
+    <BlogComments v-if="pageURL" :page-url="pageURL" :page-slug="slug" :page-title="title" />
   </div>
 </template>

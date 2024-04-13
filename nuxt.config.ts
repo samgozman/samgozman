@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  devServer: {
+    port: 5555
+  },
   modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss'],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]

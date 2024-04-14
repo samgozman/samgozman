@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  requiresAuth: true,
+  middleware: 'auth'
+})
+</script>
 
 <template>
   <ElementsHeaderMax value="🔥 Add new post." />

@@ -81,12 +81,12 @@ export default defineNuxtConfig({
     // Can be exposed to the client
     public: {
       baseUrl: 'https://gozman.space',
-      // apiURL: 'http://localhost:3000',
-      apiURL: 'https://api-gozman-blog.extr.app',
+      apiURL: 'http://localhost:3000',
+      // apiURL: 'https://api-gozman-blog.extr.app',
       githubClientId: '3a1bed516b6eda760936',
       authTokenTTLseconds: 60,
-      // hcaptchaSiteKey: '10000000-ffff-ffff-ffff-000000000001'
-      hcaptchaSiteKey: '196c72be-eff9-4389-b0bc-f588455611e9'
+      hcaptchaSiteKey: '10000000-ffff-ffff-ffff-000000000001'
+      // hcaptchaSiteKey: '196c72be-eff9-4389-b0bc-f588455611e9'
     }
   }
 })

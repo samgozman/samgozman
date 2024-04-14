@@ -18,6 +18,11 @@ onMounted(async () => {
 
   post.value = response
 })
+
+definePageMeta({
+  requiresAuth: true,
+  middleware: 'auth'
+})
 </script>
 
 <template>

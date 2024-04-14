@@ -36,6 +36,11 @@ const isValidDate = (dateString: string) => {
   const date = new Date(dateString)
   return !isNaN(date.getTime()) && dateString !== '0001-01-01T00:00:00Z'
 }
+
+definePageMeta({
+  requiresAuth: true,
+  middleware: 'auth',
+})
 </script>
 
 <template>

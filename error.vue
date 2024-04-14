@@ -7,6 +7,7 @@ const props = defineProps({
 })
 
 // TODO: send in sentry
+console.error('Error page:', props.error)
 
 const handleError = async () => {
   // Note: if you will not wait for the nextTick(), the error will not be cleared.

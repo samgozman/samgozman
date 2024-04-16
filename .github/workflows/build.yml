@@ -1,0 +1,29 @@
+name: Build docker image
+on:
+  push:
+    branches:
+      - main
+      - nuxt
+  pull_request:
+    branches:
+      - main
+      - nuxt
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build service
+        run: |
+          docker build . -f Dockerfile -t ghcr.io/samgozman/samgozman:latest
+      - name: Push service
+        run: |
+          docker push ghcr.io/samgozman/samgozman:latest

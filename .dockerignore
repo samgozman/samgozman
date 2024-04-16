@@ -1,0 +1,31 @@
+# Logs
+logs
+*.log
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+.github
+
+# Editor directories and files
+.vscode/*
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# ! Temporary
+old

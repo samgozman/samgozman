@@ -30,6 +30,5 @@ RUN bun run build
 # release image
 FROM base AS release
 COPY --from=prerelease /usr/src/app/.output .
-COPY --from=install /temp/prod/node_modules node_modules
 
 CMD ["bun", "run", "./server/index.mjs"]

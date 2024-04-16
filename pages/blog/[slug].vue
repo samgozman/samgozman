@@ -37,7 +37,7 @@ if (data.value) {
   createdAt.value = new Date(data.value.created_at)
   title.value = data.value.title
 
-  useServerSeoMeta({
+  useSeoMeta({
     title: `${data.value.title} | Sam Gozman`,
     ogType: 'article',
     ogTitle: `${data.value.title} | Sam Gozman`,

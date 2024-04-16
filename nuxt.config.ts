@@ -41,15 +41,10 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: light)' },
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: dark)' },
         // TODO: Remove it, render it on the server side
-        { name: 'og:title', content: 'Sam Gozman | Backend Engineer & Open Source Developer' },
-        { name: 'og:type', content: 'website' },
+        { name: 'og:locale', content: 'en_US' },
         { name: 'og:image', content: 'https://gozman.space/sharing.jpg' },
         { name: 'og:url', content: 'https://gozman.space/' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        {
-          name: 'og:description',
-          content: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
-        },
         { name: 'og:site_name', content: 'Sam Gozman Blog' },
         {
           name: 'twitter:image:alt',

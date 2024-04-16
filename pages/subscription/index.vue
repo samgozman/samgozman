@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Subscribe | Sam Gozman',
+  ogTitle: 'Subscribe | Sam Gozman'
+})
+</script>
 
 <template>
   <ElementsArticleProse class="flex flex-col items-center sm:items-start">

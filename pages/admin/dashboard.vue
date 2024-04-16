@@ -39,7 +39,12 @@ const isValidDate = (dateString: string) => {
 
 definePageMeta({
   requiresAuth: true,
-  middleware: 'auth',
+  middleware: 'auth'
+})
+
+useSeoMeta({
+  title: 'Admin dashboard | Sam Gozman',
+  ogTitle: 'Admin dashboard | Sam Gozman'
 })
 </script>
 

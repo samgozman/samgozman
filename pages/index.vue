@@ -1,6 +1,15 @@
 <script setup lang="ts">
 const experience = calculateAge(new Date('2016-07-01'))
 const age = calculateAge(new Date('1997-06-01'))
+
+useSeoMeta({
+  title: 'Sam Gozman | Backend Engineer & Open Source Developer',
+  ogTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',
+  ogType: 'profile',
+  profileFirstName: 'Sam',
+  profileLastName: 'Gozman',
+  profileUsername: 'samgozman'
+})
 </script>
 
 <template>

@@ -2,6 +2,11 @@
 import { ref } from 'vue'
 import { BloggyApi, type PostListItem } from '../../composables/BloggyApi'
 
+useSeoMeta({
+  title: 'Blog | Sam Gozman',
+  ogTitle: 'Blog | Sam Gozman',
+})
+
 const fetchError = ref<Error | null>(null)
 
 const { data, error } = useAsyncData<any, unknown, PostListItem[]>('blog-list', async () => {

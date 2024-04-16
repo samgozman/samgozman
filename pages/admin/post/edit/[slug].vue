@@ -6,6 +6,10 @@ import { type PostResponse } from '../../../../composables/BloggyApi'
 const route = useRoute()
 const post = ref<PostResponse>()
 
+useSeoMeta({
+  title: 'Edit post | Sam Gozman'
+})
+
 onMounted(async () => {
   const slug = route.params.slug as string
 

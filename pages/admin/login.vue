@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+useSeoMeta({
+  title: 'Admin login | Sam Gozman',
+  ogTitle: 'Admin login | Sam Gozman'
+})
+
 const router = useRouter()
 
 // Token TTL in milliseconds

@@ -9,7 +9,7 @@ const route = useRoute()
 const pageURL = `${useRuntimeConfig().public.baseUrl}${route.fullPath}`
 const slug = route.params.slug as string
 
-const { error } = useAsyncData('blog-post', async (context) => {
+const { error, data } = await useAsyncData<any, any, PostResponse>('blog-post', async (context) => {
   if (!slug) {
     throw createError({
       statusCode: 404,
@@ -25,13 +25,25 @@ const { error } = useAsyncData('blog-post', async (context) => {
     })
   }
 
-  md.value = res.content
-  createdAt.value = new Date(res.created_at)
-  title.value = res.title
+  return res
 })
 
 if (error.value) {
   showError(error.value)
+}
+
+if (data.value) {
+  md.value = data.value.content
+  createdAt.value = new Date(data.value.created_at)
+  title.value = data.value.title
+
+  useServerSeoMeta({
+    title: `${data.value.title} | Sam Gozman`,
+    ogType: 'article',
+    ogTitle: `${data.value.title} | Sam Gozman`,
+    description: data.value.description,
+    ogDescription: data.value.description
+  })
 }
 </script>
 

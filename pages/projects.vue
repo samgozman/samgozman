@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Projects | Sam Gozman',
+  ogTitle: 'Projects | Sam Gozman',
+})
+</script>
 
 <template>
   <ElementsHeaderMax value="My projects." />

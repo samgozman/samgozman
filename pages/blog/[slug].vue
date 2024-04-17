@@ -9,24 +9,27 @@ const route = useRoute()
 const pageURL = `${useRuntimeConfig().public.baseUrl}${route.fullPath}`
 const slug = route.params.slug as string
 
-const { error, data } = await useAsyncData<any, any, PostResponse>('blog-post', async (context) => {
-  if (!slug) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: 'Page Not Found'
-    })
-  }
+const { error, data } = await useAsyncData<any, any, PostResponse>(
+  `blog-post-${slug}`,
+  async (context) => {
+    if (!slug) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: 'Page Not Found'
+      })
+    }
 
-  const res = await BloggyApi.getPostBySlug(slug)
-  if (!res.ok) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: 'Page Not Found'
-    })
-  }
+    const res = await BloggyApi.getPostBySlug(slug)
+    if (!res.ok) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: 'Page Not Found'
+      })
+    }
 
-  return res
-})
+    return res
+  }
+)
 
 if (error.value) {
   showError(error.value)

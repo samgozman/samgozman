@@ -1,10 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  site: {
+    url: 'https://gozman.space'
+  },
+  sitemap: {
+    sources: ['/api/__sitemap__/urls']
+  },
   devtools: { enabled: true },
   devServer: {
     port: 5555
   },
-  modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },

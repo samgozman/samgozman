@@ -4,7 +4,28 @@ export default defineNuxtConfig({
     url: 'https://gozman.space'
   },
   sitemap: {
-    sources: ['/api/__sitemap__/urls']
+    exclude: [
+      '/admin/**',
+      '/subscription/confirm',
+      '/subscription/unsubscribe',
+      '/subscription/success'
+    ],
+    sources: ['/api/__sitemap__/urls'],
+    // Note: to override the default sitemap.xml generated from sources
+    urls: () => {
+      return [
+        {
+          changefreq: 'daily',
+          priority: 0.5,
+          loc: '/blog'
+        },
+        {
+          changefreq: 'weekly',
+          priority: 1,
+          loc: '/'
+        }
+      ]
+    }
   },
   devtools: { enabled: true },
   devServer: {

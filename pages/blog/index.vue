@@ -5,7 +5,11 @@ import { BloggyApi, type PostListItem } from '../../composables/BloggyApi'
 useSeoMeta({
   title: 'Blog | Sam Gozman',
   ogTitle: 'Blog | Sam Gozman',
-  ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
+  twitterTitle: 'Blog | Sam Gozman',
+  description: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
+  ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
+  twitterDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
+  twitterImageAlt: 'Blog | Sam Gozman'
 })
 
 defineOgImageComponent('Default', {

@@ -5,7 +5,11 @@ const age = calculateAge(new Date('1997-06-01'))
 useSeoMeta({
   title: 'Sam Gozman | Backend Engineer & Open Source Developer',
   ogTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',
+  twitterTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',
+  description: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
   ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
+  twitterDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
+  twitterImageAlt: 'Sam Gozman | Backend Engineer & Open Source Developer',
   ogType: 'profile',
   profileFirstName: 'Sam',
   profileLastName: 'Gozman',

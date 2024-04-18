@@ -44,8 +44,11 @@ if (data.value) {
     title: `${data.value.title} | Sam Gozman`,
     ogType: 'article',
     ogTitle: `${data.value.title} | Sam Gozman`,
+    twitterTitle: `${data.value.title} | Sam Gozman`,
     description: data.value.description,
-    ogDescription: data.value.description
+    ogDescription: data.value.description,
+    twitterDescription: data.value.description,
+    twitterImageAlt: `${data.value.title} | Sam Gozman`
   })
 
   defineOgImageComponent('BlogPost', {

@@ -1,7 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Subscribe | Sam Gozman',
-  ogTitle: 'Subscribe | Sam Gozman'
+  ogTitle: 'Subscribe | Sam Gozman',
+  twitterTitle: 'Subscribe | Sam Gozman',
+  description: 'Subscribe to my blog and get the latest blog posts delivered right to your inbox.',
+  ogDescription:
+    'Subscribe to my blog and get the latest blog posts delivered right to your inbox.',
+  twitterDescription:
+    'Subscribe to my blog and get the latest blog posts delivered right to your inbox.',
+  twitterImageAlt: 'Subscribe | Sam Gozman'
 })
 defineOgImageComponent('Default', {
   title: 'Subscribe'

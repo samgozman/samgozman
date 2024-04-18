@@ -2,7 +2,11 @@
 useSeoMeta({
   title: 'Projects | Sam Gozman',
   ogTitle: 'Projects | Sam Gozman',
-  ogDescription: "Sam Gozman's open-source projects."
+  twitterTitle: 'Projects | Sam Gozman',
+  description: "Sam Gozman's open-source projects.",
+  ogDescription: "Sam Gozman's open-source projects.",
+  twitterDescription: "Sam Gozman's open-source projects.",
+  twitterImageAlt: 'Projects | Sam Gozman'
 })
 defineOgImageComponent('Default', {
   title: 'Projects'

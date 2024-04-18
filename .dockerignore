@@ -26,6 +26,3 @@ coverage
 .nitro
 .cache
 dist
-
-# ! Temporary
-old

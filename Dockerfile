@@ -28,7 +28,10 @@ ENV PORT=3000
 RUN bun run build
 
 # release image
-FROM base AS release
+FROM node:lts-alpine3.19 AS release
+WORKDIR /usr/src/app
 COPY --from=prerelease /usr/src/app/.output .
 
-CMD ["bun", "run", "./server/index.mjs"]
+# note: bun is incopatable with og-image generator right now.
+# see: https://github.com/nuxt-modules/og-image/issues/112
+CMD ["node", "./server/index.mjs"]

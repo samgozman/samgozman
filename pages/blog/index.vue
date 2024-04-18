@@ -8,6 +8,10 @@ useSeoMeta({
   ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
 })
 
+defineOgImageComponent('Default', {
+  title: 'Blog'
+})
+
 const fetchError = ref<Error | null>(null)
 
 const { data, error } = useAsyncData<any, unknown, PostListItem[]>('blog-list', async () => {

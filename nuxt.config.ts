@@ -31,9 +31,12 @@ export default defineNuxtConfig({
   devServer: {
     port: 5555
   },
-  modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', 'nuxt-og-image'],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
+  },
+  ogImage: {
+    fonts: ['Poppins:700', 'Poppins:900']
   },
   vue: {
     compilerOptions: {
@@ -70,8 +73,6 @@ export default defineNuxtConfig({
         // TODO: Remove it, render it on the server side
         // Note: they are global and will rewrite the ones in the layout
         { name: 'og:locale', content: 'en_US' },
-        { name: 'og:image', content: 'https://gozman.space/sharing.jpg' },
-        { name: 'twitter:image', content: 'https://gozman.space/sharing.jpg' },
         {
           name: 'twitter:title',
           content: 'Developer blog of Sam Gozman.'
@@ -81,7 +82,6 @@ export default defineNuxtConfig({
           content: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
         },
         { name: 'og:url', content: 'https://gozman.space/' },
-        { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'og:site_name', content: 'Sam Gozman Blog' },
         {
           name: 'twitter:image:alt',

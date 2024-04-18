@@ -4,6 +4,9 @@ useSeoMeta({
   ogTitle: 'Projects | Sam Gozman',
   ogDescription: "Sam Gozman's open-source projects."
 })
+defineOgImageComponent('Default', {
+  title: 'Projects'
+})
 </script>
 
 <template>

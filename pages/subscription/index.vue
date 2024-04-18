@@ -3,6 +3,9 @@ useSeoMeta({
   title: 'Subscribe | Sam Gozman',
   ogTitle: 'Subscribe | Sam Gozman'
 })
+defineOgImageComponent('Default', {
+  title: 'Subscribe'
+})
 </script>
 
 <template>

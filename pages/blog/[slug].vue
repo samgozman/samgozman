@@ -47,6 +47,10 @@ if (data.value) {
     description: data.value.description,
     ogDescription: data.value.description
   })
+
+  defineOgImageComponent('BlogPost', {
+    title: data.value.title
+  })
 }
 </script>
 

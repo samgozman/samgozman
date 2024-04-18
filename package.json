@@ -17,6 +17,7 @@
     "@nuxtjs/tailwindcss": "^6.11.4",
     "cherry-markdown": "^0.8.40",
     "nuxt": "^3.11.2",
+    "nuxt-og-image": "^3.0.0-rc.52",
     "vue": "3.4.23",
     "vue-router": "^4.3.0"
   },

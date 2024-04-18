@@ -11,6 +11,10 @@ useSeoMeta({
   profileLastName: 'Gozman',
   profileUsername: 'samgozman'
 })
+
+defineOgImageComponent('Default', {
+  title: 'Profile'
+})
 </script>
 
 <template>

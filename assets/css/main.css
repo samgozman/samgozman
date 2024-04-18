@@ -1,0 +1,30 @@
+body {
+  height: max-content;
+  touch-action: pan-y;
+  overscroll-behavior: none;
+}
+
+html {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+/* Fix 100vh height in ios safari */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Note: OKLCH Colors Workaround For Disqus Embed.js */
+:root,
+[data-theme] {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+.bg-base-100 {
+  background-color: #ffffff;
+}

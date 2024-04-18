@@ -70,6 +70,19 @@ export default defineNuxtConfig({
         // TODO: Remove it, render it on the server side
         { name: 'og:locale', content: 'en_US' },
         { name: 'og:image', content: 'https://gozman.space/sharing.jpg' },
+        { name: 'twitter:image', content: 'https://gozman.space/sharing.jpg' },
+        {
+          name: 'twitter:title',
+          content: 'Developer blog of Sam Gozman.'
+        },
+        {
+          name: 'twitter:description',
+          content: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
+        },
+        {
+          name: 'og:description',
+          content: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
+        },
         { name: 'og:url', content: 'https://gozman.space/' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'og:site_name', content: 'Sam Gozman Blog' },

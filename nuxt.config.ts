@@ -68,6 +68,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: light)' },
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: dark)' },
         // TODO: Remove it, render it on the server side
+        // Note: they are global and will rewrite the ones in the layout
         { name: 'og:locale', content: 'en_US' },
         { name: 'og:image', content: 'https://gozman.space/sharing.jpg' },
         { name: 'twitter:image', content: 'https://gozman.space/sharing.jpg' },
@@ -77,10 +78,6 @@ export default defineNuxtConfig({
         },
         {
           name: 'twitter:description',
-          content: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
-        },
-        {
-          name: 'og:description',
           content: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
         },
         { name: 'og:url', content: 'https://gozman.space/' },

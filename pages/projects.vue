@@ -2,6 +2,7 @@
 useSeoMeta({
   title: 'Projects | Sam Gozman',
   ogTitle: 'Projects | Sam Gozman',
+  ogDescription: "Sam Gozman's open-source projects."
 })
 </script>
 

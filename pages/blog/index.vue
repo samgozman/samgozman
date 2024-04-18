@@ -5,6 +5,7 @@ import { BloggyApi, type PostListItem } from '../../composables/BloggyApi'
 useSeoMeta({
   title: 'Blog | Sam Gozman',
   ogTitle: 'Blog | Sam Gozman',
+  ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.'
 })
 
 const fetchError = ref<Error | null>(null)

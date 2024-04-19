@@ -71,7 +71,6 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: light)' },
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: dark)' },
         { name: 'og:locale', content: 'en_US' },
-        { name: 'og:url', content: 'https://gozman.space/' },
         { name: 'og:site_name', content: 'Sam Gozman Blog' },
       ],
       link: [

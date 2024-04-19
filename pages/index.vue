@@ -3,6 +3,7 @@ const experience = calculateAge(new Date('2016-07-01'))
 const age = calculateAge(new Date('1997-06-01'))
 
 useSeoMeta({
+  ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
   title: 'Sam Gozman | Backend Engineer & Open Source Developer',
   ogTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',
   twitterTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',

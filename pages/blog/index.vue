@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { BloggyApi, type PostListItem } from '../../composables/BloggyApi'
 
 useSeoMeta({
+  ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
   title: 'Blog | Sam Gozman',
   ogTitle: 'Blog | Sam Gozman',
   twitterTitle: 'Blog | Sam Gozman',

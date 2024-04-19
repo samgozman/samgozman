@@ -41,6 +41,7 @@ if (data.value) {
   title.value = data.value.title
 
   useSeoMeta({
+    ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
     title: `${data.value.title} | Sam Gozman`,
     ogType: 'article',
     ogTitle: `${data.value.title} | Sam Gozman`,

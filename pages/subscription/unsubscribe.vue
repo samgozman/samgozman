@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 useSeoMeta({
+  ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
   title: 'Unsubscribe | Sam Gozman'
 })
 

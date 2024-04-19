@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
 
 useSeoMeta({
+  ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
   title: 'Subscription status | Sam Gozman'
 })
 

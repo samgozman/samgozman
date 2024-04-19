@@ -72,6 +72,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: dark)' },
         { name: 'og:locale', content: 'en_US' },
         { name: 'og:site_name', content: 'Sam Gozman Blog' },
+        { name: 'og:logo', content: 'https://gozman.space/apple-touch-icon.png' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

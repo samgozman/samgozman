@@ -50,7 +50,6 @@ if (data.value) {
     ogDescription: data.value.description,
     twitterDescription: data.value.description,
     twitterImageAlt: `${data.value.title} | Sam Gozman`,
-    author: 'Sam Gozman',
     articlePublishedTime: createdAt.value.toISOString(),
     articleTag: data.value.keywords,
     articleAuthor: ['Sam Gozman']

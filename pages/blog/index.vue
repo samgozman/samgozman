@@ -4,6 +4,7 @@ import { BloggyApi, type PostListItem } from '../../composables/BloggyApi'
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
+  ogType: 'website',
   title: 'Blog | Sam Gozman',
   ogTitle: 'Blog | Sam Gozman',
   twitterTitle: 'Blog | Sam Gozman',

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
+  ogType: 'website',
   title: 'Projects | Sam Gozman',
   ogTitle: 'Projects | Sam Gozman',
   twitterTitle: 'Projects | Sam Gozman',

@@ -49,7 +49,18 @@ if (data.value) {
     description: data.value.description,
     ogDescription: data.value.description,
     twitterDescription: data.value.description,
-    twitterImageAlt: `${data.value.title} | Sam Gozman`
+    twitterImageAlt: `${data.value.title} | Sam Gozman`,
+    author: 'Sam Gozman'
+  })
+
+  useHead({
+    meta: [
+      {
+        name: 'publish_date',
+        property: 'og:publish_date',
+        content: createdAt.value.toISOString()
+      }
+    ]
   })
 
   defineOgImageComponent('BlogPost', {

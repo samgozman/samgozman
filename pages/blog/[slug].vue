@@ -63,7 +63,7 @@ if (data.value) {
 
 <template>
   <div class="max-w-fit">
-    <MarkdownView v-if="md" :value="md" :created-at="createdAt" />
+    <MarkdownView v-if="md" :id="slug" :value="md" :created-at="createdAt" />
     <LazyBlogComments v-if="pageURL" :page-url="pageURL" :page-slug="slug" :page-title="title" />
   </div>
 </template>

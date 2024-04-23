@@ -31,12 +31,50 @@ export default defineNuxtConfig({
   devServer: {
     port: 5555
   },
-  modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', 'nuxt-og-image'],
+  modules: [
+    '@nuxt/fonts',
+    'nuxt-icon',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/sitemap',
+    'nuxt-og-image',
+    '@nuxt/content'
+  ],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
   ogImage: {
     fonts: ['Poppins:700', 'Poppins:900']
+  },
+  content: {
+    highlight: {
+      theme: 'github-dark',
+      langs: [
+        'go',
+        'js',
+        'ts',
+        'json',
+        'rust',
+        'md',
+        'html',
+        'bash',
+        'shell',
+        'proto',
+        'yaml',
+        'toml',
+        'dockerfile',
+        'terraform',
+        'sql',
+        'vue',
+        'c',
+        'cpp',
+        'make',
+        'makefile',
+        'python',
+      ]
+    },
+    markdown: {
+      anchorLinks: false // Note: disable anchor links to create custom ones
+    }
   },
   vue: {
     compilerOptions: {

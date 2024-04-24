@@ -4,7 +4,7 @@ const props = defineProps<{
 }>()
 
 const processed = computed(() => {
-  return addColorPunctuationForLastSignToHtmlString(props.value)
+  return addColorPunctuationToHtmlString(props.value)
 })
 </script>
 

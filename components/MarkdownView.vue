@@ -14,10 +14,6 @@ const props = defineProps<{
 const parsedMarkdown = markdownParser.parse
   ? await markdownParser.parse(props.id, props.value, {})
   : ''
-
-// TODO: Set font for headers
-// TODO: Add anchor links to headers
-// TODO: color headers punctuations
 </script>
 
 <style>

@@ -57,7 +57,7 @@ const { data, error } = useAsyncData<any, unknown, PostListItem[]>('blog-list', 
   <!-- TODO: Add pagination here -->
 
   <ElementsArticleProse>
-    <h3 class="text-left">Welcome to Sam Gozman's Dev Blog!</h3>
+    <ProseH3 class="text-left">Welcome to Sam Gozman's Dev Blog!</ProseH3>
     <p>
       Hello fellow developers and enthusiasts! I'm thrilled to welcome you to my blog, a space where
       I share insights, experiences, and updates from the world of development. As a lead backend

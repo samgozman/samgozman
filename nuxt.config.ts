@@ -73,7 +73,15 @@ export default defineNuxtConfig({
       ]
     },
     markdown: {
-      anchorLinks: false // Note: disable anchor links to create custom ones
+      anchorLinks: true,
+      tags: {
+        // https://content.nuxt.com/get-started/configuration#markdown
+        // Need to see what fields are going to be used, create custom component
+        // See: ./node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH1.vue
+        h1: 'ProseH1',
+        h2: 'ProseH2',
+        h3: 'ProseH3',
+      }
     }
   },
   vue: {

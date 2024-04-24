@@ -39,7 +39,7 @@ export function forceMagicDwarfsToColorHeaders(element: HTMLElement) {
       let text = textNode.nodeValue || ''
 
       // Replace punctuation with wrapped punctuation
-      text = text.replace(/([.,;:!?&*$'])/g, '<span class="text-primary">$1</span>')
+      text = addColorPunctuationToHtmlString(text)
 
       // Create a temporary div to convert string to HTML
       const tempDiv = document.createElement('div')
@@ -54,6 +54,10 @@ export function forceMagicDwarfsToColorHeaders(element: HTMLElement) {
       header.removeChild(textNode)
     }
   })
+}
+
+function addColorPunctuationToHtmlString(value: string) {
+  return value.replace(/([.,;:!?&*$'])/g, '<span class="text-primary">$1</span>')
 }
 
 export function calculateAge(date: Date) {

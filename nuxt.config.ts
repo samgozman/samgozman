@@ -31,12 +31,58 @@ export default defineNuxtConfig({
   devServer: {
     port: 5555
   },
-  modules: ['@nuxt/fonts', 'nuxt-icon', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', 'nuxt-og-image'],
+  modules: [
+    '@nuxt/fonts',
+    'nuxt-icon',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/sitemap',
+    'nuxt-og-image',
+    '@nuxt/content'
+  ],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
   ogImage: {
     fonts: ['Poppins:700', 'Poppins:900']
+  },
+  content: {
+    highlight: {
+      theme: 'github-dark',
+      langs: [
+        'go',
+        'js',
+        'ts',
+        'json',
+        'rust',
+        'md',
+        'html',
+        'bash',
+        'shell',
+        'proto',
+        'yaml',
+        'toml',
+        'dockerfile',
+        'terraform',
+        'sql',
+        'vue',
+        'c',
+        'cpp',
+        'make',
+        'makefile',
+        'python'
+      ]
+    },
+    markdown: {
+      anchorLinks: true,
+      tags: {
+        // https://content.nuxt.com/get-started/configuration#markdown
+        // Need to see what fields are going to be used, create custom component
+        // See: ./node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH1.vue
+        h1: 'ProseH1',
+        h2: 'ProseH2',
+        h3: 'ProseH3',
+      }
+    }
   },
   vue: {
     compilerOptions: {
@@ -80,13 +126,16 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=1' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=1' }
       ],
-      script: [
-        {
-          async: true,
-          src: 'https://umami.host.extr.app/script.js',
-          'data-website-id': 'aa340c87-a780-4076-9b07-563f34742edf'
-        }
-      ],
+      script:
+        process.env.NODE_ENV === 'production'
+          ? [
+              {
+                async: true,
+                src: 'https://umami.host.extr.app/script.js',
+                'data-website-id': 'aa340c87-a780-4076-9b07-563f34742edf'
+              }
+            ]
+          : [],
       bodyAttrs: {
         class: 'bg-orange-500'
       },

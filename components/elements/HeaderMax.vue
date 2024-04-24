@@ -3,11 +3,11 @@ const props = defineProps<{
   value: string
 }>()
 
-const title = createTwoPartsTitle(props.value)
+const processed = computed(() => {
+  return addColorPunctuationForLastSignToHtmlString(props.value)
+})
 </script>
 
 <template>
-  <h1 class="not-prose text-5xl font-bold font-poppins mb-4">
-    {{ title.part1 }}<span v-if="title.part2" class="text-primary">{{ title.part2 }}</span>
-  </h1>
+  <h1 class="not-prose text-5xl font-bold font-poppins mb-4" v-html="processed"></h1>
 </template>

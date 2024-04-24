@@ -69,7 +69,7 @@ export default defineNuxtConfig({
         'cpp',
         'make',
         'makefile',
-        'python',
+        'python'
       ]
     },
     markdown: {
@@ -118,13 +118,16 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=1' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=1' }
       ],
-      script: [
-        {
-          async: true,
-          src: 'https://umami.host.extr.app/script.js',
-          'data-website-id': 'aa340c87-a780-4076-9b07-563f34742edf'
-        }
-      ],
+      script:
+        process.env.NODE_ENV === 'production'
+          ? [
+              {
+                async: true,
+                src: 'https://umami.host.extr.app/script.js',
+                'data-website-id': 'aa340c87-a780-4076-9b07-563f34742edf'
+              }
+            ]
+          : [],
       bodyAttrs: {
         class: 'bg-orange-500'
       },

@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://gozman.space'
   },
+  ssr: true,
   sitemap: {
     exclude: [
       '/admin/**',
@@ -26,6 +27,22 @@ export default defineNuxtConfig({
         }
       ]
     }
+  },
+  routeRules: {
+    // Home, projects and some subscription pages pre-rendered on build
+    '/': { prerender: true },
+    '/projects': { prerender: true },
+    '/subscription': { prerender: true },
+    '/subscription/success': { prerender: true },
+    // Disable SSR for subscription pages (just in case)
+    '/subscription/confirm': { ssr: false },
+    '/subscription/unsubscribe': { ssr: false },
+    // Blog page generated on demand, cached until API response changes
+    '/blog': { swr: true },
+    // Blog page generated on demand, cached until API response changes
+    '/blog/**': { swr: true },
+    // Admin pages are not pre-rendered
+    '/admin/**': { ssr: false }
   },
   devtools: { enabled: true },
   devServer: {
@@ -80,7 +97,7 @@ export default defineNuxtConfig({
         // See: ./node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH1.vue
         h1: 'ProseH1',
         h2: 'ProseH2',
-        h3: 'ProseH3',
+        h3: 'ProseH3'
       }
     }
   },

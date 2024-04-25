@@ -59,6 +59,16 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     '@nuxt/content'
   ],
+  extends: ['nuxt-umami'],
+  appConfig: {
+    umami: {
+      host: 'https://umami.host.extr.app',
+      id: 'aa340c87-a780-4076-9b07-563f34742edf',
+      domains: ['gozman.space'],
+      ignoreLocalhost: true,
+      version: '2'
+    }
+  },
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
@@ -146,16 +156,6 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=1' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=1' }
       ],
-      script:
-        process.env.NODE_ENV === 'production'
-          ? [
-              {
-                async: true,
-                src: 'https://umami.host.extr.app/script.js',
-                'data-website-id': 'aa340c87-a780-4076-9b07-563f34742edf'
-              }
-            ]
-          : [],
       bodyAttrs: {
         class: 'bg-orange-500'
       },

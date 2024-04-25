@@ -52,7 +52,7 @@ onMounted(async () => {
 
 <template>
   <ElementsArticleProse>
-    <h2>Subscription confirmation:</h2>
+    <ProseH2>Subscription confirmation:</ProseH2>
     <p v-if="error" class="text-error">{{ error }}</p>
     <p v-else>You have successfully subscribed to my blog! 🧡</p>
   </ElementsArticleProse>

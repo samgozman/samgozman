@@ -19,7 +19,7 @@ defineOgImageComponent('Default', {
 
 <template>
   <ElementsArticleProse class="flex flex-col items-center sm:items-start">
-    <h2>Subscribe to my blog:</h2>
+    <ProseH2>Subscribe to my blog:</ProseH2>
     <p>
       Get the latest blog posts delivered right to your inbox. Enter your email address below and
       click the subscribe button 👾

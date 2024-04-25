@@ -7,7 +7,7 @@ useSeoMeta({
 
 <template>
   <ElementsArticleProse>
-    <h2>Thank you for subscribing!</h2>
+    <ProseH2>Thank you for subscribing!</ProseH2>
     <p>
       You will receive a confirmation email shortly. Please click the link in the email to confirm
       your subscription.

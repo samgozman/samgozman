@@ -47,7 +47,7 @@ const onSubmit = async (event: Event) => {
 
 <template>
   <ElementsArticleProse>
-    <h2>Unsubscribe fom blog:</h2>
+    <ProseH2>Unsubscribe from blog:</ProseH2>
 
     <form @submit="onSubmit">
       <p v-if="error" class="text-error">{{ error }}</p>

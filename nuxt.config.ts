@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   site: {
     url: 'https://gozman.space'
   },
+  nitro: {
+    compressPublicAssets: true
+  },
   ssr: true,
   sitemap: {
     exclude: [

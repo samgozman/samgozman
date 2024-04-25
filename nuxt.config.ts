@@ -4,7 +4,12 @@ export default defineNuxtConfig({
     url: 'https://gozman.space'
   },
   nitro: {
-    compressPublicAssets: true
+    compressPublicAssets: {
+      gzip: true,
+      // Brotli is not fully supported by bun yet
+      // See: https://github.com/oven-sh/bun/issues/267
+      brotli: false
+    }
   },
   ssr: true,
   sitemap: {
@@ -32,11 +37,12 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    // Home, projects and some subscription pages pre-rendered on build
-    '/': { prerender: true },
-    '/projects': { prerender: true },
-    '/subscription': { prerender: true },
-    '/subscription/success': { prerender: true },
+    // Note: 'prerender' option is currently causing problems OgImage in docker container
+    // TODO: Use 'prerender' option when fixed. isr is a good alternative for now to cache pages on demand
+    '/': { isr: true },
+    '/projects': { isr: true },
+    '/subscription': { isr: true },
+    '/subscription/success': { isr: true },
     // Disable SSR for subscription pages (just in case)
     '/subscription/confirm': { ssr: false },
     '/subscription/unsubscribe': { ssr: false },

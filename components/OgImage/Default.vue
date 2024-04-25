@@ -10,6 +10,7 @@ withDefaults(
 </script>
 
 <style>
+/* Note: font-poppins class seems not working for OgImage, so this hack should help */
 .og-preview {
   font-family: 'Poppins', sans-serif;
 }

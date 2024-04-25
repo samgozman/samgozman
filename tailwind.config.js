@@ -17,7 +17,7 @@ module.exports = {
     './nuxt.config.{js,ts}'
   ],
   // Safelisting some classes to avoid content purge
-  safelist: ['bg-orange-500'],
+  safelist: ['bg-orange-500', 'og-preview'],
   theme: {
     extend: {
       fontFamily: {

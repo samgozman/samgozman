@@ -20,7 +20,6 @@
     "cherry-markdown": "^0.8.40",
     "nuxt": "^3.11.2",
     "nuxt-og-image": "^3.0.0-rc.52",
-    "nuxt-umami": "^2.6.0",
     "vue": "3.4.23",
     "vue-router": "^4.3.0"
   },

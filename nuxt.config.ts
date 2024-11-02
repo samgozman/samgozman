@@ -59,7 +59,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxt/fonts',
-    'nuxt-icon',
+    '@nuxt/icon',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sitemap',
     'nuxt-og-image',

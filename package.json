@@ -25,9 +25,9 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@nuxt/icon": "^1.6.1",
     "@tailwindcss/typography": "^0.5.15",
     "daisyui": "4.12.14",
-    "nuxt-icon": "^0.6.10",
     "prettier": "^3.3.3"
   }
 }

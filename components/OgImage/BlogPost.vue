@@ -9,21 +9,15 @@ withDefaults(
 )
 </script>
 
-<style>
-/* Note: font-poppins class seems not working for OgImage, so this hack should help */
-.og-preview {
-  font-family: 'Poppins', sans-serif;
-}
-</style>
-
 <template>
-  <div class="h-full w-full flex items-start justify-start bg-white relative text-[#1F2937] og-preview">
+  <div
+    class="h-full w-full flex items-start justify-start bg-white relative text-[#1F2937] og-preview"
+    style="font-family: 'Poppins', sans-serif"
+  >
     <h1 class="w-full text-7xl p-20 font-black text-left">
       {{ title }}
     </h1>
-    <div
-      class="w-full text-4xl font-bold px-20 absolute bottom-36 left-0 flex justify-between"
-    >
+    <div class="w-full text-4xl font-bold px-20 absolute bottom-36 left-0 flex justify-between">
       <span
         >https<span class="text-orange-500">://</span>gozman<span class="text-orange-500">.</span
         >space</span

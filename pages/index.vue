@@ -4,13 +4,16 @@ const age = calculateAge(new Date('1997-06-01'))
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
-  title: 'Sam Gozman | Backend Engineer & Open Source Developer',
-  ogTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',
-  twitterTitle: 'Sam Gozman | Backend Engineer & Open Source Developer',
-  description: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
-  ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
-  twitterDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
-  twitterImageAlt: 'Sam Gozman | Backend Engineer & Open Source Developer',
+  title: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
+  ogTitle: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
+  twitterTitle: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
+  description:
+    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+  ogDescription:
+    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+  twitterDescription:
+    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+  twitterImageAlt: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
   ogType: 'profile',
   profileFirstName: 'Sam',
   profileLastName: 'Gozman',
@@ -32,11 +35,14 @@ defineOgImageComponent('Default', {
 
       <div class="flex-grow">
         <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
-        <ElementsHeaderMax value="Backend Engineer & Open Source Developer." class="text-left" />
+        <ElementsHeaderMax
+          value="Senior Backend Engineer & Open Source Developer."
+          class="text-left"
+        />
         <p>
           Welcome to my dev
-          <NuxtLink class="link link-hover" :to="{ name: 'blog' }">blog</NuxtLink> 2.0! I'm an
-          experienced Backend Engineer with expertise in Golang and NodeJS and a big fan of
+          <NuxtLink class="link link-hover" :to="{ name: 'blog' }">blog</NuxtLink> 2.0! I'm a Senior
+          Backend Engineer and a Team Lead with expertise in Golang and NodeJS and a big fan of
           open-source. I've been working as a developer over the course of the last
           <strong>{{ experience }}+ years</strong>.
         </p>

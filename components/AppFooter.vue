@@ -24,7 +24,9 @@
           </a>
         </div>
         <p class="my-2 text-2xl md:text-xl">Sam Gozman</p>
-        <p class="mt-2 text-xl md:text-sm">Backend Engineer:<br />Golang, NodeJS, Rust.</p>
+        <p class="mt-2 text-xl md:text-sm">
+          Team Lead | Senior Backend Engineer:<br />Golang, NodeJS, Rust.
+        </p>
       </div>
     </aside>
     <div class="order-3 sm:order-2 flex">

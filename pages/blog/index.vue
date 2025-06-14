@@ -8,9 +8,12 @@ useSeoMeta({
   title: 'Blog | Sam Gozman',
   ogTitle: 'Blog | Sam Gozman',
   twitterTitle: 'Blog | Sam Gozman',
-  description: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
-  ogDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
-  twitterDescription: 'Developer blog of Sam Gozman. Backend Engineer & Open Source Developer.',
+  description:
+    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+  ogDescription:
+    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+  twitterDescription:
+    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
   twitterImageAlt: 'Blog | Sam Gozman'
 })
 

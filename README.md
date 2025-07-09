@@ -9,5 +9,5 @@ If you are interested in learning more about me, my OSS projects or reading a de
 
 📇 [LinkedIn: in/samgozman](https://www.linkedin.com/in/samgozman/)
 
-![GitHub stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=samgozman&count_private=true&show_icons=true&theme=transparent&hide_border=true&hide_rank=true)
-![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=samgozman&layout=compact&theme=transparent&hide_border=true&langs_count=10)
+![GitHub stats](https://samgozman-github-readme-stats.extr.app/?username=samgozman&count_private=true&show_icons=true&theme=transparent&hide_border=true&hide_rank=true)
+![Top Langs](https://samgozman-github-readme-stats.extr.app/top-langs/?username=samgozman&layout=compact&theme=transparent&hide_border=true&langs_count=10&exclude_repo=BLV-MGN-Cube-SKR-Pro-TMC2209,sensors-data-collection)

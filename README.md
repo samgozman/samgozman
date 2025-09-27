@@ -9,5 +9,5 @@ If you are interested in learning more about me, my OSS projects or reading a de
 
 📇 [LinkedIn: in/samgozman](https://www.linkedin.com/in/samgozman/)
 
-[![GitHub Top Languages for samgozman](https://github-statcrab-ce.extr.app/api/langs-card?username=samgozman&layout=horizontal&max_languages=8&theme=dracula&size_weight=0.85&count_weight=0.15&exclude_repo=BLV-MGN-Cube-SKR-Pro-TMC2209,sensors-data-collection)](https://github.com/samgozman/github-statcrab)
-[![GitHub Stats for samgozman](https://github-statcrab-ce.extr.app/api/stats-card?username=samgozman&theme=dracula&hide=started_discussions_count,answered_discussions_count&hide_title=true)](https://github.com/samgozman/github-statcrab)
+[![GitHub Top Languages for samgozman](https://github-statcrab-ce.extr.app/api/langs-card?username=samgozman&layout=horizontal&max_languages=8&theme=dracula&size_weight=0.85&count_weight=0.15&exclude_repo=BLV-MGN-Cube-SKR-Pro-TMC2209,sensors-data-collection&offset_y=13)](https://github.com/samgozman/github-statcrab)
+[![GitHub Stats for samgozman](https://github-statcrab-ce.extr.app/api/stats-card?username=samgozman&theme=dracula&hide=started_discussions_count,answered_discussions_count&hide_title=true&offset_y=12)](https://github.com/samgozman/github-statcrab)

@@ -35,10 +35,22 @@ defineOgImageComponent('Default', {
       class="not-prose timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-lg"
     >
       <ProjectsItem
-        date="2024 1/4"
-        title="go-bloggy & my blog 2.0"
+        date="2025 3/4"
+        title="github-statcrab - GitHub SVG stats"
         side="left"
         type="start"
+        backendSourceLink="https://github.com/samgozman/github-statcrab"
+      >
+        In September 2025 I created github-statcrab, a server that generates detailed statistics
+        about GitHub profile activities in SVG format. It is useful for developers who want to
+        showcase their GitHub achievements on Readme files or personal websites. The project is
+        built with Rust and was created for no reason other than my own amusement.
+      </ProjectsItem>
+      <ProjectsItem
+        date="2024 1/4"
+        title="go-bloggy & my blog 2.0"
+        side="right"
+        type="middle"
         backendSourceLink="https://github.com/samgozman/go-bloggy"
         frontendSourceLink="https://github.com/samgozman/samgozman"
       >

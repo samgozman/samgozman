@@ -9,5 +9,5 @@ If you are interested in learning more about me, my OSS projects or reading a de
 
 📇 [LinkedIn: in/samgozman](https://www.linkedin.com/in/samgozman/)
 
-![GitHub stats](https://samgozman-github-readme-stats.extr.app/?username=samgozman&count_private=true&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&show=reviews)
-![Top Langs](https://samgozman-github-readme-stats.extr.app/top-langs/?username=samgozman&layout=compact&theme=transparent&hide_border=true&langs_count=10&exclude_repo=BLV-MGN-Cube-SKR-Pro-TMC2209,sensors-data-collection)
+[![GitHub Top Languages for samgozman](https://github-statcrab-ce.extr.app/api/langs-card?username=samgozman&layout=horizontal&max_languages=8&theme=dracula&size_weight=0.85&count_weight=0.15&exclude_repo=BLV-MGN-Cube-SKR-Pro-TMC2209,sensors-data-collection)](https://github.com/samgozman/github-statcrab)
+[![GitHub Stats for samgozman](https://github-statcrab-ce.extr.app/api/stats-card?username=samgozman&theme=dracula&hide=started_discussions_count,answered_discussions_count&hide_title=true)](https://github.com/samgozman/github-statcrab)

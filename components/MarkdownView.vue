@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import markdownParser from '@nuxt/content/transformers/markdown'
+import { parseMarkdown } from '@nuxtjs/mdc/runtime'
 
 const props = defineProps<{
   id: string
@@ -7,13 +7,7 @@ const props = defineProps<{
   createdAt: Date
 }>()
 
-// Note: this a bit of a workaround to get the parsed markdown.
-// See: https://github.com/nuxt/content/issues/924#issuecomment-1274633178
-// Alternatively, you can use https://github.com/nuxt-modules/mdc to parse the markdown.
-// See: https://github.com/nuxt/content/issues/924#issuecomment-1851945345
-const parsedMarkdown = markdownParser.parse
-  ? await markdownParser.parse(props.id, props.value, {})
-  : ''
+const parsedMarkdown = await parseMarkdown(props.value)
 </script>
 
 <style>

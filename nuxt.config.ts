@@ -72,38 +72,39 @@ export default defineNuxtConfig({
     fonts: ['Poppins:700', 'Poppins:900']
   },
   content: {
-    highlight: {
-      theme: 'github-dark',
-      langs: [
-        'go',
-        'js',
-        'ts',
-        'json',
-        'rust',
-        'md',
-        'html',
-        'bash',
-        'shell',
-        'proto',
-        'yaml',
-        'toml',
-        'dockerfile',
-        'terraform',
-        'sql',
-        'vue',
-        'c',
-        'cpp',
-        'make',
-        'makefile',
-        'python'
-      ]
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'github-dark',
+          langs: [
+            'go',
+            'js',
+            'ts',
+            'json',
+            'rust',
+            'md',
+            'html',
+            'bash',
+            'shell',
+            'proto',
+            'yaml',
+            'toml',
+            'dockerfile',
+            'terraform',
+            'sql',
+            'vue',
+            'c',
+            'cpp',
+            'make',
+            'makefile',
+            'python'
+          ]
+        }
+      }
     },
-    markdown: {
+    renderer: {
       anchorLinks: true,
-      tags: {
-        // https://content.nuxt.com/get-started/configuration#markdown
-        // Need to see what fields are going to be used, create custom component
-        // See: ./node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH1.vue
+      alias: {
         h1: 'ProseH1',
         h2: 'ProseH2',
         h3: 'ProseH3'

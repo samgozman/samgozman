@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2026-04-03',
   site: {
     url: 'https://gozman.space'
   },
@@ -68,8 +69,13 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
-  ogImage: {
-    fonts: ['Poppins:700', 'Poppins:900']
+  ogImage: {},
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@hcaptcha/vue3-hcaptcha'
+      ]
+    }
   },
   content: {
     build: {

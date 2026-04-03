@@ -10,7 +10,7 @@ useSeoMeta({
   twitterDescription: "Sam Gozman's open-source projects.",
   twitterImageAlt: 'Projects | Sam Gozman'
 })
-defineOgImageComponent('Default', {
+defineOgImage('Default', {
   title: 'Projects'
 })
 </script>

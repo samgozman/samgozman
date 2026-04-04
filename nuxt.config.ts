@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2026-04-03',
   site: {
     url: 'https://gozman.space'
   },
@@ -10,14 +9,6 @@ export default defineNuxtConfig({
       // Brotli is not fully supported by bun yet
       // See: https://github.com/oven-sh/bun/issues/267
       brotli: false
-    },
-    // Use in-memory driver for payload cache to avoid ENOTDIR conflict
-    // when both /blog and /blog/** routes are cached on the filesystem
-    // (FS driver can't have "blog" as both a file and a directory)
-    storage: {
-      'cache:nuxt:payload': {
-        driver: 'lru-cache'
-      }
     }
   },
   ssr: true,
@@ -72,63 +63,47 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sitemap',
     'nuxt-og-image',
-    '@nuxt/content',
-    '@nuxtjs/robots'
+    '@nuxt/content'
   ],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
-  ogImage: {},
-  // Re-enable highlight API route for client-side parseMarkdown in MarkdownView
-  mdc: {
-    highlight: {
-      noApiRoute: false
-    }
-  },
-  vite: {
-    optimizeDeps: {
-      include: [
-        '@hcaptcha/vue3-hcaptcha',
-        'debug', // CJS
-        '@vue/devtools-core',
-        '@vue/devtools-kit',
-      ]
-    }
+  ogImage: {
+    fonts: ['Poppins:700', 'Poppins:900']
   },
   content: {
-    build: {
-      markdown: {
-        highlight: {
-          theme: 'github-dark',
-          langs: [
-            'go',
-            'js',
-            'ts',
-            'json',
-            'rust',
-            'md',
-            'html',
-            'bash',
-            'shell',
-            'proto',
-            'yaml',
-            'toml',
-            'dockerfile',
-            'terraform',
-            'sql',
-            'vue',
-            'c',
-            'cpp',
-            'make',
-            'makefile',
-            'python'
-          ]
-        }
-      }
+    highlight: {
+      theme: 'github-dark',
+      langs: [
+        'go',
+        'js',
+        'ts',
+        'json',
+        'rust',
+        'md',
+        'html',
+        'bash',
+        'shell',
+        'proto',
+        'yaml',
+        'toml',
+        'dockerfile',
+        'terraform',
+        'sql',
+        'vue',
+        'c',
+        'cpp',
+        'make',
+        'makefile',
+        'python'
+      ]
     },
-    renderer: {
+    markdown: {
       anchorLinks: true,
-      alias: {
+      tags: {
+        // https://content.nuxt.com/get-started/configuration#markdown
+        // Need to see what fields are going to be used, create custom component
+        // See: ./node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH1.vue
         h1: 'ProseH1',
         h2: 'ProseH2',
         h3: 'ProseH3'
@@ -149,10 +124,9 @@ export default defineNuxtConfig({
       {
         name: 'Poppins',
         provider: 'google',
-        global: true,
-        weights: ['300', '400', '500', '600', '700', '800', '900'],
+        weights: ['300', '400', '500', '600', '700', '800', '900', '1300', '1400'],
         display: 'swap',
-        styles: ['normal']
+        styles: ['italic', 'normal']
       }
     ]
   },

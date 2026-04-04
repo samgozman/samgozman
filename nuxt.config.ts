@@ -148,6 +148,7 @@ export default defineNuxtConfig({
       {
         name: 'Poppins',
         provider: 'google',
+        global: true,
         weights: ['300', '400', '500', '600', '700', '800', '900', '1300', '1400'],
         display: 'swap',
         styles: ['italic', 'normal']

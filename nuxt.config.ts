@@ -5,10 +5,12 @@ export default defineNuxtConfig({
     url: 'https://gozman.space'
   },
   nitro: {
+    preset: 'bun',
+    externals: {
+      inline: ['vue']
+    },
     compressPublicAssets: {
       gzip: true,
-      // Brotli is not fully supported by bun yet
-      // See: https://github.com/oven-sh/bun/issues/267
       brotli: false
     },
     // Use in-memory driver for payload cache to avoid ENOTDIR conflict

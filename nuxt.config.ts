@@ -72,7 +72,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sitemap',
     'nuxt-og-image',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/robots'
   ],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]

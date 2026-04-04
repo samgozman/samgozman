@@ -78,10 +78,19 @@ export default defineNuxtConfig({
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
   ogImage: {},
+  // Re-enable highlight API route for client-side parseMarkdown in MarkdownView
+  mdc: {
+    highlight: {
+      noApiRoute: false
+    }
+  },
   vite: {
     optimizeDeps: {
       include: [
-        '@hcaptcha/vue3-hcaptcha'
+        '@hcaptcha/vue3-hcaptcha',
+        'debug', // CJS
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
       ]
     }
   },

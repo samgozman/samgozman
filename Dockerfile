@@ -1,5 +1,6 @@
 # see all versions at https://hub.docker.com/r/oven/bun/tags
-FROM oven/bun:1.1.3-alpine as base
+FROM oven/bun:1.3.11-alpine AS base
+RUN apk add --no-cache python3 make g++
 WORKDIR /usr/src/app
 
 # install dependencies into temp directory
@@ -28,7 +29,7 @@ ENV PORT=3000
 RUN bun run build
 
 # release image
-FROM node:lts-alpine3.19 AS release
+FROM node:lts-alpine3.23 AS release
 WORKDIR /usr/src/app
 COPY --from=prerelease /usr/src/app/.output .
 

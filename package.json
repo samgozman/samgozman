@@ -21,7 +21,6 @@
     "@nuxtjs/tailwindcss": "6.12.2",
     "@takumi-rs/core": "^0.73.1",
     "baseline-browser-mapping": "^2.10.14",
-    "better-sqlite3": "^12.8.0",
     "caniuse-lite": "^1.0.30001785",
     "cherry-markdown": "0.10.3",
     "nuxt": "4.4.2",

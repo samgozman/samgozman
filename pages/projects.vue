@@ -10,9 +10,7 @@ useSeoMeta({
   twitterDescription: "Sam Gozman's open-source projects.",
   twitterImageAlt: 'Projects | Sam Gozman'
 })
-defineOgImage('Default', {
-  title: 'Projects'
-})
+defineOgImage('Default', { title: 'Projects' })
 </script>
 
 <template>
@@ -63,7 +61,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2023 4/4 - 2024 1/4"
         title="FinThread AI news bot"
-        side="right"
+        side="left"
         type="middle"
         backendSourceLink="https://github.com/samgozman/fin-thread"
         telegramLink="https://t.me/finthread"
@@ -76,7 +74,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2023 3/4"
         title="Hopa Bot"
-        side="left"
+        side="right"
         type="middle"
         backendSourceLink="https://github.com/Batumi-IT/hopa-bot"
         telegramLink="https://t.me/batumi_hopa_bot"
@@ -87,7 +85,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2023 1/4"
         title="RVP - Remote Value Parser"
-        side="right"
+        side="left"
         type="middle"
         sourceLink="https://github.com/samgozman/rvp"
       >
@@ -98,7 +96,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2023 1/4"
         title="Short-Fork 2.0"
-        side="left"
+        side="right"
         type="middle"
         sourceLink="https://github.com/samgozman/short-fork"
         websiteLink="https://short-fork.extr.app/"
@@ -110,7 +108,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2022 2/4 - 2023 1/4"
         title="Validity.Red - document validity manager"
-        side="right"
+        side="left"
         type="middle"
         sourceLink="https://github.com/samgozman/validity.red"
         websiteLink="https://validity.red/"
@@ -124,7 +122,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2021 2/4 - 2022 2/4"
         title="TightShorts - FINRA screener"
-        side="left"
+        side="right"
         type="middle"
         backendSourceLink="https://github.com/samgozman/finra-short-api"
         frontendSourceLink="https://github.com/samgozman/tightshorts"
@@ -140,7 +138,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2021 1/4 - 2021 3/4"
         title="Short-Fork 1.0"
-        side="right"
+        side="left"
         type="middle"
         sourceLink="https://github.com/samgozman/short-fork"
         websiteLink="https://short-fork.extr.app/"
@@ -155,7 +153,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2021 2/4 - 2021 3/4"
         title="TradingView scripts"
-        side="left"
+        side="right"
         type="middle"
         websiteLink="https://www.tradingview.com/u/samgozman/#published-scripts"
       >
@@ -164,7 +162,7 @@ defineOgImage('Default', {
         oscillators and charts, even cultivating a small community around it. This venture has
         reignited my passion for open-source coding after a period of quiet reflection.
       </ProjectsItem>
-      <ProjectsItem date="2016-2021" title="CNC, 3D printers & lasers" side="right" type="middle">
+      <ProjectsItem date="2016-2021" title="CNC, 3D printers & lasers" side="left" type="middle">
         Between 2016 and 2021, after landing my first job as a web developer, I shifted my focus
         away from building websites for myself and friends. Instead, I embarked on a period of
         self-discovery, channeling all my spare time and resources into crafting CNC machines,
@@ -179,7 +177,7 @@ defineOgImage('Default', {
       <ProjectsItem
         date="2016 4/4"
         title="YoptaScript: 2k stars on GitHub"
-        side="left"
+        side="right"
         type="middle"
         sourceLink="https://github.com/samgozman/YoptaScript"
         websiteLink="https://yopta.space/"
@@ -191,7 +189,7 @@ defineOgImage('Default', {
         within Slavic IT communities. <br />
         <i>What better way to enter the profession than with a bit of humor and creativity?</i>
       </ProjectsItem>
-      <ProjectsItem date="2010 - 2016" title="My path into programming" side="right" type="middle">
+      <ProjectsItem date="2010 - 2016" title="My path into programming" side="left" type="middle">
         From 2010 to 2016, while I was still studying, I spent a lot of time creating websites for
         friends and acquaintances. Besides those, I also started several projects that are now
         inactive, like a website teaching how to develop modules for CMF MODX using PHP & Fenom, a
@@ -199,7 +197,7 @@ defineOgImage('Default', {
         they've been forgotten. One of the projects that survived until today is my personal blog -
         the reincarnation of which you are currently witnessing.
       </ProjectsItem>
-      <ProjectsItem date="2009" title="The Game" side="left" type="end">
+      <ProjectsItem date="2009" title="The Game" side="right" type="end">
         Back in 2009, when I was just 12 years old, I got seriously into programming for the first
         time. It all started with creating mods for computer game Stalker, initially by tweaking
         other people's work. Soon, I had a small group of followers, which encouraged me to make my

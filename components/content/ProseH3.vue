@@ -1,5 +1,5 @@
 <template>
-  <h3 :id="id" class="leading-tight">
+  <h3 :id="id">
     <LinkAnchor v-if="generate" :id="id" />
     <span v-html="processedSlotContent" />
   </h3>

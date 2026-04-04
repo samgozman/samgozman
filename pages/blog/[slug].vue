@@ -55,7 +55,7 @@ if (data.value) {
     articleAuthor: ['Sam Gozman']
   })
 
-  defineOgImage('BlogPost', {
+  defineOgImageComponent('BlogPost', {
     title: data.value.title
   })
 }

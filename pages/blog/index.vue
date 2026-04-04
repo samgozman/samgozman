@@ -17,7 +17,7 @@ useSeoMeta({
   twitterImageAlt: 'Blog | Sam Gozman'
 })
 
-defineOgImage('Default', {
+defineOgImageComponent('Default', {
   title: 'Blog'
 })
 

@@ -1,5 +1,5 @@
 <template>
-  <h1 :id="id">
+  <h1 :id="id" class="leading-tight">
     <span v-html="processedSlotContent" />
   </h1>
 </template>

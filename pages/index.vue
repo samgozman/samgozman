@@ -20,7 +20,7 @@ useSeoMeta({
   profileUsername: 'samgozman'
 })
 
-defineOgImageComponent('Default', {
+defineOgImage('Default', {
   title: 'Profile'
 })
 </script>

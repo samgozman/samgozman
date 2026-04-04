@@ -12,7 +12,7 @@ useSeoMeta({
     'Subscribe to my blog and get the latest blog posts delivered right to your inbox.',
   twitterImageAlt: 'Subscribe | Sam Gozman'
 })
-defineOgImageComponent('Default', {
+defineOgImage('Default', {
   title: 'Subscribe'
 })
 </script>

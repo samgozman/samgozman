@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     },
     compressPublicAssets: {
       gzip: true,
-      brotli: false
+      brotli: true
     },
     // Use in-memory driver for payload cache to avoid ENOTDIR conflict
     // when both /blog and /blog/** routes are cached on the filesystem

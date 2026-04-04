@@ -10,6 +10,14 @@ export default defineNuxtConfig({
       // Brotli is not fully supported by bun yet
       // See: https://github.com/oven-sh/bun/issues/267
       brotli: false
+    },
+    // Use in-memory driver for payload cache to avoid ENOTDIR conflict
+    // when both /blog and /blog/** routes are cached on the filesystem
+    // (FS driver can't have "blog" as both a file and a directory)
+    storage: {
+      'cache:nuxt:payload': {
+        driver: 'lru-cache'
+      }
     }
   },
   ssr: true,

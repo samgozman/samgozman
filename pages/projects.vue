@@ -126,14 +126,12 @@ defineOgImage('Default', { title: 'Projects' })
         type="middle"
         backendSourceLink="https://github.com/samgozman/finra-short-api"
         frontendSourceLink="https://github.com/samgozman/tightshorts"
-        websiteLink="https://tightshorts.extr.app/"
       >
         The Tightshorts Screener is a daily short volume screener tailored for the US stock market,
         leveraging FINRA data. Developed with TypeScript, NestJS, Golang with MongoDB the project
         serves its purpose despite harboring a codebase deemed a complete mess, arguably one of the
-        worst I've ever produced, plagued by numerous N+1 issues and suboptimal design choices
-        leading to slow queries. In 2023, I attempted a ground-up refactoring but abandoned the
-        endeavor for newer projects.
+        worst I've ever produced. The service was deprecated and discontinued in Q1 2026 due to
+        increasing difficulty in parsing FINRA data.
       </ProjectsItem>
       <ProjectsItem
         date="2021 1/4 - 2021 3/4"

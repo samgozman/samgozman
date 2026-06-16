@@ -24,7 +24,7 @@
     "caniuse-lite": "^1.0.30001785",
     "cherry-markdown": "0.10.3",
     "nuxt": "4.4.2",
-    "nuxt-og-image": "6.3.2",
+    "nuxt-og-image": "6.4.9",
     "vue": "3.5.12",
     "vue-router": "5.0.4"
   },

@@ -33,10 +33,31 @@ defineOgImage('Default', { title: 'Projects' })
       class="not-prose timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-lg"
     >
       <ProjectsItem
+        date="2026 2/4"
+        title="temporalcheck-lint"
+        side="right"
+        type="start"
+        sourceLink="https://github.com/samgozman/temporalcheck-lint"
+      >
+        temporalcheck-lint is a golangci-lint plugin for static analysis of Temporal Go SDK code. It
+        restores compile-time checks to catch type and panic issues before runtime, packaging 13
+        analyzers in one linter.
+      </ProjectsItem>
+      <ProjectsItem
+        date="2026 2/4"
+        title="maxcomments-lint"
+        side="right"
+        type="middle"
+        sourceLink="https://github.com/samgozman/maxcomments-lint"
+      >
+        maxcomments-lint is a golangci-lint plugin that limits comment density per function and file
+        using fixed caps or line-to-comment ratios. It checks comment quantity, not style.
+      </ProjectsItem>
+      <ProjectsItem
         date="2025 3/4"
         title="github-statcrab - GitHub SVG stats"
         side="left"
-        type="start"
+        type="middle"
         backendSourceLink="https://github.com/samgozman/github-statcrab"
       >
         In September 2025 I created github-statcrab, a server that generates detailed statistics
@@ -111,13 +132,12 @@ defineOgImage('Default', { title: 'Projects' })
         side="left"
         type="middle"
         sourceLink="https://github.com/samgozman/validity.red"
-        websiteLink="https://validity.red/"
       >
         Validity.Red is a free web service for managing the expiration dates of documents
         (passports, travel cards, vaccinations, insurance, etc) and synchronizing them with your
         calendar. It is written in Go, TypeScript, Vue, and Rust on top of gRPC. <br />
         Despite pouring considerable effort and affection into this side project, it ultimately
-        ended up being a complete flop.
+        ended up being a complete flop. The service was discontinued in Q1 2026.
       </ProjectsItem>
       <ProjectsItem
         date="2021 2/4 - 2022 2/4"

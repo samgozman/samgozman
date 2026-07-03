@@ -30,7 +30,9 @@ const goTo = (path: string) => clearError({ redirect: path })
       </h1>
 
       <template v-if="isNotFound">
-        <p class="mt-4 text-2xl md:text-3xl font-bold font-poppins">Well, this is awkward<span class="text-primary">.</span></p>
+        <p class="mt-4 text-2xl md:text-3xl font-bold font-poppins">
+          Well, this is awkward<span class="text-primary">.</span>
+        </p>
         <p class="mt-3 max-w-md text-base-content/70">
           That page wandered off somewhere — a few older posts have been retired over the years.
           Good news: the blog is alive and well, with fresh writing.

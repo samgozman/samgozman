@@ -63,9 +63,10 @@ export default defineNuxtConfig({
     // Disable SSR for subscription pages (just in case)
     '/subscription/confirm': { ssr: false },
     '/subscription/unsubscribe': { ssr: false },
-    // Blog page generated on demand, cached until API response changes
+    // Blog index (page 1); deeper pages live at /blog/page/N — both matched
+    // by /blog/** below. Path-based paging keeps each page's cache distinct.
     '/blog': { swr: true },
-    // Blog page generated on demand, cached until API response changes
+    // Post pages and /blog/page/N, generated on demand and cached per path.
     '/blog/**': { swr: true },
     // Admin pages are not pre-rendered
     '/admin/**': { ssr: false }
@@ -74,13 +75,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 5555
   },
-  modules: [
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/seo',
-    '@nuxt/content'
-  ],
+  modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@nuxtjs/seo', '@nuxt/content'],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },

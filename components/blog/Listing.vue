@@ -51,6 +51,13 @@ const { data } = await useAsyncData(`blog-list-${props.page}`, async () => {
 
 const totalPages = computed(() => Math.max(1, Math.ceil((data.value?.total ?? 0) / PER_PAGE)))
 
+// Pages past the last must hard-404 rather than render an empty list with a 200
+// (a 200 reads as a soft 404 to crawlers and dilutes crawl budget). Skip when
+// the fetch failed so a transient API error isn't reported as "not found".
+if (!fetchError.value && props.page > totalPages.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+}
+
 // Page 1 lives at the clean /blog URL; deeper pages are their own paths.
 const pageHref = (n: number) => (n <= 1 ? '/blog' : `/blog/page/${n}`)
 </script>

@@ -99,6 +99,7 @@ export default defineNuxtConfig({
         'debug', // CJS
         '@vue/devtools-core',
         '@vue/devtools-kit',
+        '@unhead/schema-org/vue'
       ]
     }
   },

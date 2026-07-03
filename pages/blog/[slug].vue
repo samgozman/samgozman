@@ -51,9 +51,35 @@ if (data.value) {
     twitterDescription: data.value.description,
     twitterImageAlt: `${data.value.title} | Sam Gozman`,
     articlePublishedTime: createdAt.value.toISOString(),
+    articleModifiedTime: data.value.updated_at,
     articleTag: data.value.keywords,
     articleAuthor: ['Sam Gozman']
   })
+
+  // BlogPosting structured data + breadcrumb trail so Google (and AI answer
+  // engines) can attribute the article, its dates, author and topic.
+  useSchemaOrg([
+    defineArticle({
+      '@type': 'BlogPosting',
+      headline: data.value.title,
+      description: data.value.description,
+      datePublished: data.value.created_at,
+      dateModified: data.value.updated_at,
+      author: { '@type': 'Person', name: 'Sam Gozman', url: useRuntimeConfig().public.baseUrl },
+      keywords: data.value.keywords,
+      // reading_time is provided in seconds; expose as an ISO-8601 duration.
+      timeRequired: data.value.reading_time
+        ? `PT${Math.max(1, Math.round(data.value.reading_time / 60))}M`
+        : undefined
+    }),
+    defineBreadcrumb({
+      itemListElement: [
+        { name: 'Home', item: '/' },
+        { name: 'Blog', item: '/blog' },
+        { name: data.value.title, item: useRoute().path }
+      ]
+    })
+  ])
 
   defineOgImage('BlogPost', {
     title: data.value.title

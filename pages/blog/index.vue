@@ -17,6 +17,16 @@ useSeoMeta({
   twitterImageAlt: 'Blog | Sam Gozman'
 })
 
+useSchemaOrg([
+  defineWebPage({ '@type': ['CollectionPage'] }),
+  defineBreadcrumb({
+    itemListElement: [
+      { name: 'Home', item: '/' },
+      { name: 'Blog', item: '/blog' }
+    ]
+  })
+])
+
 defineOgImage('Default', {
   title: 'Blog'
 })

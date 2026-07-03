@@ -2,7 +2,14 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-04-03',
   site: {
-    url: 'https://gozman.space'
+    url: 'https://gozman.space',
+    name: 'Sam Gozman',
+    description:
+      'Developer blog of Sam Gozman — Team Lead & Senior Backend Engineer (Go, Node.js, Rust) and open-source developer.',
+    defaultLocale: 'en',
+    // Canonicalize the trailing-slash variant (/blog/ -> /blog) so Google
+    // does not treat them as duplicate URLs. Also drives the auto rel=canonical.
+    trailingSlash: false
   },
   nitro: {
     preset: 'bun',
@@ -72,10 +79,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/sitemap',
-    'nuxt-og-image',
-    '@nuxt/content',
-    '@nuxtjs/robots'
+    '@nuxtjs/seo',
+    '@nuxt/content'
   ],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
@@ -165,7 +170,7 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Sam Gozman' },
         {
           name: 'viewport',
-          content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+          content: 'width=device-width, initial-scale=1'
         },
         { name: 'theme-color', content: '#f97316' },
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: light)' },

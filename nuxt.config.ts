@@ -1,4 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+// Captured once per `nuxt build`, so every redeploy advances the lastmod of
+// static pages (whose content only changes when the code is rebuilt).
+const buildTime = new Date().toISOString()
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-04-03',
   site: {
@@ -38,19 +43,13 @@ export default defineNuxtConfig({
       '/subscription/success'
     ],
     sources: ['/api/__sitemap__/urls'],
-    // Note: to override the default sitemap.xml generated from sources
+    // Static pages: their lastmod tracks the build. /blog and blog posts are
+    // supplied by the source endpoint above so their lastmod can follow content.
     urls: () => {
       return [
-        {
-          changefreq: 'daily',
-          priority: 0.5,
-          loc: '/blog'
-        },
-        {
-          changefreq: 'weekly',
-          priority: 1,
-          loc: '/'
-        }
+        { loc: '/', changefreq: 'weekly', priority: 1, lastmod: buildTime },
+        { loc: '/projects', changefreq: 'monthly', priority: 0.8, lastmod: buildTime },
+        { loc: '/subscription', changefreq: 'yearly', priority: 0.3, lastmod: buildTime }
       ]
     }
   },
@@ -213,7 +212,8 @@ export default defineNuxtConfig({
       githubClientId: '3a1bed516b6eda760936',
       authTokenTTLseconds: 60,
       // hcaptchaSiteKey: '10000000-ffff-ffff-ffff-000000000001'
-      hcaptchaSiteKey: '196c72be-eff9-4389-b0bc-f588455611e9'
+      hcaptchaSiteKey: '196c72be-eff9-4389-b0bc-f588455611e9',
+      buildTime
     }
   }
 })

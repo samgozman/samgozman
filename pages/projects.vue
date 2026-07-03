@@ -10,6 +10,16 @@ useSeoMeta({
   twitterDescription: "Sam Gozman's open-source projects.",
   twitterImageAlt: 'Projects | Sam Gozman'
 })
+useSchemaOrg([
+  defineWebPage({ '@type': ['CollectionPage'] }),
+  defineBreadcrumb({
+    itemListElement: [
+      { name: 'Home', item: '/' },
+      { name: 'Projects', item: '/projects' }
+    ]
+  })
+])
+
 defineOgImage('Default', { title: 'Projects' })
 </script>
 

@@ -1,8 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+// Captured once per `nuxt build`, so every redeploy advances the lastmod of
+// static pages (whose content only changes when the code is rebuilt).
+const buildTime = new Date().toISOString()
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-04-03',
   site: {
-    url: 'https://gozman.space'
+    url: 'https://gozman.space',
+    name: 'Sam Gozman',
+    description:
+      'Developer blog of Sam Gozman — Team Lead & Senior Backend Engineer (Go, Node.js, Rust) and open-source developer.',
+    defaultLocale: 'en',
+    // Canonicalize the trailing-slash variant (/blog/ -> /blog) so Google
+    // does not treat them as duplicate URLs. Also drives the auto rel=canonical.
+    trailingSlash: false
   },
   nitro: {
     preset: 'bun',
@@ -31,19 +43,13 @@ export default defineNuxtConfig({
       '/subscription/success'
     ],
     sources: ['/api/__sitemap__/urls'],
-    // Note: to override the default sitemap.xml generated from sources
+    // Static pages: their lastmod tracks the build. /blog and blog posts are
+    // supplied by the source endpoint above so their lastmod can follow content.
     urls: () => {
       return [
-        {
-          changefreq: 'daily',
-          priority: 0.5,
-          loc: '/blog'
-        },
-        {
-          changefreq: 'weekly',
-          priority: 1,
-          loc: '/'
-        }
+        { loc: '/', changefreq: 'weekly', priority: 1, lastmod: buildTime },
+        { loc: '/projects', changefreq: 'monthly', priority: 0.8, lastmod: buildTime },
+        { loc: '/subscription', changefreq: 'yearly', priority: 0.3, lastmod: buildTime }
       ]
     }
   },
@@ -57,9 +63,10 @@ export default defineNuxtConfig({
     // Disable SSR for subscription pages (just in case)
     '/subscription/confirm': { ssr: false },
     '/subscription/unsubscribe': { ssr: false },
-    // Blog page generated on demand, cached until API response changes
+    // Blog index (page 1); deeper pages live at /blog/page/N — both matched
+    // by /blog/** below. Path-based paging keeps each page's cache distinct.
     '/blog': { swr: true },
-    // Blog page generated on demand, cached until API response changes
+    // Post pages and /blog/page/N, generated on demand and cached per path.
     '/blog/**': { swr: true },
     // Admin pages are not pre-rendered
     '/admin/**': { ssr: false }
@@ -68,15 +75,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 5555
   },
-  modules: [
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/sitemap',
-    'nuxt-og-image',
-    '@nuxt/content',
-    '@nuxtjs/robots'
-  ],
+  modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@nuxtjs/seo', '@nuxt/content'],
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
   },
@@ -94,6 +93,7 @@ export default defineNuxtConfig({
         'debug', // CJS
         '@vue/devtools-core',
         '@vue/devtools-kit',
+        '@unhead/schema-org/vue'
       ]
     }
   },
@@ -165,7 +165,7 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Sam Gozman' },
         {
           name: 'viewport',
-          content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+          content: 'width=device-width, initial-scale=1'
         },
         { name: 'theme-color', content: '#f97316' },
         { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: light)' },
@@ -178,7 +178,13 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=1' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=1' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=1' }
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=1' },
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: 'Sam Gozman — Dev Blog',
+          href: '/feed.xml'
+        }
       ],
       script:
         process.env.NODE_ENV === 'production'
@@ -207,7 +213,8 @@ export default defineNuxtConfig({
       githubClientId: '3a1bed516b6eda760936',
       authTokenTTLseconds: 60,
       // hcaptchaSiteKey: '10000000-ffff-ffff-ffff-000000000001'
-      hcaptchaSiteKey: '196c72be-eff9-4389-b0bc-f588455611e9'
+      hcaptchaSiteKey: '196c72be-eff9-4389-b0bc-f588455611e9',
+      buildTime
     }
   }
 })

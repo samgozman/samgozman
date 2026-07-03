@@ -2,6 +2,38 @@
 import '~/assets/css/main.css'
 import { onMounted } from 'vue'
 
+const baseUrl = useRuntimeConfig().public.baseUrl
+
+// Pages already author their own full title (e.g. "Blog | Sam Gozman"), so
+// neutralize the module's "%s | <site.name>" template to avoid a doubled
+// suffix. Untitled pages fall back to the site name.
+useHead({
+  titleTemplate: (title) => title || 'Sam Gozman'
+})
+
+// Site-wide structured data. definePerson sets the site identity (this is a
+// personal site), which nuxt-schema-org wires up as the WebSite publisher and
+// as the default author for articles.
+useSchemaOrg([
+  definePerson({
+    name: 'Sam Gozman',
+    image: `${baseUrl}/img/me.jpg`,
+    url: baseUrl,
+    jobTitle: 'Team Lead & Senior Backend Engineer',
+    sameAs: [
+      'https://github.com/samgozman',
+      'https://www.linkedin.com/in/samgozman/',
+      'https://t.me/samgozman'
+    ]
+  }),
+  defineWebSite({
+    name: 'Sam Gozman',
+    description:
+      'Developer blog of Sam Gozman — Team Lead & Senior Backend Engineer (Go, Node.js, Rust) and open-source developer.'
+  }),
+  defineWebPage()
+])
+
 // Token TTL in milliseconds
 const ttl = Number(useRuntimeConfig().public.authTokenTTLseconds) * 1000
 

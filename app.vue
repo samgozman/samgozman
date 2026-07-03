@@ -4,6 +4,13 @@ import { onMounted } from 'vue'
 
 const baseUrl = useRuntimeConfig().public.baseUrl
 
+// Pages already author their own full title (e.g. "Blog | Sam Gozman"), so
+// neutralize the module's "%s | <site.name>" template to avoid a doubled
+// suffix. Untitled pages fall back to the site name.
+useHead({
+  titleTemplate: (title) => title || 'Sam Gozman'
+})
+
 // Site-wide structured data. definePerson sets the site identity (this is a
 // personal site), which nuxt-schema-org wires up as the WebSite publisher and
 // as the default author for articles.

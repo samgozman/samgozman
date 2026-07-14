@@ -16,6 +16,8 @@ const email = ref('')
 const token = ref('')
 const captcha = ref<VueHcaptcha>()
 const formClicked = ref(false)
+const submitting = ref(false)
+const errorMessage = ref('')
 
 const router = useRouter()
 
@@ -29,7 +31,7 @@ const onCaptchaExpired = () => {
 
 const onSubmit = async (event: Event) => {
   event.preventDefault()
-  if (captcha.value === undefined) {
+  if (captcha.value === undefined || submitting.value) {
     return
   }
 
@@ -37,16 +39,26 @@ const onSubmit = async (event: Event) => {
     return
   }
 
-  await captcha.value.executeAsync()
+  submitting.value = true
+  errorMessage.value = ''
+  try {
+    await captcha.value.executeAsync()
 
-  const res = await BloggyApi.subscribeToNewsletter(email.value, token.value)
-  if (!res.ok) {
-    console.error('Failed to subscribe:', res.message)
-    return
+    const res = await BloggyApi.subscribeToNewsletter(email.value, token.value)
+    if (!res.ok) {
+      console.error('Failed to subscribe:', res.message)
+      errorMessage.value = "Couldn't subscribe. Please try again."
+      return
+    }
+
+    email.value = ''
+    router.push({ name: 'subscription-success' })
+  } catch (err) {
+    console.error('Failed to subscribe:', err)
+    errorMessage.value = "Couldn't subscribe. Please try again."
+  } finally {
+    submitting.value = false
   }
-
-  email.value = ''
-  router.push({ name: 'subscription-success' })
 }
 
 const onInputFocus = () => {
@@ -56,17 +68,22 @@ const onInputFocus = () => {
 
 <template>
   <form @submit="onSubmit">
-    <div class="join">
+    <div class="join max-w-full">
       <input
         :name="data ?? 'email'"
         type="email"
+        required
         placeholder="Enter your email"
-        class="input input-bordered join-item"
+        class="input input-bordered join-item min-w-0"
         v-model="email"
         @focus="onInputFocus"
       />
-      <button class="btn btn-primary join-item text-base-100">Subscribe</button>
+      <button class="btn btn-primary join-item text-base-100" :disabled="submitting">
+        <span v-if="submitting" class="loading loading-spinner loading-sm"></span>
+        <span v-else>Subscribe</span>
+      </button>
     </div>
+    <p v-if="errorMessage" role="alert" class="text-error text-sm mt-2">{{ errorMessage }}</p>
     <vue-hcaptcha
       ref="captcha"
       v-if="formClicked"

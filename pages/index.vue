@@ -31,6 +31,7 @@ defineOgImage('Default', {
       <img
         class="not-prose rounded-xl mb-4 mx-auto max-w-[60%] md:max-w-full md:my-0 md:ml-0 md:mr-8 md:max-h-[24rem] lg:max-h-[34rem]"
         src="/img/me.jpg"
+        alt="Portrait of Sam Gozman"
       />
 
       <div class="flex-grow">

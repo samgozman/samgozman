@@ -2,6 +2,14 @@
 import { ref } from 'vue'
 
 const dropdownVisible = ref(true)
+
+// Path-prefix matching so nested pages (/blog/my-post, /blog/page/2)
+// still highlight their section, which router-link-exact-active would miss.
+const route = useRoute()
+const sectionClass = (prefix: string) => {
+  const active = prefix === '/' ? route.path === '/' : route.path.startsWith(prefix)
+  return active ? 'nav-active' : undefined
+}
 </script>
 
 <template>
@@ -25,13 +33,26 @@ const dropdownVisible = ref(true)
           class="menu menu-md dropdown-content mt-2 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-poppins font-medium"
         >
           <li>
-            <NuxtLink :to="{ name: 'index' }" @click="dropdownVisible = false">About</NuxtLink>
+            <NuxtLink
+              :to="{ name: 'index' }"
+              :class="sectionClass('/')"
+              @click="dropdownVisible = false"
+              >About</NuxtLink
+            >
           </li>
           <li>
-            <NuxtLink :to="{ name: 'blog' }" @click="dropdownVisible = false">Blog</NuxtLink>
+            <NuxtLink
+              :to="{ name: 'blog' }"
+              :class="sectionClass('/blog')"
+              @click="dropdownVisible = false"
+              >Blog</NuxtLink
+            >
           </li>
           <li>
-            <NuxtLink :to="{ name: 'projects' }" @click="dropdownVisible = false"
+            <NuxtLink
+              :to="{ name: 'projects' }"
+              :class="sectionClass('/projects')"
+              @click="dropdownVisible = false"
               >Projects</NuxtLink
             >
           </li>
@@ -43,9 +64,13 @@ const dropdownVisible = ref(true)
     </div>
     <div class="navbar-center hidden sm:flex">
       <ul class="menu menu-horizontal gap-1 font-poppins font-medium">
-        <li><NuxtLink :to="{ name: 'index' }">About</NuxtLink></li>
-        <li><NuxtLink :to="{ name: 'blog' }">Blog</NuxtLink></li>
-        <li><NuxtLink :to="{ name: 'projects' }">Projects</NuxtLink></li>
+        <li><NuxtLink :to="{ name: 'index' }" :class="sectionClass('/')">About</NuxtLink></li>
+        <li><NuxtLink :to="{ name: 'blog' }" :class="sectionClass('/blog')">Blog</NuxtLink></li>
+        <li>
+          <NuxtLink :to="{ name: 'projects' }" :class="sectionClass('/projects')"
+            >Projects</NuxtLink
+          >
+        </li>
       </ul>
     </div>
     <div class="navbar-end">
@@ -53,3 +78,9 @@ const dropdownVisible = ref(true)
     </div>
   </div>
 </template>
+
+<style scoped>
+.menu .nav-active {
+  @apply text-primary font-semibold;
+}
+</style>

@@ -68,13 +68,13 @@ const onInputFocus = () => {
 
 <template>
   <form @submit="onSubmit">
-    <div class="join">
+    <div class="join max-w-full">
       <input
         :name="data ?? 'email'"
         type="email"
         required
         placeholder="Enter your email"
-        class="input input-bordered join-item"
+        class="input input-bordered join-item min-w-0"
         v-model="email"
         @focus="onInputFocus"
       />

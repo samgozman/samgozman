@@ -24,6 +24,57 @@ html {
   background-color: rgb(249 115 22 / 0.25);
 }
 
+/*
+ * Orange canvas with depth. The flat #f97316 (bg-orange-500 on <body>) stays
+ * as the fallback; on top of it a fixed layer adds a soft light from the
+ * top-left and deeper orange toward the bottom-right. All hues are from the
+ * same Tailwind orange ramp (300-800), so it still reads as "the orange".
+ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(120% 90% at 12% -5%, rgb(251 146 60 / 0.85), transparent 55%),
+    radial-gradient(140% 110% at 90% 105%, rgb(194 65 12 / 0.5), transparent 60%),
+    #f97316;
+}
+
+/*
+ * Slow ambient drift: two large soft glows wander across the canvas over
+ * ~50s. Oversized (inset -25%) so its edges never enter the viewport, fixed
+ * and transform-only so it is composited once and never repaints on scroll.
+ * Visible in the gutter around the white card, where it makes the frame feel
+ * alive without competing with content.
+ */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -25%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 32% at 28% 24%, rgb(253 186 116 / 0.4), transparent 70%),
+    radial-gradient(42% 36% at 74% 78%, rgb(154 52 18 / 0.3), transparent 70%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::after {
+    animation: canvas-drift 50s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+}
+
+@keyframes canvas-drift {
+  from {
+    transform: translate3d(-4%, -3%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) scale(1.1);
+  }
+}
+
 /* Note: OKLCH Colors Workaround For Disqus Embed.js */
 :root,
 [data-theme] {

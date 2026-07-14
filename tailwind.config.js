@@ -22,6 +22,11 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif']
+      },
+      // Warm-tinted elevation for the signature card lift: a faint orange
+      // glow over a neutral depth shadow instead of generic black.
+      boxShadow: {
+        lift: '0 12px 24px -10px rgb(249 115 22 / 0.18), 0 6px 12px -6px rgb(31 41 55 / 0.1)'
       }
     }
   },

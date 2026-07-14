@@ -8,6 +8,6 @@ const processed = computed(() => {
 })
 </script>
 
-<template class="not-prose text-xl font-semibold font-sans">
+<template>
   <span class="text-xl font-semibold font-poppins" v-html="processed"></span>
 </template>

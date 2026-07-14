@@ -9,5 +9,8 @@ const processed = computed(() => {
 </script>
 
 <template>
-  <h1 class="not-prose text-5xl font-bold font-poppins mb-4" v-html="processed"></h1>
+  <h1
+    class="not-prose text-5xl font-bold font-poppins tracking-tight text-balance mb-4"
+    v-html="processed"
+  ></h1>
 </template>

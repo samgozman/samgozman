@@ -12,11 +12,16 @@ html {
   height: 100%;
 }
 
-/* Fix 100vh height in ios safari */
-@supports (-webkit-touch-callout: none) {
-  .min-h-screen {
-    min-height: -webkit-fill-available;
+/* Smooth anchor scrolling, but respect users who prefer reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
+}
+
+/* Text selection in the brand orange */
+::selection {
+  background-color: rgb(249 115 22 / 0.25);
 }
 
 /* Note: OKLCH Colors Workaround For Disqus Embed.js */

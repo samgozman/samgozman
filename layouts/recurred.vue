@@ -24,9 +24,22 @@ useHead({
   meta: [
     // Smart App Banner: Safari on iOS shows a native banner linking to the app
     { name: 'apple-itunes-app', content: 'app-id=6783705092' },
+    { name: 'apple-mobile-web-app-title', content: 'Recurred' },
     { name: 'theme-color', content: '#6455E0' },
     { name: 'theme-color', content: '#6455E0', media: '(prefers-color-scheme: light)' },
     { name: 'theme-color', content: '#8B7CFF', media: '(prefers-color-scheme: dark)' }
+  ],
+  // Only the touch icon is app-branded (per-page in Safari, used for
+  // bookmarks, home screen, and share sheets). Tab favicons deliberately stay
+  // the site-wide set: Safari caches favicons per domain, so a Recurred
+  // favicon here could leak onto gozman.space bookmarks.
+  link: [
+    {
+      key: 'apple-touch-icon',
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/img/recurred/apple-touch-icon.png'
+    }
   ]
 })
 </script>

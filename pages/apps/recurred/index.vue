@@ -178,8 +178,8 @@ const screens = [
           Your data stays yours.
         </h2>
         <p class="mt-4 text-lg text-white/90 max-w-[52ch]">
-          Everything you add lives on your device and syncs through your own iCloud. Recurred has no
-          servers, no account, no ads, and nothing to sell.
+          Everything you add lives on your device and syncs through your own iCloud. No account, no
+          ads, no tracking, and your subscription data never reaches anyone else's servers.
         </p>
         <NuxtLink
           to="/apps/recurred/privacy"

@@ -1,9 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'recurred' })
 
-// TODO(owner): confirm the effective date and contact email before submitting
-// the app for review. The policy text mirrors the app's actual behavior.
-const supportEmail = 'sam@gozman.space'
+const supportEmail = 'recurred-app@gozman.space'
 const lastUpdated = 'July 15, 2026'
 
 useSeoMeta({
@@ -59,9 +57,9 @@ defineOgImage('Recurred')
 
     <h2>Currency exchange rates</h2>
     <p>
-      To convert between currencies, Recurred downloads public exchange-rate data from a third-party
-      service. This is a one-way download. No information about you, your device, or your
-      subscriptions is sent with these requests.
+      To convert between currencies, Recurred downloads current exchange rates from a service run by
+      the developer. It returns rates and nothing else: it does not collect personal or user data,
+      and no information about you, your device, or your subscriptions is sent with these requests.
     </p>
 
     <h2>What Recurred does not do</h2>
@@ -100,7 +98,7 @@ defineOgImage('Recurred')
     <h2>Contact</h2>
     <p>
       Questions about this policy can be sent to
-      <a :href="`mailto:${supportEmail}`">{{ supportEmail }}</a
+      <a class="whitespace-nowrap" :href="`mailto:${supportEmail}`">{{ supportEmail }}</a
       >.
     </p>
   </article>

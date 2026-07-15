@@ -1,8 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'recurred' })
 
-// TODO(owner): confirm this is the address you want App Store users writing to.
-const supportEmail = 'sam@gozman.space'
+const supportEmail = 'recurred-app@gozman.space'
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
@@ -44,7 +43,7 @@ const faq = [
     <h1 class="font-poppins font-bold tracking-tight text-4xl mb-6">Recurred Support</h1>
     <p class="text-lg text-gray-600">
       Questions, bug reports, and feedback are all welcome. Write to
-      <a class="link text-primary font-medium" :href="`mailto:${supportEmail}`">{{
+      <a class="link text-primary font-medium whitespace-nowrap" :href="`mailto:${supportEmail}`">{{
         supportEmail
       }}</a>
       and you will get a reply from the developer.

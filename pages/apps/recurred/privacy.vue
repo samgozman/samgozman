@@ -19,9 +19,7 @@ useSeoMeta({
     'Privacy policy for Recurred, the subscription tracker for iPhone. Your data stays on your device: no tracking, no ads, no accounts.'
 })
 
-defineOgImage('Default', {
-  title: 'Recurred Privacy Policy'
-})
+defineOgImage('Recurred')
 </script>
 
 <template>

@@ -17,9 +17,7 @@ useSeoMeta({
     'Get help with Recurred, the subscription tracker for iPhone. Questions, bug reports, and feedback are welcome by email.'
 })
 
-defineOgImage('Default', {
-  title: 'Recurred Support'
-})
+defineOgImage('Recurred')
 
 const faq = [
   {

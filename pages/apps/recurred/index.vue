@@ -17,9 +17,7 @@ useSeoMeta({
   twitterImageAlt: 'Recurred: Subscription Tracker for iPhone'
 })
 
-defineOgImage('Default', {
-  title: 'Recurred'
-})
+defineOgImage('Recurred')
 
 const features = [
   {

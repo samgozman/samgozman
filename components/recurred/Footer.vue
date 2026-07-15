@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="footer container mx-auto max-w-6xl p-4 sm:p-6 flex flex-col sm:flex-row justify-between gap-8"
+    class="footer container mx-auto max-w-6xl p-4 sm:p-6 flex flex-col sm:flex-row flex-wrap justify-between gap-8"
   >
     <aside class="flex items-center gap-2.5">
       <span
@@ -39,5 +39,12 @@
         >
       </nav>
     </div>
+    <!-- Apple trademark credit lines, required by Apple's marketing guidelines
+         when the App Store badge is used (once per website is enough). -->
+    <p class="w-full basis-full text-xs text-gray-400 leading-relaxed sm:pt-2">
+      Apple, the Apple logo, App Store, iPhone, and iCloud are trademarks of Apple Inc., registered
+      in the U.S. and other countries and regions. IOS is a trademark or registered trademark of
+      Cisco in the U.S. and other countries and is used under license.
+    </p>
   </footer>
 </template>

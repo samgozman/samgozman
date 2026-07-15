@@ -49,7 +49,10 @@ export default defineNuxtConfig({
       return [
         { loc: '/', changefreq: 'weekly', priority: 1, lastmod: buildTime },
         { loc: '/projects', changefreq: 'monthly', priority: 0.8, lastmod: buildTime },
-        { loc: '/subscription', changefreq: 'yearly', priority: 0.3, lastmod: buildTime }
+        { loc: '/subscription', changefreq: 'yearly', priority: 0.3, lastmod: buildTime },
+        { loc: '/apps/recurred', changefreq: 'monthly', priority: 0.8, lastmod: buildTime },
+        { loc: '/apps/recurred/support', changefreq: 'yearly', priority: 0.4, lastmod: buildTime },
+        { loc: '/apps/recurred/privacy', changefreq: 'yearly', priority: 0.4, lastmod: buildTime }
       ]
     }
   },
@@ -59,6 +62,9 @@ export default defineNuxtConfig({
     '/': { isr: true },
     '/projects': { isr: true },
     '/subscription': { isr: true },
+    // Recurred app pages (App Store Connect links to /support and /privacy)
+    '/apps/recurred': { isr: true },
+    '/apps/recurred/**': { isr: true },
     '/subscription/success': { isr: true },
     // Disable SSR for subscription pages (just in case)
     '/subscription/confirm': { ssr: false },
@@ -167,16 +173,35 @@ export default defineNuxtConfig({
           name: 'viewport',
           content: 'width=device-width, initial-scale=1'
         },
-        { name: 'theme-color', content: '#f97316' },
-        { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: light)' },
-        { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: dark)' },
+        // Keyed (like apple-touch-icon below) so layouts/recurred.vue can
+        // swap in its own values instead of relying on unhead's name dedupe.
+        { key: 'theme-color', name: 'theme-color', content: '#f97316' },
+        {
+          key: 'theme-color-light',
+          name: 'theme-color',
+          content: '#f97316',
+          media: '(prefers-color-scheme: light)'
+        },
+        {
+          key: 'theme-color-dark',
+          name: 'theme-color',
+          content: '#f97316',
+          media: '(prefers-color-scheme: dark)'
+        },
         { name: 'og:locale', content: 'en_US' },
-        { name: 'og:site_name', content: 'Sam Gozman Blog' },
+        { key: 'og-site-name', name: 'og:site_name', content: 'Sam Gozman Blog' },
         { name: 'og:logo', content: 'https://gozman.space/apple-touch-icon.png' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png?v=1' },
+        // Keyed so layouts/recurred.vue can swap in the app's touch icon
+        // instead of rendering a second, competing one.
+        {
+          key: 'apple-touch-icon',
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/apple-touch-icon.png?v=1'
+        },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png?v=1' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png?v=1' },
         {

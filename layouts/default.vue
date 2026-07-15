@@ -1,20 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
-const isScrolled = ref(false)
-
-const handleScroll = () => {
-  const bottomOfWindow =
-    window.scrollY + window.innerHeight >= document.documentElement.scrollHeight
-  isScrolled.value = window.scrollY > 0 && !bottomOfWindow
-}
-
-onMounted(async () => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+const { isScrolled } = useScrolledCard()
 </script>
 
 <template>

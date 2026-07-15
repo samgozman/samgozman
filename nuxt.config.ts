@@ -49,7 +49,10 @@ export default defineNuxtConfig({
       return [
         { loc: '/', changefreq: 'weekly', priority: 1, lastmod: buildTime },
         { loc: '/projects', changefreq: 'monthly', priority: 0.8, lastmod: buildTime },
-        { loc: '/subscription', changefreq: 'yearly', priority: 0.3, lastmod: buildTime }
+        { loc: '/subscription', changefreq: 'yearly', priority: 0.3, lastmod: buildTime },
+        { loc: '/apps/recurred', changefreq: 'monthly', priority: 0.8, lastmod: buildTime },
+        { loc: '/apps/recurred/support', changefreq: 'yearly', priority: 0.4, lastmod: buildTime },
+        { loc: '/apps/recurred/privacy', changefreq: 'yearly', priority: 0.4, lastmod: buildTime }
       ]
     }
   },
@@ -59,6 +62,9 @@ export default defineNuxtConfig({
     '/': { isr: true },
     '/projects': { isr: true },
     '/subscription': { isr: true },
+    // Recurred app pages (App Store Connect links to /support and /privacy)
+    '/apps/recurred': { isr: true },
+    '/apps/recurred/**': { isr: true },
     '/subscription/success': { isr: true },
     // Disable SSR for subscription pages (just in case)
     '/subscription/confirm': { ssr: false },

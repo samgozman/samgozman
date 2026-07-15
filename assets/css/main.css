@@ -37,8 +37,7 @@ body::before {
   z-index: -2;
   background:
     radial-gradient(120% 90% at 12% -5%, rgb(251 146 60 / 0.85), transparent 55%),
-    radial-gradient(140% 110% at 90% 105%, rgb(194 65 12 / 0.5), transparent 60%),
-    #f97316;
+    radial-gradient(140% 110% at 90% 105%, rgb(194 65 12 / 0.5), transparent 60%), #f97316;
 }
 
 /*
@@ -73,6 +72,34 @@ body::after {
   to {
     transform: translate3d(4%, 3%, 0) scale(1.1);
   }
+}
+
+/*
+ * Violet canvas variant for the Recurred app pages (layouts/recurred.vue sets
+ * data-canvas on <body>). Same structure as the orange canvas: soft light from
+ * the top-left, deeper violet toward the bottom-right, drifting glows on top.
+ * Hues come from the app's accent pair (#8B7CFF / #6455E0).
+ */
+body[data-canvas='recurred'] {
+  /* Violet counterpart of the bg-orange-500 fallback the layout sets on <body> */
+  background-color: #6455e0;
+}
+
+body[data-canvas='recurred']::before {
+  background:
+    radial-gradient(120% 90% at 12% -5%, rgb(139 124 255 / 0.85), transparent 55%),
+    radial-gradient(140% 110% at 90% 105%, rgb(60 46 176 / 0.5), transparent 60%), #6455e0;
+}
+
+body[data-canvas='recurred']::after {
+  background:
+    radial-gradient(38% 32% at 28% 24%, rgb(185 176 255 / 0.4), transparent 70%),
+    radial-gradient(42% 36% at 74% 78%, rgb(43 31 138 / 0.3), transparent 70%);
+}
+
+/* Text selection in the Recurred violet on those pages */
+body[data-canvas='recurred'] ::selection {
+  background-color: rgb(100 85 224 / 0.25);
 }
 
 /* Note: OKLCH Colors Workaround For Disqus Embed.js */

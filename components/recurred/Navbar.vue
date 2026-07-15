@@ -8,7 +8,7 @@ const sectionClass = (path: string) => (route.path === path ? 'nav-active' : und
 <template>
   <!-- Plain justify-between instead of daisyUI navbar halves: the fixed 50/50
        split wraps the three links to a second line on phones. -->
-  <div class="flex items-center justify-center sm:justify-between gap-2 px-2 py-3 sm:p-4 min-h-16">
+  <nav class="flex items-center justify-center sm:justify-between gap-2 px-2 py-3 sm:p-4 min-h-16">
     <!-- Brand is desktop-only: on phones the hero right below carries the app
          icon and name, and the links get the full row to themselves. -->
     <NuxtLink
@@ -36,7 +36,7 @@ const sectionClass = (path: string) => (route.path === path ? 'nav-active' : und
         >
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <style scoped>

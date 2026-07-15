@@ -1,37 +1,33 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
-
 // Same white-card-on-canvas shell as the default layout, with the Recurred
 // violet canvas (see main.css) and Recurred-only navigation.
-const isScrolled = ref(false)
-
-const handleScroll = () => {
-  const bottomOfWindow =
-    window.scrollY + window.innerHeight >= document.documentElement.scrollHeight
-  isScrolled.value = window.scrollY > 0 && !bottomOfWindow
-}
-
-onMounted(async () => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+const { isScrolled } = useScrolledCard()
 
 useHead({
   bodyAttrs: { 'data-canvas': 'recurred' },
+  // Keyed entries replace their site-wide counterparts from nuxt.config.
   meta: [
     // Smart App Banner: Safari on iOS shows a native banner linking to the app
     { name: 'apple-itunes-app', content: 'app-id=6783705092' },
     { name: 'apple-mobile-web-app-title', content: 'Recurred' },
-    { name: 'theme-color', content: '#6455E0' },
-    { name: 'theme-color', content: '#6455E0', media: '(prefers-color-scheme: light)' },
-    { name: 'theme-color', content: '#8B7CFF', media: '(prefers-color-scheme: dark)' }
+    { key: 'og-site-name', name: 'og:site_name', content: 'Recurred' },
+    { key: 'theme-color', name: 'theme-color', content: '#6455E0' },
+    {
+      key: 'theme-color-light',
+      name: 'theme-color',
+      content: '#6455E0',
+      media: '(prefers-color-scheme: light)'
+    },
+    {
+      key: 'theme-color-dark',
+      name: 'theme-color',
+      content: '#8B7CFF',
+      media: '(prefers-color-scheme: dark)'
+    }
   ],
   // Only the touch icon is app-branded (per-page in Safari, used for
-  // bookmarks, home screen, and share sheets). Tab favicons deliberately stay
-  // the site-wide set: Safari caches favicons per domain, so a Recurred
+  // bookmarks, home screen, and share sheets). Tab favicons deliberately
+  // stay the site-wide set: Safari caches favicons per domain, so a Recurred
   // favicon here could leak onto gozman.space bookmarks.
   link: [
     {

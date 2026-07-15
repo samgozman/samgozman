@@ -173,11 +173,23 @@ export default defineNuxtConfig({
           name: 'viewport',
           content: 'width=device-width, initial-scale=1'
         },
-        { name: 'theme-color', content: '#f97316' },
-        { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: light)' },
-        { name: 'theme-color', content: '#f97316', media: '(prefers-color-scheme: dark)' },
+        // Keyed (like apple-touch-icon below) so layouts/recurred.vue can
+        // swap in its own values instead of relying on unhead's name dedupe.
+        { key: 'theme-color', name: 'theme-color', content: '#f97316' },
+        {
+          key: 'theme-color-light',
+          name: 'theme-color',
+          content: '#f97316',
+          media: '(prefers-color-scheme: light)'
+        },
+        {
+          key: 'theme-color-dark',
+          name: 'theme-color',
+          content: '#f97316',
+          media: '(prefers-color-scheme: dark)'
+        },
         { name: 'og:locale', content: 'en_US' },
-        { name: 'og:site_name', content: 'Sam Gozman Blog' },
+        { key: 'og-site-name', name: 'og:site_name', content: 'Sam Gozman Blog' },
         { name: 'og:logo', content: 'https://gozman.space/apple-touch-icon.png' }
       ],
       link: [

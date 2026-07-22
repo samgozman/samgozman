@@ -75,7 +75,9 @@ export default defineNuxtConfig({
     // Post pages and /blog/page/N, generated on demand and cached per path.
     '/blog/**': { swr: true },
     // Admin pages are not pre-rendered
-    '/admin/**': { ssr: false }
+    '/admin/**': { ssr: false },
+    // RSS feed fetches each post's full body; cache so the API isn't hit per request.
+    '/feed.xml': { swr: 3600 }
   },
   devtools: { enabled: true },
   devServer: {

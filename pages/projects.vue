@@ -43,10 +43,25 @@ defineOgImage('Default', { title: 'Projects' })
       class="not-prose timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-lg"
     >
       <ProjectsItem
+        date="2025 4/4 - 2026 3/4"
+        title="Recurred - subscription tracker"
+        side="left"
+        type="start"
+        websiteLink="/apps/recurred"
+        appStoreLink="https://apps.apple.com/app/id6783705092"
+      >
+        Recurred is an iOS app for tracking subscriptions and recurring bills. You add each one and
+        it shows what you're paying, when the next charge is due, and what the coming months will
+        cost. It handles different currencies, reminds you before a renewal or free trial ends, and
+        breaks spending down by category. It's free, with no ads and no account, and your data stays
+        on the device and syncs through iCloud. I built it fully natively in Swift and kept it
+        closed source; the only backend is a small service that provides exchange rates.
+      </ProjectsItem>
+      <ProjectsItem
         date="2026 2/4"
         title="temporalcheck-lint"
         side="right"
-        type="start"
+        type="middle"
         sourceLink="https://github.com/samgozman/temporalcheck-lint"
       >
         temporalcheck-lint is a golangci-lint plugin for static analysis of Temporal Go SDK code. It

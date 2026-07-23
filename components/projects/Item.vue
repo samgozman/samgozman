@@ -11,6 +11,7 @@ interface ProjectItemProps {
   frontendSourceLink?: string
   telegramLink?: string
   websiteLink?: string
+  appStoreLink?: string
 }
 
 defineProps<ProjectItemProps>()
@@ -34,6 +35,12 @@ defineProps<ProjectItemProps>()
         class="flex-grow flex justify-center items-center"
       >
         <ul class="not-prose px-0 py-1 menu menu-horizontal menu-sm">
+          <li v-if="appStoreLink">
+            <a :href="appStoreLink" target="_blank" rel="noopener noreferrer">
+              <Icon name="i-ion:logo-apple" class="text-xl" />
+              app store
+            </a>
+          </li>
           <li v-if="sourceLink">
             <a :href="sourceLink" target="_blank" rel="noopener noreferrer">
               <Icon name="i-ion:logo-github" class="text-xl" />

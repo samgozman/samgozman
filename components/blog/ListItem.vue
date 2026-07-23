@@ -40,7 +40,7 @@ const readingTimeSeconds = props.post.reading_time % 60
       >
         {{ post.title }}
       </NuxtLink>
-      <p class="text-base-content/80 text-justify sm:text-left">
+      <p class="text-base-content/80 text-left">
         {{ post.description }}
       </p>
       <div class="flex flex-wrap gap-2 mt-1">

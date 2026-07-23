@@ -26,7 +26,7 @@ defineOgImage('Default', { title: 'Projects' })
 <template>
   <ElementsHeaderMax value="My projects." />
 
-  <ElementsArticleProse class="text-justify">
+  <ElementsArticleProse>
     <p>
       Over the last several years, besides my regular job as backend engineer, I've been chipping
       away at my own <strong>open-source</strong> side projects whenever I could. It's been a hobby

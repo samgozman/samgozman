@@ -1,6 +1,6 @@
 <template>
   <article
-    class="prose prose-headings:font-poppins prose-p:font-sans prose-a:text-orange-500 text-xl prose-p:text-justify prose-p:hyphens-auto"
+    class="prose prose-headings:font-poppins prose-p:font-sans prose-a:text-orange-500 text-lg sm:text-xl prose-p:text-left sm:prose-p:text-justify sm:prose-p:hyphens-auto"
   >
     <slot />
   </article>

@@ -27,17 +27,76 @@ defineOgImage('Default', {
 
 <template>
   <ElementsArticleProse class="md:max-w-[100ch]">
+    <!-- Mobile: profile header with a prominent portrait. The full portrait
+         column below is desktop-only. -->
+    <div class="not-prose mb-6 flex items-center gap-5 md:hidden">
+      <img
+        class="w-[44%] shrink-0 aspect-[3/4] rounded-2xl object-cover object-[center_22%] shadow-lift"
+        src="/img/me.jpg"
+        alt="Portrait of Sam Gozman"
+      />
+      <div class="flex min-w-0 flex-col gap-3">
+        <div class="leading-tight">
+          <p class="text-lg text-base-content/60">👋 Hi, I am</p>
+          <p class="font-poppins text-2xl font-semibold">Sam Gozman</p>
+        </div>
+        <ul class="flex flex-wrap gap-2 text-2xl text-primary">
+          <li>
+            <a
+              href="https://github.com/samgozman"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              class="inline-flex p-1.5"
+            >
+              <Icon name="i-ion:logo-github" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/samgozman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              class="inline-flex p-1.5"
+            >
+              <Icon name="i-ion:logo-linkedin" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://t.me/samgozman"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Telegram"
+              class="inline-flex p-1.5"
+            >
+              <Icon name="i-tabler:brand-telegram" />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sam@gozman.space" title="Mail to me: sam@gozman.space" class="inline-flex p-1.5">
+              <Icon name="i-ion:mail-outline" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="flex flex-col md:flex-row">
       <img
-        class="not-prose rounded-xl mb-4 mx-auto max-w-[60%] md:max-w-full md:my-0 md:ml-0 md:mr-8 md:max-h-[24rem] lg:max-h-[34rem]"
+        class="not-prose hidden rounded-xl md:mr-8 md:block md:max-h-[24rem] lg:max-h-[34rem]"
         src="/img/me.jpg"
         alt="Portrait of Sam Gozman"
       />
 
       <div class="grow">
-        <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
+        <div class="badge badge-outline badge-lg mb-2 hidden md:inline-flex">
+          Hi, I am Sam Gozman! 👋
+        </div>
         <ElementsHeaderMax
           value="Senior Backend Engineer & Open Source Developer."
+          size="hero"
           class="text-left"
         />
         <p>
@@ -58,7 +117,7 @@ defineOgImage('Default', {
           My main stack includes Go, NodeJS, Rust, PostgreSQL, Redis, VueJS, Docker, Linux, and Git,
           forming a versatile toolkit for efficient development.
         </p>
-        <div class="grow flex justify-center items-center">
+        <div class="grow hidden md:flex justify-center items-center">
           <ul class="not-prose menu menu-horizontal rounded-box">
             <li>
               <a

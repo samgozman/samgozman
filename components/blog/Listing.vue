@@ -14,11 +14,11 @@ useSeoMeta({
   ogTitle: () => `Blog${pageSuffix.value} | Sam Gozman`,
   twitterTitle: () => `Blog${pageSuffix.value} | Sam Gozman`,
   description:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Articles on backend engineering, Go, Node.js, Rust, distributed systems, and fintech by Sam Gozman, Engineering Team Lead and Senior Backend Engineer.',
   ogDescription:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Articles on backend engineering, Go, Node.js, Rust, distributed systems, and fintech by Sam Gozman, Engineering Team Lead and Senior Backend Engineer.',
   twitterDescription:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Articles on backend engineering, Go, Node.js, Rust, distributed systems, and fintech by Sam Gozman, Engineering Team Lead and Senior Backend Engineer.',
   twitterImageAlt: 'Blog | Sam Gozman'
 })
 

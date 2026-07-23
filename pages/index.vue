@@ -8,11 +8,11 @@ useSeoMeta({
   ogTitle: 'Sam Gozman | Engineering Team Lead & Senior Backend Engineer',
   twitterTitle: 'Sam Gozman | Engineering Team Lead & Senior Backend Engineer',
   description:
-    'Developer blog of Sam Gozman. Engineering Team Lead & Senior Backend Engineer.',
+    'Sam Gozman is an Engineering Team Lead and Senior Backend Engineer working in Go, Node.js, and Rust, with a focus on fintech and open source.',
   ogDescription:
-    'Developer blog of Sam Gozman. Engineering Team Lead & Senior Backend Engineer.',
+    'Sam Gozman is an Engineering Team Lead and Senior Backend Engineer working in Go, Node.js, and Rust, with a focus on fintech and open source.',
   twitterDescription:
-    'Developer blog of Sam Gozman. Engineering Team Lead & Senior Backend Engineer.',
+    'Sam Gozman is an Engineering Team Lead and Senior Backend Engineer working in Go, Node.js, and Rust, with a focus on fintech and open source.',
   twitterImageAlt: 'Sam Gozman | Engineering Team Lead & Senior Backend Engineer',
   ogType: 'profile',
   profileFirstName: 'Sam',

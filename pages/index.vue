@@ -4,16 +4,16 @@ const age = calculateAge(new Date('1997-06-01'))
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
-  title: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
-  ogTitle: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
-  twitterTitle: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
+  title: 'Sam Gozman | Engineering Team Lead & Senior Backend Engineer',
+  ogTitle: 'Sam Gozman | Engineering Team Lead & Senior Backend Engineer',
+  twitterTitle: 'Sam Gozman | Engineering Team Lead & Senior Backend Engineer',
   description:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Developer blog of Sam Gozman. Engineering Team Lead & Senior Backend Engineer.',
   ogDescription:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Developer blog of Sam Gozman. Engineering Team Lead & Senior Backend Engineer.',
   twitterDescription:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
-  twitterImageAlt: 'Sam Gozman | Team Lead, Senior Backend Engineer & Open Source Developer',
+    'Developer blog of Sam Gozman. Engineering Team Lead & Senior Backend Engineer.',
+  twitterImageAlt: 'Sam Gozman | Engineering Team Lead & Senior Backend Engineer',
   ogType: 'profile',
   profileFirstName: 'Sam',
   profileLastName: 'Gozman',
@@ -95,7 +95,7 @@ defineOgImage('Default', {
           Hi, I am Sam Gozman! 👋
         </div>
         <ElementsHeaderMax
-          value="Senior Backend Engineer & Open Source Developer."
+          value="Engineering Team Lead & Senior Backend Engineer."
           size="hero"
           class="text-left"
         />

@@ -144,3 +144,14 @@ body[data-canvas='recurred'] ::selection {
 .prose :not(pre) > code::after {
   content: none;
 }
+
+/*
+ * Long URLs (and any unbroken token) in prose must wrap instead of pushing the
+ * layout wider than the viewport. `break-word` only breaks a word when it would
+ * otherwise overflow, so normal text is untouched. `pre` keeps white-space: pre
+ * and scrolls, so code blocks are unaffected.
+ */
+.prose {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}

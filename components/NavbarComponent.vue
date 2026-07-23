@@ -1,75 +1,54 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const dropdownVisible = ref(true)
-
 // Path-prefix matching so nested pages (/blog/my-post, /blog/page/2)
 // still highlight their section, which router-link-exact-active would miss.
 const route = useRoute()
-const sectionClass = (prefix: string) => {
-  const active = prefix === '/' ? route.path === '/' : route.path.startsWith(prefix)
-  return active ? 'nav-active' : undefined
-}
+const isActive = (prefix: string) =>
+  prefix === '/' ? route.path === '/' : route.path.startsWith(prefix)
+const sectionClass = (prefix: string) => (isActive(prefix) ? 'nav-active' : undefined)
+
+const links = [
+  { name: 'index', prefix: '/', label: 'About' },
+  { name: 'blog', prefix: '/blog', label: 'Blog' },
+  { name: 'projects', prefix: '/projects', label: 'Projects' },
+]
 </script>
 
 <template>
-  <div class="navbar sm:p-4">
+  <!-- Mobile: two-tier header. Row 1 = signature + Subscribe, Row 2 = full-width
+       nav tabs. No hamburger — three links fit comfortably on every phone. -->
+  <div class="sm:hidden px-2 pt-2">
+    <div class="flex items-center justify-between px-2 py-1">
+      <span class="text-xl select-none">
+        <ElementsHeaderSignature value="gozman." />
+      </span>
+      <NuxtLink class="btn btn-sm" :to="{ name: 'subscription' }">Subscribe</NuxtLink>
+    </div>
+    <nav class="mt-2 flex border-t border-base-200 font-poppins font-medium">
+      <NuxtLink
+        v-for="link in links"
+        :key="link.name"
+        :to="{ name: link.name }"
+        class="mobile-nav-link flex-1 py-3 text-center"
+        :class="{ 'mobile-nav-active': isActive(link.prefix) }"
+      >
+        {{ link.label }}
+      </NuxtLink>
+    </nav>
+  </div>
+
+  <!-- Desktop: unchanged daisyUI navbar. -->
+  <div class="navbar hidden sm:flex sm:p-4">
     <div class="navbar-start">
-      <div class="dropdown">
-        <div
-          tabindex="0"
-          role="button"
-          class="btn btn-ghost sm:hidden px-3"
-          @click="dropdownVisible = true"
-        >
-          <Icon name="i-ion:menu-outline" class="text-2xl mr-1" />
-          <span class="text-xl select-none">
-            <ElementsHeaderSignature value="gozman." />
-          </span>
-        </div>
-        <ul
-          tabindex="0"
-          v-show="dropdownVisible"
-          class="menu menu-md dropdown-content mt-2 z-[1] p-2 shadow-sm bg-base-100 rounded-box w-52 font-poppins font-medium"
-        >
-          <li>
-            <NuxtLink
-              :to="{ name: 'index' }"
-              :class="sectionClass('/')"
-              @click="dropdownVisible = false"
-              >About</NuxtLink
-            >
-          </li>
-          <li>
-            <NuxtLink
-              :to="{ name: 'blog' }"
-              :class="sectionClass('/blog')"
-              @click="dropdownVisible = false"
-              >Blog</NuxtLink
-            >
-          </li>
-          <li>
-            <NuxtLink
-              :to="{ name: 'projects' }"
-              :class="sectionClass('/projects')"
-              @click="dropdownVisible = false"
-              >Projects</NuxtLink
-            >
-          </li>
-        </ul>
-      </div>
-      <span class="text-xl select-none hidden sm:block">
+      <span class="text-xl select-none">
         <ElementsHeaderSignature value="gozman." />
       </span>
     </div>
-    <div class="navbar-center hidden sm:flex">
+    <div class="navbar-center">
       <ul class="menu menu-horizontal gap-1 font-poppins font-medium">
-        <li><NuxtLink :to="{ name: 'index' }" :class="sectionClass('/')">About</NuxtLink></li>
-        <li><NuxtLink :to="{ name: 'blog' }" :class="sectionClass('/blog')">Blog</NuxtLink></li>
-        <li>
-          <NuxtLink :to="{ name: 'projects' }" :class="sectionClass('/projects')"
-            >Projects</NuxtLink
-          >
+        <li v-for="link in links" :key="link.name">
+          <NuxtLink :to="{ name: link.name }" :class="sectionClass(link.prefix)">{{
+            link.label
+          }}</NuxtLink>
         </li>
       </ul>
     </div>
@@ -84,5 +63,21 @@ const sectionClass = (prefix: string) => {
 @reference '../assets/css/tailwind.css';
 .menu .nav-active {
   @apply text-primary font-semibold;
+}
+
+/* Mobile nav tabs: quiet by default, brand-orange with a short underline when
+   the section is active. */
+.mobile-nav-link {
+  @apply relative text-base-content/60 transition-colors;
+}
+.mobile-nav-link:hover {
+  @apply text-base-content;
+}
+.mobile-nav-active {
+  @apply text-primary font-semibold;
+}
+.mobile-nav-active::after {
+  content: '';
+  @apply absolute bottom-0 left-1/2 h-[3px] w-6 -translate-x-1/2 rounded-full bg-primary;
 }
 </style>

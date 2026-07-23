@@ -14,11 +14,11 @@ useSeoMeta({
   ogTitle: () => `Blog${pageSuffix.value} | Sam Gozman`,
   twitterTitle: () => `Blog${pageSuffix.value} | Sam Gozman`,
   description:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Articles on backend engineering, Go, Node.js, Rust, distributed systems, and fintech by Sam Gozman, Engineering Team Lead and Senior Backend Engineer.',
   ogDescription:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Articles on backend engineering, Go, Node.js, Rust, distributed systems, and fintech by Sam Gozman, Engineering Team Lead and Senior Backend Engineer.',
   twitterDescription:
-    'Developer blog of Sam Gozman. Team Lead, Senior Backend Engineer & Open Source Developer.',
+    'Articles on backend engineering, Go, Node.js, Rust, distributed systems, and fintech by Sam Gozman, Engineering Team Lead and Senior Backend Engineer.',
   twitterImageAlt: 'Blog | Sam Gozman'
 })
 
@@ -129,6 +129,9 @@ const pageHref = (n: number) => (n <= 1 ? '/blog' : `/blog/page/${n}`)
 </template>
 
 <style scoped>
+/* Tailwind v4: scoped <style> blocks need @reference to resolve @apply against
+   the app's utilities (daisyUI colors + the custom font-poppins). */
+@reference '../../assets/css/tailwind.css';
 /* Newer/Older: a bordered button on mobile, a bare uppercase eyebrow on desktop
    (mirroring the date-eyebrow above each post). */
 .page-edge {

@@ -27,12 +27,12 @@ defineProps<ProjectItemProps>()
     <div :class="side === 'left' ? 'timeline-start md:text-end' : 'timeline-end'" class="mb-10">
       <time class="font-mono italic">{{ date }}</time>
       <div class="text-lg font-black">{{ title }}</div>
-      <p class="text-justify">
+      <p class="text-left sm:text-justify">
         <slot></slot>
       </p>
       <div
         :class="side === 'left' ? 'md:justify-end' : 'md:justify-start'"
-        class="flex-grow flex justify-center items-center"
+        class="grow flex justify-center items-center"
       >
         <ul class="not-prose px-0 py-1 menu menu-horizontal menu-sm">
           <li v-if="appStoreLink">

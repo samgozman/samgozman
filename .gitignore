@@ -26,6 +26,7 @@ coverage
 *.sln
 *.sw?
 
+.env
 .env.development
 
 # Nuxt dev/build outputs

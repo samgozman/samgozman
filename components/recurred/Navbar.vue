@@ -40,6 +40,8 @@ const sectionClass = (path: string) => (route.path === path ? 'nav-active' : und
 </template>
 
 <style scoped>
+/* Tailwind v4: @reference so @apply can resolve daisyUI's text-primary. */
+@reference '../../assets/css/tailwind.css';
 .menu .nav-active {
   @apply text-primary font-semibold;
 }

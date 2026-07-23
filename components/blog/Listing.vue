@@ -129,6 +129,9 @@ const pageHref = (n: number) => (n <= 1 ? '/blog' : `/blog/page/${n}`)
 </template>
 
 <style scoped>
+/* Tailwind v4: scoped <style> blocks need @reference to resolve @apply against
+   the app's utilities (daisyUI colors + the custom font-poppins). */
+@reference '../../assets/css/tailwind.css';
 /* Newer/Older: a bordered button on mobile, a bare uppercase eyebrow on desktop
    (mirroring the date-eyebrow above each post). */
 .page-edge {

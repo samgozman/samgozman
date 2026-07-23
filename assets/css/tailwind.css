@@ -1,3 +1,124 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* JS plugins are loaded from CSS in Tailwind v4 (replaces the config `plugins` array). */
+@plugin '@tailwindcss/typography';
+
+/*
+ * daisyUI v5. Only the `light` theme is enabled as default — we deliberately do
+ * NOT pull in the built-in `dark` theme, because a bare `@plugin "daisyui"`
+ * would register `dark` as `--prefersdark` and flip the whole site to dark for
+ * visitors whose OS is in dark mode. The v4 config only ever shipped light +
+ * recurred, so this keeps behavior identical.
+ */
+@plugin 'daisyui' {
+  themes: light --default;
+}
+
+/*
+ * Customize the built-in `light` theme in place: everything is inherited from
+ * daisyUI's light theme, we only swap the accents to the brand orange (both
+ * primary and secondary, matching the old config) and force white content so
+ * text on the orange buttons stays legible.
+ */
+@plugin 'daisyui/theme' {
+  name: 'light';
+  default: true;
+  /*
+   * daisyUI v5's light theme ships different base colors than v4 (notably a
+   * darker base-content and a lighter base-200). Pin them to the v4 values so
+   * body text keeps its previous weight/color and the plain .btn keeps its old
+   * grey background. Values copied from daisyUI v4's light theme.
+   */
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(96.1151% 0 0);
+  --color-base-300: oklch(92.4169% 0.00108 197.138);
+  --color-base-content: oklch(27.8078% 0.029596 256.848);
+  --color-primary: #f97316;
+  --color-primary-content: #ffffff;
+  --color-secondary: #f97316;
+  --color-secondary-content: #ffffff;
+  /*
+   * daisyUI v5 shrank the default corner radii (selector 0.5rem / field 0.25rem
+   * / box 0.5rem). Restore the v4 values so badges stay pill-shaped and buttons
+   * / inputs keep their previous rounding: v4 had --rounded-badge 1.9rem,
+   * --rounded-btn 0.5rem, --rounded-box 1rem.
+   */
+  --radius-selector: 1.9rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  /*
+   * --size-field 0.3rem -> controls are 3rem (48px) tall like v4's h-12 buttons
+   * and inputs (v5 defaults to 0.25rem = 40px). --depth 0 removes the v5 button
+   * border/shadow so plain buttons render flat, as they did in v4.
+   */
+  --size-field: 0.3rem;
+  --depth: 0;
+}
+
+/*
+ * Recurred app pages: the light palette recolored with the app's violet accent
+ * pair (#6455E0 / #8B7CFF). `recurred` is not a built-in theme name, so it does
+ * not inherit — the full light palette is copied verbatim (values taken from
+ * daisyui/theme/light.css) and only the accents are changed.
+ */
+@plugin 'daisyui/theme' {
+  name: 'recurred';
+  color-scheme: light;
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(96.1151% 0 0);
+  --color-base-300: oklch(92.4169% 0.00108 197.138);
+  --color-base-content: oklch(27.8078% 0.029596 256.848);
+  --color-primary: #6455e0;
+  --color-primary-content: #ffffff;
+  --color-secondary: #8b7cff;
+  --color-secondary-content: #ffffff;
+  --color-accent: oklch(77% 0.152 181.912);
+  --color-accent-content: oklch(38% 0.063 188.416);
+  --color-neutral: oklch(14% 0.005 285.823);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(37% 0.077 168.94);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+  --color-error: oklch(71% 0.194 13.428);
+  --color-error-content: oklch(27% 0.105 12.094);
+  --radius-selector: 1.9rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.3rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/*
+ * Custom theme extensions migrated from the old tailwind.config.js `theme.extend`.
+ * In v4 these live as CSS theme variables, which generate the matching utilities
+ * (`font-poppins`, `shadow-lift`, `shadow-lift-violet`).
+ */
+@theme {
+  /*
+   * Override Tailwind v4's default --font-sans. Its stock value hard-codes named
+   * system fonts ("Segoe UI", "Helvetica Neue", Arial) that @nuxtjs/og-image
+   * auto-detects from the base font-family and then warns it cannot download
+   * (they are not real webfonts). A pure generic/system stack is visually
+   * identical (system-ui resolves to the same OS fonts) and og-image treats
+   * every token here as a generic keyword, so the warnings go away.
+   */
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  /* Warm-tinted elevation for the signature card lift: a faint orange glow over
+     a neutral depth shadow. The violet variant is the same lift recolored. */
+  --shadow-lift: 0 12px 24px -10px rgb(249 115 22 / 0.18), 0 6px 12px -6px rgb(31 41 55 / 0.1);
+  --shadow-lift-violet: 0 12px 24px -10px rgb(100 85 224 / 0.22),
+    0 6px 12px -6px rgb(31 41 55 / 0.1);
+}
+
+/*
+ * `bg-orange-500` is applied on <body> via nuxt.config's bodyAttrs (and in the
+ * OG-image components), so safelist it — replaces the old JS-config `safelist`.
+ */
+@source inline('bg-orange-500');

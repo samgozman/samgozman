@@ -32,7 +32,7 @@ defineProps<ProjectItemProps>()
       </p>
       <div
         :class="side === 'left' ? 'md:justify-end' : 'md:justify-start'"
-        class="flex-grow flex justify-center items-center"
+        class="grow flex justify-center items-center"
       >
         <ul class="not-prose px-0 py-1 menu menu-horizontal menu-sm">
           <li v-if="appStoreLink">

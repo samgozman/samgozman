@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
 
 // Captured once per `nuxt build`, so every redeploy advances the lastmod of
 // static pages (whose content only changes when the code is rebuilt).
@@ -83,10 +84,11 @@ export default defineNuxtConfig({
   devServer: {
     port: 5555
   },
-  modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@nuxtjs/seo', '@nuxt/content'],
-  tailwindcss: {
-    cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }]
-  },
+  modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxtjs/seo', '@nuxt/content'],
+  // Tailwind v4 is wired through its dedicated Vite plugin (see `vite.plugins`)
+  // instead of the @nuxtjs/tailwindcss module, which only supports v3. The CSS
+  // entry below carries the `@import "tailwindcss"` + daisyUI plugin directives.
+  css: ['~/assets/css/tailwind.css'],
   ogImage: {},
   // Re-enable highlight API route for client-side parseMarkdown in MarkdownView
   mdc: {
@@ -95,6 +97,7 @@ export default defineNuxtConfig({
     }
   },
   vite: {
+    plugins: [tailwindcss()],
     optimizeDeps: {
       include: [
         '@hcaptcha/vue3-hcaptcha',

@@ -187,9 +187,9 @@ const generateSlug = () => {
       <input type="text" class="grow" placeholder="typescript,vuejs" v-model="post.keywords" />
     </label>
 
-    <label class="form-control">
+    <label class="flex flex-col">
       <div class="label">
-        <span class="label-text font-bold">Compact description *</span>
+        <span class="font-bold">Compact description *</span>
       </div>
       <textarea
         placeholder="A short description of the post."

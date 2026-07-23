@@ -30,7 +30,7 @@
       </div>
     </aside>
     <div class="order-3 sm:order-2 flex">
-      <fieldset class="form-control">
+      <fieldset class="flex flex-col">
         <p class="footer-title text-center text-xl md:text-sm md:text-right px-2">
           Subscribe to my blog
         </p>

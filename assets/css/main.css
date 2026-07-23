@@ -111,3 +111,13 @@ body[data-canvas='recurred'] ::selection {
 .bg-base-100 {
   background-color: #ffffff;
 }
+
+/*
+ * daisyUI v5 tightened menu item padding (0.375rem / 0.75rem) compared to v4
+ * (0.5rem / 1rem), which narrowed the horizontal nav. Restore the v4 spacing.
+ * Unlayered, so it wins over daisyUI's @layer utilities rule.
+ */
+.menu li > a {
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+}

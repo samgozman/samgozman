@@ -30,7 +30,7 @@ const sectionClass = (prefix: string) => {
         <ul
           tabindex="0"
           v-show="dropdownVisible"
-          class="menu menu-md dropdown-content mt-2 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-poppins font-medium"
+          class="menu menu-md dropdown-content mt-2 z-[1] p-2 shadow-sm bg-base-100 rounded-box w-52 font-poppins font-medium"
         >
           <li>
             <NuxtLink
@@ -80,6 +80,8 @@ const sectionClass = (prefix: string) => {
 </template>
 
 <style scoped>
+/* Tailwind v4: @reference so @apply can resolve daisyUI's text-primary. */
+@reference '../assets/css/tailwind.css';
 .menu .nav-active {
   @apply text-primary font-semibold;
 }

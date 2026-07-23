@@ -19,12 +19,12 @@ const readingTimeSeconds = props.post.reading_time % 60
       class="p-1 md:p-4 flex justify-between sm:justify-start sm:gap-2 items-center sm:flex-col sm:items-center"
     >
       <p
-        class="text-base-content text-opacity-80 text-2xl font-black font-poppins uppercase tabular-nums"
+        class="text-base-content/80 text-2xl font-black font-poppins uppercase tabular-nums"
       >
         {{ `${createdAt.getDate()} ${createdAt.toLocaleString('en-GB', { month: 'short' })}` }}
       </p>
       <p
-        class="text-base-content text-opacity-20 text-2xl sm:text-4xl font-poppins font-semibold tabular-nums"
+        class="text-base-content/20 text-2xl sm:text-4xl font-poppins font-semibold tabular-nums"
       >
         {{ createdAt.getFullYear() }}
       </p>
@@ -40,7 +40,7 @@ const readingTimeSeconds = props.post.reading_time % 60
       >
         {{ post.title }}
       </NuxtLink>
-      <p class="text-base-content text-opacity-80 text-justify sm:text-left">
+      <p class="text-base-content/80 text-justify sm:text-left">
         {{ post.description }}
       </p>
       <div class="flex flex-wrap gap-2 mt-1">
@@ -51,7 +51,7 @@ const readingTimeSeconds = props.post.reading_time % 60
     </div>
 
     <!-- Right Section -->
-    <div class="p-4 flex-2 flex flex-col justify-end items-end">
+    <div class="p-4 flex flex-col justify-end items-end">
       <p class="text-sm text-gray-700 tabular-nums whitespace-nowrap">
         {{ readingTime }}m {{ readingTimeSeconds }}s read
       </p>

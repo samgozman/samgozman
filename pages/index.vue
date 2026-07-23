@@ -34,7 +34,7 @@ defineOgImage('Default', {
         alt="Portrait of Sam Gozman"
       />
 
-      <div class="flex-grow">
+      <div class="grow">
         <div class="badge badge-outline badge-lg mb-2">Hi, I am Sam Gozman! 👋</div>
         <ElementsHeaderMax
           value="Senior Backend Engineer & Open Source Developer."
@@ -58,7 +58,7 @@ defineOgImage('Default', {
           My main stack includes Go, NodeJS, Rust, PostgreSQL, Redis, VueJS, Docker, Linux, and Git,
           forming a versatile toolkit for efficient development.
         </p>
-        <div class="flex-grow flex justify-center items-center">
+        <div class="grow flex justify-center items-center">
           <ul class="not-prose menu menu-horizontal rounded-box">
             <li>
               <a

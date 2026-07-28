@@ -73,5 +73,6 @@ ${items.join('\n')}
 </rss>`
 
   setHeader(event, 'content-type', 'application/rss+xml; charset=UTF-8')
+  setHeader(event, 'x-robots-tag', 'noindex')
   return xml
 })

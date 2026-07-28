@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, useId } from 'vue'
 import { useRouter } from 'vue-router'
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
 
-const { data } = useAsyncData(async () => {
-  const inputName = `email-${Math.random().toString(36).substring(2, 10)}`
-  return inputName
-})
+// Deterministic across renders, unlike the Math.random() this replaced
+const inputName = `email-${useId()}`
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -70,7 +68,7 @@ const onInputFocus = () => {
   <form @submit="onSubmit">
     <div class="join max-w-full">
       <input
-        :name="data ?? 'email'"
+        :name="inputName"
         type="email"
         required
         placeholder="Enter your email"

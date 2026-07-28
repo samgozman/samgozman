@@ -49,6 +49,21 @@ const features = [
     icon: 'i-tabler:shield-lock',
     title: 'Private by default',
     text: 'Your subscriptions stay on your device and sync only through your own iCloud. Recurred does not track or sell your data.'
+  },
+  {
+    icon: 'i-tabler:layout-grid',
+    title: 'Widgets on your home screen',
+    text: 'Up Next shows what is due and how much, or the next three charges with names and prices. This Month tracks how much has already left your account and what next month is shaping up to cost.'
+  },
+  {
+    icon: 'i-tabler:sparkles',
+    title: 'Add them by describing them',
+    text: 'Write or dictate your subscriptions in your own words and Recurred fills in the details, read entirely on your device. Needs an iPhone with Apple Intelligence.'
+  },
+  {
+    icon: 'i-tabler:file-spreadsheet',
+    title: 'Import from a spreadsheet',
+    text: 'Already keep your subscriptions in a CSV file? Bring the whole list across at once instead of adding them one by one.'
   }
 ]
 
@@ -72,6 +87,24 @@ const screens = [
     text: 'Find the subscriptions worth cancelling.'
   }
 ]
+
+// Tells Google the page describes an iOS app rather than leaving it as the
+// generic WebPage the module emits by default. No aggregateRating: the app has
+// no ratings yet, and inventing them is a structured-data violation.
+useSchemaOrg([
+  defineSoftwareApp({
+    '@type': 'MobileApplication',
+    name: 'Recurred',
+    description:
+      "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'iOS 18.0 or later',
+    softwareVersion: '1.1.0',
+    downloadUrl: appStoreUrl,
+    featureList: features.map((feature) => feature.title),
+    offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' }
+  })
+])
 </script>
 
 <template>

@@ -99,7 +99,8 @@ useSchemaOrg([
       "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'iOS 18.0 or later',
-    softwareVersion: '1.1.0',
+    // No softwareVersion: it ships every few days and no rich result uses it,
+    // so a hardcoded value would only ever drift out of date.
     downloadUrl: appStoreUrl,
     featureList: features.map((feature) => feature.title),
     offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' }

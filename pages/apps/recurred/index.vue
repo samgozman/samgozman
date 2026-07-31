@@ -67,24 +67,46 @@ const features = [
   }
 ]
 
+// Six, so the three-column grid fills two even rows. Ordered as the journey
+// through the app: add, schedule, then understand and act. Captions run long
+// enough to fill two lines in a card, so none of them strands a single word on
+// a line of its own.
 const screens = [
+  {
+    src: '/img/recurred/s2.webp',
+    alt: 'Recurred add-subscription screen with a grid of popular services to pick from',
+    title: 'Add in seconds',
+    text: 'Tap one of the popular services, or search for your own.'
+  },
+  {
+    src: '/img/recurred/s7.webp',
+    alt: 'Recurred import screen where several subscriptions are described in a sentence for the app to extract',
+    title: 'Or just describe them',
+    text: 'Write or dictate the whole list and your iPhone fills in the details.'
+  },
   {
     src: '/img/recurred/s5.webp',
     alt: 'Recurred payment calendar showing which subscriptions charge on each day of the month',
     title: 'Payment calendar',
-    text: 'Every charge on the day it lands.'
+    text: 'Every charge on the day it lands, so nothing arrives unannounced.'
+  },
+  {
+    src: '/img/recurred/s4.webp',
+    alt: 'Recurred subscription details showing impact analysis with the yearly cost and share of its category',
+    title: 'What one costs you',
+    text: 'The yearly figure, and how much of a category it quietly takes.'
   },
   {
     src: '/img/recurred/s6.webp',
     alt: 'Recurred analytics screen with monthly spending bars, a yearly summary and a breakdown by currency',
     title: 'The year at a glance',
-    text: 'Month by month, in every currency you pay.'
+    text: 'Totals by month and by year, in every currency you pay in.'
   },
   {
     src: '/img/recurred/s13.webp',
     alt: 'Recurred Optimizer summary showing the yearly saving from two cancelled subscriptions',
     title: 'The Optimizer',
-    text: 'Cut what you never open, and see the saving.'
+    text: 'Cut what you never open and watch the yearly total drop.'
   }
 ]
 
@@ -171,7 +193,7 @@ useSchemaOrg([
           />
           <figcaption class="mt-5">
             <p class="font-poppins font-semibold text-lg">{{ screen.title }}</p>
-            <p class="text-gray-600 mt-1">{{ screen.text }}</p>
+            <p class="text-gray-600 mt-1 text-balance">{{ screen.text }}</p>
           </figcaption>
         </figure>
       </div>

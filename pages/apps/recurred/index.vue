@@ -69,22 +69,22 @@ const features = [
 
 const screens = [
   {
-    src: '/img/recurred/s7.webp',
+    src: '/img/recurred/s5.webp',
     alt: 'Recurred payment calendar showing which subscriptions charge on each day of the month',
     title: 'Payment calendar',
     text: 'Every charge on the day it lands.'
   },
   {
-    src: '/img/recurred/s9.webp',
-    alt: 'Recurred analytics screen with a monthly spending breakdown by category',
-    title: 'Monthly breakdown',
-    text: 'Spending by category, month by month.'
+    src: '/img/recurred/s6.webp',
+    alt: 'Recurred analytics screen with monthly spending bars, a yearly summary and a breakdown by currency',
+    title: 'The year at a glance',
+    text: 'Month by month, in every currency you pay.'
   },
   {
-    src: '/img/recurred/s11.webp',
-    alt: 'Recurred Optimizer results suggesting a subscription to cancel based on usage',
+    src: '/img/recurred/s13.webp',
+    alt: 'Recurred Optimizer summary showing the yearly saving from two cancelled subscriptions',
     title: 'The Optimizer',
-    text: 'Find the subscriptions worth cancelling.'
+    text: 'Cut what you never open, and see the saving.'
   }
 ]
 

@@ -104,7 +104,7 @@ const screens = [
   },
   {
     src: '/img/recurred/s13.webp',
-    alt: 'Recurred Optimizer summary showing the yearly saving from two cancelled subscriptions',
+    alt: 'Recurred Optimizer summary showing the yearly saving from the subscriptions you cancelled',
     title: 'The Optimizer',
     text: 'Cut what you never open and watch the yearly total drop.'
   }

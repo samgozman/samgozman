@@ -38,7 +38,7 @@ const features = [
   {
     icon: 'i-tabler:scissors',
     title: "Cancel what you don't use",
-    text: 'The Optimizer tracks how often you actually open each service and helps you decide what is worth keeping.'
+    text: 'The Optimizer lets you log how often you use each service over a set period, then helps you decide what is worth keeping.'
   },
   {
     icon: 'i-tabler:chart-pie',
@@ -128,9 +128,45 @@ const ipadCallouts = [
   }
 ]
 
-// Tells Google the page describes an iOS app rather than leaving it as the
-// generic WebPage the module emits by default. No aggregateRating: the app has
-// no ratings yet, and inventing them is a structured-data violation.
+const faqs = [
+  {
+    q: 'Is Recurred free?',
+    a: 'Yes. Every feature is unlocked, with no ads and no in-app purchases — there is no subscription required to track your subscriptions.'
+  },
+  {
+    q: 'Does Recurred connect to my bank?',
+    a: 'No. There is no bank login and no account to create. You add what you pay for yourself, so Recurred never touches your financial accounts.'
+  },
+  {
+    q: 'Where is my data kept?',
+    a: 'On your device. It syncs only through your own iCloud, so your subscriptions move between iPhone and iPad without passing through anyone else’s servers. Nothing is tracked or sold.'
+  },
+  {
+    q: 'Is there an Android version?',
+    a: 'No, and there are no plans for one. Recurred is built to be fully native on iPhone and iPad rather than spread thin across platforms.'
+  },
+  {
+    q: 'Does it work on iPad?',
+    a: 'Yes. It is a universal app — the same subscriptions, synced through iCloud, with a layout that uses the bigger screen to show your details side by side.'
+  },
+  {
+    q: 'Are there home screen widgets?',
+    a: 'Two. Up Next shows the charges about to land, and This Month tracks your spending against what you usually pay — both without opening the app.'
+  },
+  {
+    q: "Can Recurred help me cancel subscriptions I don't use?",
+    a: 'Yes. Over a tracking period you set, you log how often you actually use each service — Recurred does not watch you in the background. It then sorts them by usage and shows how much you would save a year by cutting the ones you barely touch.'
+  },
+  {
+    q: 'Do I need Apple Intelligence?',
+    a: 'No. It only powers a few small touches — describing your subscriptions in plain English for Recurred to fill in, or suggesting a fitting icon from Apple’s own symbols when a service is not one of the built-in ones — all handled on your device. Everything else, including importing a CSV, works without it.'
+  },
+  {
+    q: 'Who makes Recurred?',
+    a: 'One developer. I built it to get my own subscriptions under control, then made it good enough to share — which is why it stays free and private, with every feature unlocked.'
+  }
+]
+
 useSchemaOrg([
   defineSoftwareApp({
     '@type': 'MobileApplication',
@@ -144,7 +180,9 @@ useSchemaOrg([
     downloadUrl: appStoreUrl,
     featureList: features.map((feature) => feature.title),
     offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' }
-  })
+  }),
+  defineWebPage({ '@type': ['WebPage', 'FAQPage'] }),
+  ...faqs.map((faq) => defineQuestion({ name: faq.q, acceptedAnswer: faq.a }))
 ])
 </script>
 
@@ -326,12 +364,32 @@ useSchemaOrg([
       </div>
     </section>
 
+    <section id="faq" class="pb-16 md:pb-20 scroll-mt-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-poppins font-bold tracking-tight text-3xl mb-8">Questions, answered.</h2>
+        <details v-for="faq in faqs" :key="faq.q" class="group border-b border-gray-200">
+          <summary
+            class="flex items-center justify-between gap-4 cursor-pointer list-none py-4 font-poppins font-semibold text-lg [&::-webkit-details-marker]:hidden"
+          >
+            {{ faq.q }}
+            <Icon
+              name="i-tabler:chevron-down"
+              class="shrink-0 text-xl text-gray-400 transition-transform duration-200 group-open:rotate-180"
+            />
+          </summary>
+          <p class="text-gray-600 pb-4 pr-8 text-balance">{{ faq.a }}</p>
+        </details>
+      </div>
+    </section>
+
     <!-- Closing CTA -->
     <section class="pb-14 md:pb-20 text-center">
       <h2 class="font-poppins font-bold tracking-tight text-3xl text-balance">
         Get your subscriptions under control.
       </h2>
-      <p class="mt-3 text-gray-600">Free for iPhone and iPad. Requires iOS or iPadOS 18 or later.</p>
+      <p class="mt-3 text-gray-600">
+        Free for iPhone and iPad. Requires iOS or iPadOS 18 or later.
+      </p>
       <a :href="appStoreUrl" class="inline-block mt-6" title="Download Recurred on the App Store">
         <img
           src="/img/recurred/appstore-badge.svg"

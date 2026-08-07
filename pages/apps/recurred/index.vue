@@ -5,16 +5,16 @@ const appStoreUrl = 'https://apps.apple.com/app/id6783705092'
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
-  title: 'Recurred: Subscription Tracker for iPhone',
-  ogTitle: 'Recurred: Subscription Tracker for iPhone',
-  twitterTitle: 'Recurred: Subscription Tracker for iPhone',
+  title: 'Recurred: Subscription Tracker for iPhone & iPad',
+  ogTitle: 'Recurred: Subscription Tracker for iPhone & iPad',
+  twitterTitle: 'Recurred: Subscription Tracker for iPhone & iPad',
   description:
     "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
   ogDescription:
     "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
   twitterDescription:
     "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
-  twitterImageAlt: 'Recurred: Subscription Tracker for iPhone'
+  twitterImageAlt: 'Recurred: Subscription Tracker for iPhone & iPad'
 })
 
 defineOgImage('Recurred')
@@ -110,6 +110,24 @@ const screens = [
   }
 ]
 
+const ipadCallouts = [
+  {
+    icon: 'i-tabler:layout-dashboard',
+    title: 'The whole dashboard at once',
+    text: 'Totals, upcoming charges and every subscription together, with no scrolling to find them.'
+  },
+  {
+    icon: 'i-tabler:columns-2',
+    title: 'Calendar and totals, together',
+    text: "The month's payment calendar sits right beside the numbers it adds up to."
+  },
+  {
+    icon: 'i-tabler:devices',
+    title: 'The same list everywhere',
+    text: "Add a subscription on your iPhone and it's already on your iPad, synced through your iCloud."
+  }
+]
+
 // Tells Google the page describes an iOS app rather than leaving it as the
 // generic WebPage the module emits by default. No aggregateRating: the app has
 // no ratings yet, and inventing them is a structured-data violation.
@@ -120,7 +138,7 @@ useSchemaOrg([
     description:
       "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
     applicationCategory: 'FinanceApplication',
-    operatingSystem: 'iOS 18.0 or later',
+    operatingSystem: 'iOS 18.0 or later, iPadOS 18.0 or later',
     // No softwareVersion: it ships every few days and no rich result uses it,
     // so a hardcoded value would only ever drift out of date.
     downloadUrl: appStoreUrl,
@@ -199,6 +217,68 @@ useSchemaOrg([
       </div>
     </section>
 
+    <section class="pb-16 md:pb-20">
+      <div
+        class="relative overflow-hidden rounded-3xl border border-gray-200 bg-[radial-gradient(120%_100%_at_50%_0%,rgb(139_124_255/0.14),rgb(139_124_255/0.03)_70%)] px-6 py-12 md:px-12 md:py-16"
+      >
+        <div class="text-center max-w-2xl mx-auto">
+          <span
+            class="inline-flex items-center gap-1.5 rounded-full bg-[#6455E0]/10 text-primary font-medium px-3 py-1 text-sm"
+          >
+            <Icon name="i-tabler:device-ipad" class="text-base" />
+            Now on iPad
+          </span>
+          <h2 class="font-poppins font-bold tracking-tight text-3xl mt-5 text-balance">
+            Made for the bigger screen.
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 text-balance">
+            Recurred uses every inch of the iPad, so your whole subscription picture sits on one
+            screen instead of one tap away.
+          </p>
+        </div>
+
+        <!-- Centerpiece: the home dashboard, the screen the extra room helps most -->
+        <div class="relative mt-10 md:mt-12 flex justify-center">
+          <div
+            class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[80%] -z-0 bg-[radial-gradient(closest-side,rgb(139_124_255/0.35),transparent)]"
+            aria-hidden="true"
+          ></div>
+          <RecurredTabletFrame
+            src="/img/recurred/ipad-home.webp"
+            alt="Recurred on iPad showing the home dashboard: the month's total, spending by category, upcoming charges and every subscription grouped by type, all on one screen"
+            loading="lazy"
+            class="relative w-full max-w-3xl"
+          />
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-8 mt-12 max-w-4xl mx-auto">
+          <div v-for="callout in ipadCallouts" :key="callout.title" class="text-center">
+            <span
+              class="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-[#6455E0]/10 text-primary"
+            >
+              <Icon :name="callout.icon" class="text-2xl" />
+            </span>
+            <h3 class="font-poppins font-semibold text-lg mt-4">{{ callout.title }}</h3>
+            <p class="text-gray-600 mt-2 text-balance">{{ callout.text }}</p>
+          </div>
+        </div>
+
+        <!-- Proof of the side-by-side claim -->
+        <figure class="mt-12 max-w-4xl mx-auto">
+          <RecurredTabletFrame
+            src="/img/recurred/ipad-analytics.webp"
+            alt="Recurred analytics on iPad with the monthly payment calendar on the left and this month's totals, the yearly summary and a currency breakdown on the right"
+            loading="lazy"
+            class="w-full"
+          />
+          <figcaption class="mt-5 text-center text-gray-600 text-balance">
+            A month's payment calendar and the totals it adds up to, read together instead of one
+            after the other.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <!-- Features -->
     <section id="features" class="pb-16 md:pb-20 scroll-mt-8">
       <h2 class="font-poppins font-bold tracking-tight text-3xl mb-8">What it does.</h2>
@@ -251,7 +331,7 @@ useSchemaOrg([
       <h2 class="font-poppins font-bold tracking-tight text-3xl text-balance">
         Get your subscriptions under control.
       </h2>
-      <p class="mt-3 text-gray-600">Free for iPhone. Requires iOS 18 or later.</p>
+      <p class="mt-3 text-gray-600">Free for iPhone and iPad. Requires iOS or iPadOS 18 or later.</p>
       <a :href="appStoreUrl" class="inline-block mt-6" title="Download Recurred on the App Store">
         <img
           src="/img/recurred/appstore-badge.svg"

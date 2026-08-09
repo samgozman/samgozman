@@ -27,14 +27,14 @@
           class="link link-hover"
           href="https://github.com/samgozman"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           >GitHub</a
         >
         <a
           class="link link-hover"
           href="https://x.com/samgozman"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           >X (Twitter)</a
         >
       </nav>

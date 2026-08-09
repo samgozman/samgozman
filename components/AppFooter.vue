@@ -9,17 +9,17 @@
         <div
           class="grid grid-flow-col gap-4 md:gap-0 mb-8 md:mb-0 text-3xl md:text-2xl text-primary"
         >
-          <a href="https://github.com/samgozman" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/samgozman" target="_blank" rel="nofollow noopener noreferrer">
             <Icon name="i-ion:logo-github" />
           </a>
           <a
             href="https://www.linkedin.com/in/samgozman/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
           >
             <Icon name="i-ion:logo-linkedin" />
           </a>
-          <a href="https://t.me/samgozman" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/samgozman" target="_blank" rel="nofollow noopener noreferrer">
             <Icon name="i-tabler:brand-telegram" />
           </a>
         </div>

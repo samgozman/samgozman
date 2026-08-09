@@ -45,7 +45,7 @@ defineOgImage('Default', {
             <a
               href="https://github.com/samgozman"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               title="GitHub"
               class="inline-flex p-1.5"
             >
@@ -56,7 +56,7 @@ defineOgImage('Default', {
             <a
               href="https://www.linkedin.com/in/samgozman/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               title="LinkedIn"
               class="inline-flex p-1.5"
             >
@@ -67,7 +67,7 @@ defineOgImage('Default', {
             <a
               href="https://t.me/samgozman"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               title="Telegram"
               class="inline-flex p-1.5"
             >
@@ -123,7 +123,7 @@ defineOgImage('Default', {
               <a
                 href="https://github.com/samgozman"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 title="GitHub"
               >
                 <Icon name="i-ion:logo-github" class="text-4xl" />
@@ -133,7 +133,7 @@ defineOgImage('Default', {
               <a
                 href="https://www.linkedin.com/in/samgozman/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 title="LinkedIn"
               >
                 <Icon name="i-ion:logo-linkedin" class="text-4xl" />
@@ -143,7 +143,7 @@ defineOgImage('Default', {
               <a
                 href="https://t.me/samgozman"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 title="Telegram"
               >
                 <Icon name="i-tabler:brand-telegram" class="text-4xl" />

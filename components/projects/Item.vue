@@ -36,37 +36,37 @@ defineProps<ProjectItemProps>()
       >
         <ul class="not-prose px-0 py-1 menu menu-horizontal menu-sm">
           <li v-if="appStoreLink">
-            <a :href="appStoreLink" target="_blank" rel="noopener noreferrer">
+            <a :href="appStoreLink" target="_blank" :rel="externalLinkRel(appStoreLink)">
               <Icon name="i-ion:logo-apple" class="text-xl" />
               app store
             </a>
           </li>
           <li v-if="sourceLink">
-            <a :href="sourceLink" target="_blank" rel="noopener noreferrer">
+            <a :href="sourceLink" target="_blank" :rel="externalLinkRel(sourceLink)">
               <Icon name="i-ion:logo-github" class="text-xl" />
               /source
             </a>
           </li>
           <li v-if="backendSourceLink">
-            <a :href="backendSourceLink" target="_blank" rel="noopener noreferrer">
+            <a :href="backendSourceLink" target="_blank" :rel="externalLinkRel(backendSourceLink)">
               <Icon name="i-ion:logo-github" class="text-xl" />
               /backend
             </a>
           </li>
           <li v-if="frontendSourceLink">
-            <a :href="frontendSourceLink" target="_blank" rel="noopener noreferrer">
+            <a :href="frontendSourceLink" target="_blank" :rel="externalLinkRel(frontendSourceLink)">
               <Icon name="i-ion:logo-github" class="text-xl" />
               /frontend
             </a>
           </li>
           <li v-if="telegramLink">
-            <a :href="telegramLink" target="_blank" rel="noopener noreferrer">
+            <a :href="telegramLink" target="_blank" :rel="externalLinkRel(telegramLink)">
               <Icon name="i-tabler:brand-telegram" class="text-xl" />
               telegram
             </a>
           </li>
           <li v-if="websiteLink">
-            <a :href="websiteLink" target="_blank">
+            <a :href="websiteLink" target="_blank" :rel="externalLinkRel(websiteLink)">
               <Icon name="i-ion:link-outline" class="text-xl" />
               website
             </a>

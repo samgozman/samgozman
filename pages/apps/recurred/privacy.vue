@@ -51,7 +51,7 @@ defineOgImage('Recurred')
     <h2>Crash reports</h2>
     <p>
       Recurred uses
-      <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">Sentry</a>
+      <a href="https://sentry.io/privacy/" target="_blank" rel="nofollow noopener noreferrer">Sentry</a>
       to collect anonymous crash reports so bugs can be found and fixed. These reports contain
       diagnostic information about a crash. They are not linked to your identity, are not used to
       track you, and personally identifying information is not collected.

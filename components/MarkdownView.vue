@@ -7,7 +7,18 @@ const props = defineProps<{
   createdAt: Date
 }>()
 
-const parsedMarkdown = await parseMarkdown(props.value)
+const parsedMarkdown = await parseMarkdown(props.value, {
+  rehype: {
+    plugins: {
+      'rehype-external-links': {
+        options: {
+          rel: (element: { properties?: Record<string, unknown> }) =>
+            isEndorsedUrl(String(element.properties?.href ?? '')) ? [] : ['nofollow']
+        }
+      }
+    }
+  }
+})
 </script>
 
 <style>

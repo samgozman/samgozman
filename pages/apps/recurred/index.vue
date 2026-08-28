@@ -73,37 +73,37 @@ const features = [
 // a line of its own.
 const screens = [
   {
-    src: '/img/recurred/s2.webp',
+    src: '/img/recurred/iphone/add-subscription.webp',
     alt: 'Recurred add-subscription screen with a grid of popular services to pick from',
     title: 'Add in seconds',
     text: 'Tap one of the popular services, or search for your own.'
   },
   {
-    src: '/img/recurred/s7.webp',
+    src: '/img/recurred/iphone/import-describe-input.webp',
     alt: 'Recurred import screen where several subscriptions are described in a sentence for the app to extract',
     title: 'Or just describe them',
     text: 'Write or dictate the whole list and your iPhone fills in the details.'
   },
   {
-    src: '/img/recurred/s5.webp',
+    src: '/img/recurred/iphone/analytics-calendar.webp',
     alt: 'Recurred payment calendar showing which subscriptions charge on each day of the month',
     title: 'Payment calendar',
     text: 'Every charge on the day it lands, so nothing arrives unannounced.'
   },
   {
-    src: '/img/recurred/s4.webp',
+    src: '/img/recurred/iphone/subscription-detail.webp',
     alt: 'Recurred subscription details showing impact analysis with the yearly cost and share of its category',
     title: 'What one costs you',
     text: 'The yearly figure, and how much of a category it quietly takes.'
   },
   {
-    src: '/img/recurred/s6.webp',
+    src: '/img/recurred/iphone/analytics-trends.webp',
     alt: 'Recurred analytics screen with monthly spending bars, a yearly summary and a breakdown by currency',
     title: 'The year at a glance',
     text: 'Totals by month and by year, in every currency you pay in.'
   },
   {
-    src: '/img/recurred/s13.webp',
+    src: '/img/recurred/iphone/optimizer-summary.webp',
     alt: 'Recurred Optimizer summary showing the yearly saving from the subscriptions you cancelled',
     title: 'The Optimizer',
     text: 'Cut what you never open and watch the yearly total drop.'
@@ -224,7 +224,7 @@ useSchemaOrg([
           aria-hidden="true"
         ></div>
         <RecurredPhoneFrame
-          src="/img/recurred/s1.webp"
+          src="/img/recurred/iphone/home.webp"
           alt="Recurred home screen listing upcoming charges and all subscriptions"
           fetchpriority="high"
           class="relative w-64 lg:w-72"
@@ -282,7 +282,7 @@ useSchemaOrg([
             aria-hidden="true"
           ></div>
           <RecurredTabletFrame
-            src="/img/recurred/ipad-home.webp"
+            src="/img/recurred/ipad/home.webp"
             alt="Recurred on iPad showing the home dashboard: the month's total, spending by category, upcoming charges and every subscription grouped by type, all on one screen"
             loading="lazy"
             class="relative w-full max-w-3xl"
@@ -304,7 +304,7 @@ useSchemaOrg([
         <!-- Proof of the side-by-side claim -->
         <figure class="mt-12 max-w-4xl mx-auto">
           <RecurredTabletFrame
-            src="/img/recurred/ipad-analytics.webp"
+            src="/img/recurred/ipad/analytics-calendar.webp"
             alt="Recurred analytics on iPad with the monthly payment calendar on the left and this month's totals, the yearly summary and a currency breakdown on the right"
             loading="lazy"
             class="w-full"

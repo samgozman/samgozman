@@ -5,16 +5,16 @@ const appStoreUrl = 'https://apps.apple.com/app/id6783705092'
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
-  title: 'Recurred: Subscription Tracker for iPhone & iPad',
-  ogTitle: 'Recurred: Subscription Tracker for iPhone & iPad',
-  twitterTitle: 'Recurred: Subscription Tracker for iPhone & iPad',
+  title: 'Recurred: Subscription Tracker for iPhone, iPad & Mac',
+  ogTitle: 'Recurred: Subscription Tracker for iPhone, iPad & Mac',
+  twitterTitle: 'Recurred: Subscription Tracker for iPhone, iPad & Mac',
   description:
     "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
   ogDescription:
     "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
   twitterDescription:
     "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
-  twitterImageAlt: 'Recurred: Subscription Tracker for iPhone & iPad'
+  twitterImageAlt: 'Recurred: Subscription Tracker for iPhone, iPad & Mac'
 })
 
 defineOgImage('Recurred')
@@ -73,58 +73,58 @@ const features = [
 // a line of its own.
 const screens = [
   {
-    src: '/img/recurred/s2.webp',
+    src: '/img/recurred/iphone/add-subscription.webp',
     alt: 'Recurred add-subscription screen with a grid of popular services to pick from',
     title: 'Add in seconds',
     text: 'Tap one of the popular services, or search for your own.'
   },
   {
-    src: '/img/recurred/s7.webp',
+    src: '/img/recurred/iphone/import-describe-input.webp',
     alt: 'Recurred import screen where several subscriptions are described in a sentence for the app to extract',
     title: 'Or just describe them',
     text: 'Write or dictate the whole list and your iPhone fills in the details.'
   },
   {
-    src: '/img/recurred/s5.webp',
+    src: '/img/recurred/iphone/analytics-calendar.webp',
     alt: 'Recurred payment calendar showing which subscriptions charge on each day of the month',
     title: 'Payment calendar',
     text: 'Every charge on the day it lands, so nothing arrives unannounced.'
   },
   {
-    src: '/img/recurred/s4.webp',
+    src: '/img/recurred/iphone/subscription-detail.webp',
     alt: 'Recurred subscription details showing impact analysis with the yearly cost and share of its category',
     title: 'What one costs you',
     text: 'The yearly figure, and how much of a category it quietly takes.'
   },
   {
-    src: '/img/recurred/s6.webp',
+    src: '/img/recurred/iphone/analytics-trends.webp',
     alt: 'Recurred analytics screen with monthly spending bars, a yearly summary and a breakdown by currency',
     title: 'The year at a glance',
     text: 'Totals by month and by year, in every currency you pay in.'
   },
   {
-    src: '/img/recurred/s13.webp',
+    src: '/img/recurred/iphone/optimizer-summary.webp',
     alt: 'Recurred Optimizer summary showing the yearly saving from the subscriptions you cancelled',
     title: 'The Optimizer',
     text: 'Cut what you never open and watch the yearly total drop.'
   }
 ]
 
-const ipadCallouts = [
+const syncCallouts = [
+  {
+    icon: 'i-tabler:cloud',
+    title: 'Synced through your iCloud',
+    text: "Add a subscription on your iPhone and it's already on your iPad and Mac — no account, and nothing kept on anyone else's servers."
+  },
+  {
+    icon: 'i-tabler:app-window',
+    title: 'Native on each one',
+    text: 'Not a phone app stretched to fit: every version uses its own screen properly, from the Dynamic Island to a full Mac window.'
+  },
   {
     icon: 'i-tabler:layout-dashboard',
-    title: 'The whole dashboard at once',
-    text: 'Totals, upcoming charges and every subscription together, with no scrolling to find them.'
-  },
-  {
-    icon: 'i-tabler:columns-2',
-    title: 'Calendar and totals, together',
-    text: "The month's payment calendar sits right beside the numbers it adds up to."
-  },
-  {
-    icon: 'i-tabler:devices',
-    title: 'The same list everywhere',
-    text: "Add a subscription on your iPhone and it's already on your iPad, synced through your iCloud."
+    title: 'More room, more at once',
+    text: 'The bigger the screen, the more of your totals, calendar and subscriptions sit together without scrolling.'
   }
 ]
 
@@ -139,15 +139,19 @@ const faqs = [
   },
   {
     q: 'Where is my data kept?',
-    a: 'On your device. It syncs only through your own iCloud, so your subscriptions move between iPhone and iPad without passing through anyone else’s servers. Nothing is tracked or sold.'
+    a: 'On your device. It syncs only through your own iCloud, so your subscriptions move between iPhone, iPad and Mac without passing through anyone else’s servers. Nothing is tracked or sold.'
   },
   {
     q: 'Is there an Android version?',
-    a: 'No, and there are no plans for one. Recurred is built to be fully native on iPhone and iPad rather than spread thin across platforms.'
+    a: 'No, and there are no plans for one. Recurred is built to be fully native on iPhone, iPad and Mac rather than spread thin across platforms.'
   },
   {
     q: 'Does it work on iPad?',
     a: 'Yes. It is a universal app — the same subscriptions, synced through iCloud, with a layout that uses the bigger screen to show your details side by side.'
+  },
+  {
+    q: 'Does it run on Mac?',
+    a: 'Yes. Recurred is a native Mac app on macOS 15 or later, from the same App Store listing, with the same subscriptions synced through your iCloud.'
   },
   {
     q: 'Are there home screen widgets?',
@@ -174,7 +178,7 @@ useSchemaOrg([
     description:
       "Every subscription in one place, so you always know what you're paying and when. Free, private, no ads and no account.",
     applicationCategory: 'FinanceApplication',
-    operatingSystem: 'iOS 18.0 or later, iPadOS 18.0 or later',
+    operatingSystem: 'iOS 18.0 or later, iPadOS 18.0 or later, macOS 15.0 or later',
     // No softwareVersion: it ships every few days and no rich result uses it,
     // so a hardcoded value would only ever drift out of date.
     downloadUrl: appStoreUrl,
@@ -224,7 +228,7 @@ useSchemaOrg([
           aria-hidden="true"
         ></div>
         <RecurredPhoneFrame
-          src="/img/recurred/s1.webp"
+          src="/img/recurred/iphone/home.webp"
           alt="Recurred home screen listing upcoming charges and all subscriptions"
           fetchpriority="high"
           class="relative w-64 lg:w-72"
@@ -255,42 +259,64 @@ useSchemaOrg([
       </div>
     </section>
 
+    <!-- Across every device, kept in step by iCloud -->
     <section class="pb-16 md:pb-20">
       <div
         class="relative overflow-hidden rounded-3xl border border-gray-200 bg-[radial-gradient(120%_100%_at_50%_0%,rgb(139_124_255/0.14),rgb(139_124_255/0.03)_70%)] px-6 py-12 md:px-12 md:py-16"
       >
         <div class="text-center max-w-2xl mx-auto">
           <span
-            class="inline-flex items-center gap-1.5 rounded-full bg-[#6455E0]/10 text-primary font-medium px-3 py-1 text-sm"
+            class="inline-flex items-center gap-2 rounded-full bg-[#6455E0]/10 text-primary font-medium px-3 py-1 text-sm"
           >
-            <Icon name="i-tabler:device-ipad" class="text-base" />
-            Now on iPad
+            <Icon name="i-tabler:devices" class="text-base" />
+            iPhone · iPad · Mac
           </span>
           <h2 class="font-poppins font-bold tracking-tight text-3xl mt-5 text-balance">
-            Made for the bigger screen.
+            One list, on every device.
           </h2>
           <p class="mt-4 text-lg text-gray-600 text-balance">
-            Recurred uses every inch of the iPad, so your whole subscription picture sits on one
-            screen instead of one tap away.
+            The same subscriptions on your iPhone, iPad and Mac, kept in step through your own
+            iCloud. Add one anywhere and it's already everywhere else.
           </p>
         </div>
 
-        <!-- Centerpiece: the home dashboard, the screen the extra room helps most -->
-        <div class="relative mt-10 md:mt-12 flex justify-center">
+        <!-- The same home screen on all three, so the sync story shows itself -->
+        <div class="relative mx-auto mt-12 md:mt-16 max-w-4xl">
           <div
-            class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[80%] -z-0 bg-[radial-gradient(closest-side,rgb(139_124_255/0.35),transparent)]"
+            class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[80%] -z-0 bg-[radial-gradient(closest-side,rgb(139_124_255/0.4),transparent)]"
             aria-hidden="true"
           ></div>
-          <RecurredTabletFrame
-            src="/img/recurred/ipad-home.webp"
-            alt="Recurred on iPad showing the home dashboard: the month's total, spending by category, upcoming charges and every subscription grouped by type, all on one screen"
-            loading="lazy"
-            class="relative w-full max-w-3xl"
-          />
+          <div class="relative z-10 mx-auto w-full md:w-[80%]">
+            <RecurredMacFrame
+              src="/img/recurred/mac/home.webp"
+              alt="Recurred as a native Mac app: the home dashboard with this month's total, upcoming charges and every subscription in a resizable window"
+              loading="lazy"
+            />
+          </div>
+          <div class="mt-6 flex items-end justify-center gap-5 md:mt-0 md:contents">
+            <div
+              class="w-2/5 max-w-[13rem] md:absolute md:bottom-0 md:left-0 md:z-20 md:w-[46%] md:max-w-none lg:w-[44%]"
+            >
+              <RecurredTabletFrame
+                src="/img/recurred/ipad/home.webp"
+                alt="The same Recurred home dashboard on iPad"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="w-1/5 max-w-[6rem] md:absolute md:bottom-0 md:right-0 md:z-30 md:w-[22%] md:max-w-none"
+            >
+              <RecurredPhoneFrame
+                src="/img/recurred/iphone/home.webp"
+                alt="The same Recurred home screen on iPhone"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
 
-        <div class="grid sm:grid-cols-3 gap-8 mt-12 max-w-4xl mx-auto">
-          <div v-for="callout in ipadCallouts" :key="callout.title" class="text-center">
+        <div class="grid sm:grid-cols-3 gap-8 mt-14 md:mt-16 max-w-4xl mx-auto">
+          <div v-for="callout in syncCallouts" :key="callout.title" class="text-center">
             <span
               class="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-[#6455E0]/10 text-primary"
             >
@@ -301,17 +327,16 @@ useSchemaOrg([
           </div>
         </div>
 
-        <!-- Proof of the side-by-side claim -->
+        <!-- Proof the Mac app is native, not a blown-up phone screen -->
         <figure class="mt-12 max-w-4xl mx-auto">
-          <RecurredTabletFrame
-            src="/img/recurred/ipad-analytics.webp"
-            alt="Recurred analytics on iPad with the monthly payment calendar on the left and this month's totals, the yearly summary and a currency breakdown on the right"
+          <RecurredMacFrame
+            src="/img/recurred/mac/analytics.webp"
+            alt="Recurred analytics in a Mac window: monthly spending bars, the yearly summary and a breakdown by currency laid out across the full width"
             loading="lazy"
-            class="w-full"
           />
           <figcaption class="mt-5 text-center text-gray-600 text-balance">
-            A month's payment calendar and the totals it adds up to, read together instead of one
-            after the other.
+            On the Mac it's a real window you can resize, with the year's spending spread across the
+            screen instead of stacked into a column.
           </figcaption>
         </figure>
       </div>
@@ -388,7 +413,7 @@ useSchemaOrg([
         Get your subscriptions under control.
       </h2>
       <p class="mt-3 text-gray-600">
-        Free for iPhone and iPad. Requires iOS or iPadOS 18 or later.
+        Free for iPhone, iPad and Mac. Requires iOS or iPadOS 18, or macOS 15 or later.
       </p>
       <a :href="appStoreUrl" class="inline-block mt-6" title="Download Recurred on the App Store">
         <img

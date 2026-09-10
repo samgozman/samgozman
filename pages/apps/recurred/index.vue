@@ -31,6 +31,11 @@ const features = [
     text: 'A calendar shows exactly when money leaves your account, and reminders reach you before a renewal or free trial ends.'
   },
   {
+    icon: 'i-tabler:receipt',
+    title: 'Bills, not just subscriptions',
+    text: 'Mark rent, electricity or an invoice as something you pay by hand. Recurred says so when the day passes unpaid, and you record what it actually cost when the amount moves month to month.'
+  },
+  {
     icon: 'i-tabler:calendar-month',
     title: 'See future months',
     text: 'Open any upcoming month to check what you are due to pay. Useful when a few annual bills happen to land together.'
@@ -57,13 +62,8 @@ const features = [
   },
   {
     icon: 'i-tabler:sparkles',
-    title: 'Add them by describing them',
-    text: 'Write or dictate your subscriptions in your own words and Recurred fills in the details, read entirely on your device. Needs an iPhone with Apple Intelligence.'
-  },
-  {
-    icon: 'i-tabler:file-spreadsheet',
-    title: 'Import from a spreadsheet',
-    text: 'Already keep your subscriptions in a CSV file? Bring the whole list across at once instead of adding them one by one.'
+    title: 'Bring your whole list across',
+    text: 'Write or dictate your subscriptions in your own words and Recurred fills in the details, read entirely on your device — or import the CSV you already keep. Describing them needs Apple Intelligence; a spreadsheet does not.'
   }
 ]
 
@@ -156,6 +156,10 @@ const faqs = [
   {
     q: 'Are there home screen widgets?',
     a: 'Two. Up Next shows the charges about to land, and This Month tracks your spending against what you usually pay — both without opening the app.'
+  },
+  {
+    q: 'Can I track bills I pay manually?',
+    a: 'Yes. Flag anything you pay by hand — rent, electricity, an invoice — and Recurred stops expecting it to collect itself: it tells you when the day has gone by unpaid, and marking it paid records the real amount as that bill’s price from then on.'
   },
   {
     q: "Can Recurred help me cancel subscriptions I don't use?",

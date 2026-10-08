@@ -134,7 +134,8 @@ export default defineNuxtConfig({
             'cpp',
             'make',
             'makefile',
-            'python'
+            'python',
+            'swift'
           ]
         }
       }

@@ -216,7 +216,7 @@ useSchemaOrg([
           Always know what you're paying and when the next charge lands. Free, with no ads and no
           account.
         </p>
-        <a :href="appStoreUrl" class="inline-block mt-8" title="Download Recurred on the App Store">
+        <a :href="appStoreUrl" class="inline-block mt-8" data-umami-event="appstore-click" data-umami-event-position="top" title="Download Recurred on the App Store">
           <img
             src="/img/recurred/appstore-badge.svg"
             alt="Download on the App Store"
@@ -419,7 +419,7 @@ useSchemaOrg([
       <p class="mt-3 text-gray-600">
         Free for iPhone, iPad and Mac. Requires iOS or iPadOS 18, or macOS 15 or later.
       </p>
-      <a :href="appStoreUrl" class="inline-block mt-6" title="Download Recurred on the App Store">
+      <a :href="appStoreUrl" class="inline-block mt-6" data-umami-event="appstore-click" data-umami-event-position="bottom" title="Download Recurred on the App Store">
         <img
           src="/img/recurred/appstore-badge.svg"
           alt="Download on the App Store"

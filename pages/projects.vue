@@ -43,10 +43,22 @@ defineOgImage('Default', { title: 'Projects' })
       class="not-prose timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-lg"
     >
       <ProjectsItem
-        date="2025 4/4 - 2026 3/4"
-        title="Recurred - subscription tracker"
+        date="2026 4/4"
+        title="refetch - Claude Code plugin"
         side="left"
         type="start"
+        sourceLink="https://github.com/samgozman/refetch"
+      >
+        refetch is a Claude Code plugin that reads the web pages WebFetch can't: 403 and 429
+        responses, "Just a moment..." challenges, JavaScript-only pages and timeouts. Hooks catch
+        the failed read and point Claude at refetch in the same turn, which fetches the page with a
+        Chrome TLS fingerprint and falls back to headless Chrome when needed.
+      </ProjectsItem>
+      <ProjectsItem
+        date="2025 4/4 - 2026 3/4"
+        title="Recurred - subscription tracker"
+        side="right"
+        type="middle"
         websiteLink="/apps/recurred"
         appStoreLink="https://apps.apple.com/app/id6783705092"
       >
@@ -60,7 +72,7 @@ defineOgImage('Default', { title: 'Projects' })
       <ProjectsItem
         date="2026 2/4"
         title="temporalcheck-lint"
-        side="right"
+        side="left"
         type="middle"
         sourceLink="https://github.com/samgozman/temporalcheck-lint"
       >

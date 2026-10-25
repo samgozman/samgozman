@@ -1,5 +1,5 @@
 # see all versions at https://hub.docker.com/r/oven/bun/tags
-FROM oven/bun:1.3.11-alpine AS base
+FROM oven/bun:1.4.4-alpine AS base
 WORKDIR /usr/src/app
 
 # install dependencies into temp directory
@@ -28,7 +28,7 @@ ENV PORT=3000
 RUN bun run build
 
 # release image
-FROM oven/bun:1.3.11-alpine AS release
+FROM oven/bun:1.4.4-alpine AS release
 WORKDIR /usr/src/app
 COPY --from=prerelease /usr/src/app/.output .
 

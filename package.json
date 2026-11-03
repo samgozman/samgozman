@@ -23,6 +23,7 @@
     "cherry-markdown": "0.10.3",
     "marked": "^18.1.1",
     "nuxt": "4.6.2",
+    "ohash": "2.0.11",
     "vue": "3.5.44",
     "vue-router": "5.0.4"
   },

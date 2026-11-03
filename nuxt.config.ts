@@ -89,6 +89,11 @@ export default defineNuxtConfig({
   // instead of the @nuxtjs/tailwindcss module, which only supports v3. The CSS
   // entry below carries the `@import "tailwindcss"` + daisyUI plugin directives.
   css: ['~/assets/css/tailwind.css'],
+  // og:image URLs are signed. The signing secret comes from NUXT_OG_IMAGE_SECRET
+  // at runtime (set it in Coolify). Without it the module generates a random
+  // secret per build, and every deploy invalidates the og:image URLs crawlers
+  // have cached. server/middleware/og-image-stale-signature.ts redirects such
+  // stale URLs to the page's current og:image.
   ogImage: {},
   // Re-enable highlight API route for client-side parseMarkdown in MarkdownView
   mdc: {

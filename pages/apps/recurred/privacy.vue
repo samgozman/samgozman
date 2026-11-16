@@ -2,7 +2,7 @@
 definePageMeta({ layout: 'recurred' })
 
 const supportEmail = 'recurred-app@gozman.space'
-const lastUpdated = 'July 15, 2026'
+const lastUpdated = 'November 16, 2026'
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
@@ -10,11 +10,11 @@ useSeoMeta({
   ogTitle: 'Privacy Policy | Recurred',
   twitterTitle: 'Privacy Policy | Recurred',
   description:
-    'Privacy policy for Recurred, the subscription tracker for iPhone. Your data stays on your device: no tracking, no ads, no accounts.',
+    'Privacy policy for Recurred, the subscription tracker for iPhone, iPad and Mac. Your data stays on your device: no tracking, no ads, no accounts.',
   ogDescription:
-    'Privacy policy for Recurred, the subscription tracker for iPhone. Your data stays on your device: no tracking, no ads, no accounts.',
+    'Privacy policy for Recurred, the subscription tracker for iPhone, iPad and Mac. Your data stays on your device: no tracking, no ads, no accounts.',
   twitterDescription:
-    'Privacy policy for Recurred, the subscription tracker for iPhone. Your data stays on your device: no tracking, no ads, no accounts.'
+    'Privacy policy for Recurred, the subscription tracker for iPhone, iPad and Mac. Your data stays on your device: no tracking, no ads, no accounts.'
 })
 
 defineOgImage('Recurred')
@@ -29,16 +29,17 @@ defineOgImage('Recurred')
       <strong>Last updated: {{ lastUpdated }}</strong>
     </p>
     <p>
-      Recurred is a subscription tracker for iPhone. This policy explains what data the app handles
-      and how. The short version: your subscription data stays on your device, and Recurred does not
-      track you, show ads, or sell your data.
+      Recurred is a subscription tracker for iPhone, iPad and Mac. This policy explains what data the
+      app handles and how. The short version: your subscription data stays on your device, and
+      Recurred does not track you, show ads, or sell your data. If you choose to, you can share
+      anonymous usage data to help improve the app. It's off unless you turn it on.
     </p>
 
     <h2>Data stored on your device</h2>
     <p>
       Everything you add to Recurred, such as your subscriptions, prices, categories, and usage
-      notes, is stored locally on your device. Recurred has no account system and no server that
-      holds this data.
+      notes, is stored locally on your device. Recurred has no account system. Your subscriptions,
+      prices, categories and notes are never sent to us.
     </p>
 
     <h2>iCloud sync</h2>
@@ -64,10 +65,64 @@ defineOgImage('Recurred')
       and no information about you, your device, or your subscriptions is sent with these requests.
     </p>
 
+    <h2>Optional usage data</h2>
+    <p>
+      Recurred can share anonymous usage data with us to help decide what to improve. It is off until
+      you agree: the app asks once, during setup or at the top of Settings, and you can change your
+      answer any time in Settings → Usage Data.
+    </p>
+    <p><strong>What is sent, only if you agree:</strong></p>
+    <ul>
+      <li>
+        Which screens and features you use, and whether a task like adding a subscription was
+        finished or cancelled.
+      </li>
+      <li>
+        When the app is opened and closed, and how (for example from a widget or a notification).
+      </li>
+      <li>
+        Rounded counts, such as "4–10 subscriptions", and which options are on (for example iCloud
+        sync, reminders, appearance, widgets in use).
+      </li>
+      <li>A rough range of your monthly spending, converted to US dollars (for example "51–100").</li>
+      <li>
+        Your region and App Store country, your time zone (our server keeps only its country), your
+        device and app language, your base currency and your region's currency.
+      </li>
+      <li>The app version, the type of device (iPhone, iPad or Mac) and the system version.</li>
+      <li>
+        A random identifier for this installation. On supported devices this is an Apple App Attest
+        key, which proves the data comes from the genuine app; it is not your Apple ID or a device
+        identifier used for advertising.
+      </li>
+    </ul>
+    <p>
+      <strong>What is never sent:</strong> subscription names, exact prices, notes, dates, search
+      text, file names or which templates you pick. No advertising identifier, no tracking across
+      apps or websites.
+    </p>
+    <p>
+      <strong>Where it goes:</strong> only to a server we run ourselves, at a hosting provider in
+      Germany (EU). It is not shared with or sold to anyone and no third-party analytics service is
+      involved. Our server does not store IP addresses.
+    </p>
+    <p>
+      <strong>How long it is kept:</strong> events are linked to the random identifier for up to
+      three years, after which they are anonymized. If you turn sharing off, collection stops at once
+      and what was already sent is unlinked from your installation.
+    </p>
+    <p>
+      <strong>Legal basis (EU/UK):</strong> your consent, which you can withdraw at any time without
+      affecting the rest of the app.
+    </p>
+
     <h2>What Recurred does not do</h2>
     <ul>
       <li>No ads.</li>
-      <li>No analytics that profile you.</li>
+      <li>
+        No profiling or tracking. The optional usage data is anonymous and is used only in aggregate
+        to decide what to improve.
+      </li>
       <li>No selling or sharing of your data.</li>
       <li>No account, login, or personal profile.</li>
       <li>No tracking across other apps or websites.</li>
@@ -86,9 +141,20 @@ defineOgImage('Recurred')
 
     <h2>Your rights</h2>
     <p>
-      Because your data lives on your device and your own iCloud, you are in control of it. Deleting
-      the app removes its local data. You can manage iCloud data through your device's iCloud
-      settings.
+      Your subscriptions live on your device and in your own iCloud, so you control them: deleting
+      the app removes its local data, and iCloud data is managed in your device's iCloud settings.
+    </p>
+    <p>
+      For the optional usage data, you can stop sharing at any time in Settings → Usage Data. This
+      stops collection, unlinks what was already sent from your installation, and deletes the random
+      identifier on your device.
+    </p>
+    <p>
+      The usage data carries no name, email or account, and the app never shows its random
+      identifier, so we have no way to tell which data is yours. That means we can't look up, hand
+      over, correct or delete a particular person's usage data on request (GDPR Art. 11). Turning
+      sharing off is how you withdraw your consent and remove the link. If you are in the EU or UK,
+      you can also complain to your local data protection authority.
     </p>
 
     <h2>Changes to this policy</h2>
@@ -97,9 +163,10 @@ defineOgImage('Recurred')
       updated" date.
     </p>
 
-    <h2>Contact</h2>
+    <h2>Who is responsible</h2>
     <p>
-      Questions about this policy can be sent to
+      Recurred is developed by Semen Gozman, Netanya, Israel, who is responsible for the data
+      described in this policy. For any privacy question or request, email
       <a class="whitespace-nowrap" :href="`mailto:${supportEmail}`">{{ supportEmail }}</a
       >.
     </p>

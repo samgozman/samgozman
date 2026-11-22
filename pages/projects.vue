@@ -60,7 +60,7 @@ defineOgImage('Default', { title: 'Projects' })
         side="right"
         type="middle"
         websiteLink="/apps/recurred"
-        appStoreLink="https://apps.apple.com/app/id6783705092"
+        appStoreLink="https://apps.apple.com/app/apple-store/id6783705092?pt=129042193&ct=website&mt=8"
       >
         Recurred is an iOS app for tracking subscriptions and recurring bills. You add each one and
         it shows what you're paying, when the next charge is due, and what the coming months will

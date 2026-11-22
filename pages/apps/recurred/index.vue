@@ -2,6 +2,8 @@
 definePageMeta({ layout: 'recurred' })
 
 const appStoreUrl = 'https://apps.apple.com/app/id6783705092'
+// App Store Connect campaign, so installs from this page show up as "website".
+const appStoreCampaignUrl = 'https://apps.apple.com/app/apple-store/id6783705092?pt=129042193&ct=website&mt=8'
 
 useSeoMeta({
   ogUrl: `${useRuntimeConfig().public.baseUrl}${useRoute().path}`,
@@ -216,7 +218,7 @@ useSchemaOrg([
           Always know what you're paying and when the next charge lands. Free, with no ads and no
           account.
         </p>
-        <a :href="appStoreUrl" class="inline-block mt-8" data-umami-event="appstore-click" data-umami-event-position="top" title="Download Recurred on the App Store">
+        <a :href="appStoreCampaignUrl" class="inline-block mt-8" data-umami-event="appstore-click" data-umami-event-position="top" title="Download Recurred on the App Store">
           <img
             src="/img/recurred/appstore-badge.svg"
             alt="Download on the App Store"
@@ -419,7 +421,7 @@ useSchemaOrg([
       <p class="mt-3 text-gray-600">
         Free for iPhone, iPad and Mac. Requires iOS or iPadOS 18, or macOS 15 or later.
       </p>
-      <a :href="appStoreUrl" class="inline-block mt-6" data-umami-event="appstore-click" data-umami-event-position="bottom" title="Download Recurred on the App Store">
+      <a :href="appStoreCampaignUrl" class="inline-block mt-6" data-umami-event="appstore-click" data-umami-event-position="bottom" title="Download Recurred on the App Store">
         <img
           src="/img/recurred/appstore-badge.svg"
           alt="Download on the App Store"
